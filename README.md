@@ -1,5 +1,5 @@
 # Blog
-[undefinedvoidnull.github.io](https://undefinedvoidnull.github.io/)
+https://UndefinedVoidNull.github.io
 
 ## Command
 ```bash
