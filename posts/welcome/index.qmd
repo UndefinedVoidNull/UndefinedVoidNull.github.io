@@ -47,11 +47,11 @@ console.log("Hello")
 
 ------------------------------------------------------------------------
 
-> Thm: Fundamental Theorem of Calculus
+Fundamental Theorem of Caculus
 
-$$
-\int_a^b f'(x) \, dx = f(b) - f(a)
-$$
+:   $$
+    \int_a^b f'(x) \, dx = f(b) - f(a)
+    $$
 
 > Thm: Multiple Lines Theorem
 
@@ -92,7 +92,7 @@ $a \neq 0$
 
 ------------------------------------------------------------------------
 
-| A\\B | A1      | A2      |
+| B\\A | A1      | A2      |
 |------|---------|---------|
 | B1   | A1 x B1 | A2 x B1 |
 | B2   | A1 x B2 | A2 x B2 |
