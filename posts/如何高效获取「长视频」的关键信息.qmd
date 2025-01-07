@@ -1,7 +1,7 @@
 ---
 title: "如何高效获取「长视频」的关键信息"
 date: "2025-01-03"
-categories: [Record, Tool]
+categories: [Workflow, Tool]
 ---
 
 1.  去[DownSub](https://downsub.com/)等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕

@@ -1,0 +1,43 @@
+---
+title: "博客标签设计(暂定)"
+date: "2025-01-06"
+categories: [Record]
+---
+
+-   按动作
+
+    -   Record 一般记录/随笔
+
+    -   Workflow 工作流
+
+    -   Reading 读书笔记
+
+    -   Repost 转载/转发
+
+-   按主题
+
+    -   SOC 社会相关
+
+    -   ECON 经济相关
+
+    -   Data 数据/图表相关
+
+    -   CS
+
+    -   Code
+
+    -   Math
+
+    -   AI
+
+    -   History
+
+    -   Music
+
+    -   Efficiency
+
+    -   Tool
+
+    -   Idea 不成熟的想法
+
+    -   Method 方法(论)
