@@ -5,7 +5,8 @@ website:
   title: "Shigure Chizuru"
   navbar:
     right:
-      - about.qmd
+      - text: "About"
+        href: about.qmd
       - icon: github
         href: https://github.com/UndefinedVoidNull/UndefinedVoidNull.github.io
 format:
