@@ -1,6 +1,8 @@
 # Blog
 https://UndefinedVoidNull.github.io
 
+ffmpeg图片压缩
+
 ## Command
 ```bash
 quarto render
