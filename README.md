@@ -14,6 +14,8 @@ author: "Harlow Malloc"
 date: "2025-01-01"
 categories: [News, Code, Analysis]
 image: "image.jpg"
+toc: true
+number-sections: true
 ---
 ```
 
