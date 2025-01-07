@@ -14,17 +14,24 @@
     "text": "List\n\nList\n\nList\n\nList\n\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://marketplace.visualstudio.com/items?itemName=quarto.quarto\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
-    "section": "",
-    "text": "如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nRecord\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/如何高效获取「长视频」的关键信息.html",
     "href": "posts/如何高效获取「长视频」的关键信息.html",
     "title": "如何高效获取「长视频」的关键信息",
     "section": "",
     "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nRecord\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/初探SageMath.html",
+    "href": "posts/初探SageMath.html",
+    "title": "初探SageMath",
+    "section": "",
+    "text": "https://sagecell.sagemath.org/\nhttps://doc.sagemath.org/html/en/tutorial/tour_assignment.html\n# define variables\nx, b, c = var('x b c')\n\n# solve equations\nsolve([x^2 + b*x + c == 0], x) \nsolve([x+y==6, x-y==4], x, y)\n\n# differentiate\nu = var('u')\ndiff(sin(u), u)\n\n# 4-th derivative\ndiff(sin(x^2), x, 4)\n\n# partial\nx, y = var('x,y')\nf = x^2 + 17*y^2\n\nf.diff(x) # w.r.t. x\nf.diff(y) # w.r.t. y\n\n# partial fraction decomposition\nf = 1/((1+x)*(x-1))\nf.partial_fraction(x)\n\n# indefnite integral\nintegral(x*sin(x^2), x)\n# definite integral\nintegral(x/(x^2+1), x, 0, 1)\n\n# solve DEs\nt = var('t')    # define a variable t\nx = function('x')(t)   # define x to be a function of t\nDE = diff(x, t) + x - 1\ndesolve(DE, [x,t])\n\n# lapalce transform\ns = var(\"s\")\nt = var(\"t\")\nf = t^2*exp(t) - sin(t)\nf.laplace(t,s)\n\n# LaTeX\nlatex(sqrt(z^2 + 1/2)) # \\sqrt{z^{2} + \\frac{1}{2}}\n\n# print\nprint(\"Hello World\")"
   }
 ]
