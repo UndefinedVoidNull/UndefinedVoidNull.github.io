@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/博客标签设计.html",
       "/posts/初探SageMath.html",
       "/posts/如何高效获取「长视频」的关键信息.html",
       "/posts/welcome/index.html"
