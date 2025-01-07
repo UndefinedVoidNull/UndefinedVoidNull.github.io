@@ -1,0 +1,23 @@
+---
+title: "如何高效获取「长视频」的关键信息"
+date: "2025-01-03"
+categories: [Record, Tool]
+---
+
+1.  去[DownSub](https://downsub.com/)等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕
+
+2.  将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)
+
+3.  将txt文件喂给AI让其详细总结
+
+4.  由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入"继续翻译"的提示词让AI继续. 不是特别长的可以尝试Mistral AI的[Le Chat](https://chat.mistral.ai/chat)一般可以一次性翻译. 也可以尝试[Deepseek](https://chat.deepseek.com/)或者[Kimi.ai](https://kimi.moonshot.cn/). (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)
+
+5.  (推荐) 将txt的内容粘贴进Word Docx中. 使用[Google Translate](https://translate.google.com/?sl=en&tl=zh-CN&op=docs)或者[DeepL](https://www.deepl.com/en/translator/files), [Reverso](https://documents.reverso.net/Default.aspx?lang=en)(这两个需要付费)上传Docx进行翻译
+
+6.  新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出
+
+7.  将摘抄部分发到互联网上, 然后分享给朋友
+
+8.  将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹
+
+PS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如[豆包](https://chromewebstore.google.com/detail/%E8%B1%86%E5%8C%85%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8-ai-%E5%8A%A9%E6%89%8B/dbjibobgilijgolhjdcbdebjhejelffo), [YouTube Summary](https://chromewebstore.google.com/detail/youtube-summary-with-chat/nmmicjeknamkfloonkhhcjmomieiodli?hl=en-US)
