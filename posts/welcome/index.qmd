@@ -1,7 +1,7 @@
 ---
-title: "Hello Quarto Blog"
-date: "2025-01-03"
-categories: []
+title: "Quarto Markdown (.qmd) Testing"
+date: "2025-01-01"
+categories: [Record]
 ---
 
 # H1
@@ -92,7 +92,7 @@ $a \neq 0$
 
 ------------------------------------------------------------------------
 
-| B\\A | A1      | A2      |
+| A\\B | B1      | B2      |
 |------|---------|---------|
-| B1   | A1 x B1 | A2 x B1 |
-| B2   | A1 x B2 | A2 x B2 |
+| A1   | A1 x B1 | A1 x B2 |
+| A2   | A2 x B1 | A2 x B2 |
