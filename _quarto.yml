@@ -2,14 +2,12 @@ project:
   type: website
 
 website:
-  title: "quarto-blogger"
+  title: "Shigure Chizuru"
   navbar:
     right:
       - about.qmd
       - icon: github
-        href: https://github.com/
-      - icon: twitter
-        href: https://twitter.com
+        href: https://github.com/UndefinedVoidNull/UndefinedVoidNull.github.io
 format:
   html:
     theme:

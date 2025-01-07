@@ -1,12 +1,98 @@
 ---
-title: "Welcome To My Blog"
-author: "Tristan O'Malley"
+title: "Hello Quarto Blog"
 date: "2025-01-03"
-categories: [news]
+categories: []
 ---
 
-This is the first post in a Quarto blog. Welcome!
+# H1
 
-![](thumbnail.jpg)
+## H2
 
-Since this post doesn't specify an explicit `image`, the first image in the post will be used in the listing page of posts.
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+------------------------------------------------------------------------
+
+-   List
+
+    -   List
+
+        -   List
+
+            -   List
+
+    -   List
+
+-   List
+
+1.  First
+2.  Second
+    1.  First
+        1.  First
+3.  Third
+4.  Forth
+
+------------------------------------------------------------------------
+
+What is `JavaScript` ?
+
+``` js
+console.log("Hello")
+```
+
+------------------------------------------------------------------------
+
+> Thm: Fundamental Theorem of Calculus
+
+$$
+\int_a^b f'(x) \, dx = f(b) - f(a)
+$$
+
+> Thm: Multiple Lines Theorem
+
+$$
+\begin{align*}
+&ax^2+bx+c = 0 \\ 
+&x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align*}
+$$
+
+::: callout-note
+$a \neq 0$
+:::
+
+------------------------------------------------------------------------
+
+> Quote:
+>
+> > Nested Quote:
+> >
+> > > Nested Quote:
+
+------------------------------------------------------------------------
+
+**bold**
+
+*italic*
+
+***bold italic***
+
+------------------------------------------------------------------------
+
+[Google](google.com)
+
+<https://marketplace.visualstudio.com/items?itemName=quarto.quarto>
+
+![](images/paste-1.png)
+
+------------------------------------------------------------------------
+
+| A\\B | A1      | A2      |
+|------|---------|---------|
+| B1   | A1 x B1 | A2 x B1 |
+| B2   | A1 x B2 | A2 x B2 |
