@@ -1,7 +1,7 @@
 ---
-title: "博客标签设计(暂定)"
+title: "博客标签设计"
 date: "2025-01-06"
-categories: [Record]
+categories: [Record, Idea]
 ---
 
 -   按动作
@@ -14,11 +14,15 @@ categories: [Record]
 
     -   Repost 转载/转发
 
+    -   Comment/Review 评论
+
 -   按主题
 
     -   SOC 社会相关
 
     -   ECON 经济相关
+
+    -   Psychology
 
     -   Data 数据/图表相关
 
@@ -28,11 +32,15 @@ categories: [Record]
 
     -   Math
 
+    -   Logic
+
     -   AI
 
     -   History
 
     -   Music
+
+    -   Art
 
     -   Efficiency
 
