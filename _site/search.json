@@ -14,13 +14,6 @@
     "text": "https://sagecell.sagemath.org/\nhttps://doc.sagemath.org/html/en/tutorial/tour_assignment.html\n# define variables\nx, b, c = var('x b c')\n\n# solve equations\nsolve([x^2 + b*x + c == 0], x) \nsolve([x+y==6, x-y==4], x, y)\n\n# differentiate\nu = var('u')\ndiff(sin(u), u)\n\n# 4-th derivative\ndiff(sin(x^2), x, 4)\n\n# partial\nx, y = var('x,y')\nf = x^2 + 17*y^2\n\nf.diff(x) # w.r.t. x\nf.diff(y) # w.r.t. y\n\n# partial fraction decomposition\nf = 1/((1+x)*(x-1))\nf.partial_fraction(x)\n\n# indefnite integral\nintegral(x*sin(x^2), x)\n# definite integral\nintegral(x/(x^2+1), x, 0, 1)\n\n# solve DEs\nt = var('t')    # define a variable t\nx = function('x')(t)   # define x to be a function of t\nDE = diff(x, t) + x - 1\ndesolve(DE, [x,t])\n\n# lapalce transform\ns = var(\"s\")\nt = var(\"t\")\nf = t^2*exp(t) - sin(t)\nf.laplace(t,s)\n\n# LaTeX\nlatex(sqrt(z^2 + 1/2)) # \\sqrt{z^{2} + \\frac{1}{2}}\n\n# print\nprint(\"Hello World\")"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
-    "section": "",
-    "text": "初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/welcome/index.html",
     "href": "posts/welcome/index.html",
     "title": "Quarto Markdown (.qmd) Testing",
@@ -33,6 +26,20 @@
     "title": "Quarto Markdown (.qmd) Testing",
     "section": "H2",
     "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://marketplace.visualstudio.com/items?itemName=quarto.quarto\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "使用ffmpeg压缩图片 (pwsh)\n\n\n\n\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/使用ffmpeg压缩图片 (pwsh).html",
+    "href": "posts/使用ffmpeg压缩图片 (pwsh).html",
+    "title": "使用ffmpeg压缩图片 (pwsh)",
+    "section": "",
+    "text": "ImageCompression.ps1\n# 创建输出目录\n$OutputDir = \"Compressed\"\nif (!(Test-Path -Path $OutputDir)) {\n    New-Item -ItemType Directory -Path $OutputDir\n}\n\n# 遍历当前目录下的所有 .jpg 文件\nGet-ChildItem -Path . -Filter \"*.jpg\" | ForEach-Object {\n    $InputFile = $_.FullName\n    $OutputFile = Join-Path -Path $OutputDir -ChildPath $_.Name\n\n    # 使用 ffmpeg 进行图片压缩\n    ffmpeg -i $InputFile -qscale:v 2 $OutputFile\n}\n\nWrite-Host \"图片压缩完成，输出到 $OutputDir 文件夹。\""
   },
   {
     "objectID": "posts/博客标签设计.html",

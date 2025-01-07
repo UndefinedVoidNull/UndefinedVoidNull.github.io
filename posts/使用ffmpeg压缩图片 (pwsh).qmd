@@ -1,0 +1,26 @@
+---
+title: "使用ffmpeg压缩图片 (pwsh)"
+date: "2025-01-07"
+categories: [Code]
+---
+
+`ImageCompression.ps1`
+
+``` ps1
+# 创建输出目录
+$OutputDir = "Compressed"
+if (!(Test-Path -Path $OutputDir)) {
+    New-Item -ItemType Directory -Path $OutputDir
+}
+
+# 遍历当前目录下的所有 .jpg 文件
+Get-ChildItem -Path . -Filter "*.jpg" | ForEach-Object {
+    $InputFile = $_.FullName
+    $OutputFile = Join-Path -Path $OutputDir -ChildPath $_.Name
+
+    # 使用 ffmpeg 进行图片压缩
+    ffmpeg -i $InputFile -qscale:v 2 $OutputFile
+}
+
+Write-Host "图片压缩完成，输出到 $OutputDir 文件夹。"
+```
