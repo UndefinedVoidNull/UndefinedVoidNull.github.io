@@ -14,11 +14,53 @@
     "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://marketplace.visualstudio.com/items?itemName=quarto.quarto\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
   },
   {
-    "objectID": "posts/使用ffmpeg压缩图片 (pwsh).html",
-    "href": "posts/使用ffmpeg压缩图片 (pwsh).html",
-    "title": "使用ffmpeg压缩图片 (pwsh)",
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html",
+    "href": "posts/sqrt2_is_not_a_rational_number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
     "section": "",
-    "text": "ImageCompression.ps1\n# 创建输出目录\n$OutputDir = \"Compressed\"\nif (!(Test-Path -Path $OutputDir)) {\n    New-Item -ItemType Directory -Path $OutputDir\n}\n\n# 遍历当前目录下的所有 .jpg 文件\nGet-ChildItem -Path . -Filter \"*.jpg\" | ForEach-Object {\n    $InputFile = $_.FullName\n    $OutputFile = Join-Path -Path $OutputDir -ChildPath $_.Name\n\n    # 使用 ffmpeg 进行图片压缩\n    ffmpeg -i $InputFile -qscale:v 2 $OutputFile\n}\n\nWrite-Host \"图片压缩完成，输出到 $OutputDir 文件夹。\""
+    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \\[\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#summary",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+  },
+  {
+    "objectID": "posts/Qudartic_Formula.html",
+    "href": "posts/Qudartic_Formula.html",
+    "title": "[Proof] Qudartic Formula",
+    "section": "",
+    "text": "\\[\n\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\end{align*}\n\\]\nTherefore,\n\nIf \\(b^2-4ac&gt;0\\), there are two real roots\nIf \\(b^2-4ac=0\\), there is only one real root (or two repeated roots)\nIf \\(b^2-4ac&lt;0\\), there is no real root (or two complex conjugate root)"
+  },
+  {
+    "objectID": "posts/博客标签设计.html",
+    "href": "posts/博客标签设计.html",
+    "title": "博客标签设计",
+    "section": "",
+    "text": "按动作\n\nRecord 一般记录/随笔\nWorkflow 工作流\nReading 读书笔记\nRepost 转载/转发\nComment/Review 评论\n\n按主题\n\nSOC 社会相关\nECON 经济相关\nPsychology\nData 数据/图表相关\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea 不成熟的想法\nMethod 方法(论)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Qudartic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/如何高效获取「长视频」的关键信息.html",
@@ -28,18 +70,74 @@
     "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
+    "objectID": "posts/Geometric_Series.html",
+    "href": "posts/Geometric_Series.html",
+    "title": "[Proof] Geometric Series",
     "section": "",
-    "text": "使用ffmpeg压缩图片 (pwsh)\n\n\n\n\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
   },
   {
-    "objectID": "posts/博客标签设计.html",
-    "href": "posts/博客标签设计.html",
-    "title": "博客标签设计",
+    "objectID": "posts/Geometric_Series.html#geometric-sequence",
+    "href": "posts/Geometric_Series.html#geometric-sequence",
+    "title": "[Proof] Geometric Series",
     "section": "",
-    "text": "按动作\n\nRecord 一般记录/随笔\nWorkflow 工作流\nReading 读书笔记\nRepost 转载/转发\nComment/Review 评论\n\n按主题\n\nSOC 社会相关\nECON 经济相关\nPsychology\nData 数据/图表相关\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea 不成熟的想法\nMethod 方法(论)"
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html#finite-series",
+    "href": "posts/Geometric_Series.html#finite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Finite Series",
+    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html#infinite-series",
+    "href": "posts/Geometric_Series.html#infinite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Infinite Series",
+    "text": "Infinite Series"
+  },
+  {
+    "objectID": "posts/群环域模.html",
+    "href": "posts/群环域模.html",
+    "title": "群 环 域 模",
+    "section": "",
+    "text": "以下是群、环、域和模的基础定义。这些都是抽象代数中的重要概念，每个都有不同的代数结构和运算规则。"
+  },
+  {
+    "objectID": "posts/群环域模.html#群group",
+    "href": "posts/群环域模.html#群group",
+    "title": "群 环 域 模",
+    "section": "1. 群（Group）",
+    "text": "1. 群（Group）\n群是一个集合和一个二元运算的代数结构，满足以下条件：\n\n封闭性：对于任意 \\(a, b \\in G\\)，有 \\(a \\cdot b \\in G\\)\n结合律：对于任意 \\(a, b, c \\in G\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n单位元：存在一个单位元 \\(e \\in G\\)，对于任意 \\(a \\in G\\)，有 \\(e \\cdot a = a \\cdot e = a\\)\n逆元：对于任意 \\(a \\in G\\)，存在一个逆元 \\(a^{-1} \\in G\\)，使得 \\(a \\cdot a^{-1} = a^{-1} \\cdot a = e\\)\n\n\n如果还满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in G\\)，则称为交换群或阿贝尔群\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法下构成一个交换群，单位元是 0，逆元是负数\n非零实数集合 \\(\\mathbb{R}^*\\) 在乘法下构成一个群，单位元是 1，逆元是数的倒数"
+  },
+  {
+    "objectID": "posts/群环域模.html#环ring",
+    "href": "posts/群环域模.html#环ring",
+    "title": "群 环 域 模",
+    "section": "2. 环（Ring）",
+    "text": "2. 环（Ring）\n环是一个集合，配备了两个二元运算：加法和乘法。环中的元素必须满足以下条件：\n\n\n加法构成交换群：环中的加法形成一个交换群（有单位元、逆元和交换性）\n\n乘法封闭性：环中对任意元素 \\(a, b \\in R\\)，有 \\(a \\cdot b \\in R\\)\n乘法结合律：对于任意 \\(a, b, c \\in R\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n乘法分配律：乘法对加法满足分配律，即 \\(a \\cdot (b + c) = a \\cdot b + a \\cdot c\\) 和 \\((a + b) \\cdot c = a \\cdot c + b \\cdot c\\)\n\n\n如果乘法也满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in R\\)，则称为交换环\n\n环不要求每个非零元素有乘法逆元，也不要求乘法有单位元\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法和乘法下构成一个交换环\n矩阵集合 \\(M_n(\\mathbb{R})\\) （实数 \\(n \\times n\\) 矩阵）在加法和矩阵乘法下构成一个环（不是交换环，因为矩阵乘法不交换）"
+  },
+  {
+    "objectID": "posts/群环域模.html#域field",
+    "href": "posts/群环域模.html#域field",
+    "title": "群 环 域 模",
+    "section": "3. 域（Field）",
+    "text": "3. 域（Field）\n域是一个环的特例，它要求在加法和乘法下满足更强的条件。域中的元素不仅可以进行加法和乘法，还能进行除法（除了除以零）。一个域必须满足以下条件：\n\n加法构成交换群：域中的加法构成一个交换群，单位元为 0\n乘法构成交换群（除零元外）：域中的非零元素在乘法下构成一个交换群，单位元为 1。对于任意非零元素 \\(a \\in F\\)，存在一个乘法逆元 \\(a^{-1}\\)，使得 \\(a \\cdot a^{-1} = 1\\)\n分配律：乘法对加法满足分配律\n\n\n例子：\n\n实数集合 \\(\\mathbb{R}\\) 和有理数集合 \\(\\mathbb{Q}\\) 都是域\n复数集合 \\(\\mathbb{C}\\) 也是一个域\n有限域 \\(\\mathbb{F}_p\\)，其中 \\(p\\) 是素数，定义在模 \\(p\\) 加法和乘法上，是一个有限域"
+  },
+  {
+    "objectID": "posts/群环域模.html#模module",
+    "href": "posts/群环域模.html#模module",
+    "title": "群 环 域 模",
+    "section": "4. 模（Module）",
+    "text": "4. 模（Module）\n模是向量空间的广义概念。与向量空间类似，模中的元素可以进行加法和标量乘法，但模中的标量来自一个环而不是域。模的定义类似于向量空间，但它只要求标量来自环，因此模比向量空间更广泛。\n\n模的定义：\n一个模是一个集合 \\(M\\)，配备了两个运算：\n\n加法：模中的元素可以相加，满足交换群的公理。\n标量乘法：环中的标量可以与模中的元素相乘，满足结合律和分配律。\n\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在自身上构成一个模。\n矩阵空间 \\(M_n(\\mathbb{Z})\\) 是一个模，其中标量来自于环 \\(\\mathbb{Z}\\)，矩阵中的元素来自于整数。"
+  },
+  {
+    "objectID": "posts/群环域模.html#总结",
+    "href": "posts/群环域模.html#总结",
+    "title": "群 环 域 模",
+    "section": "总结：",
+    "text": "总结：\n\n群：一个集合，定义了一个封闭的二元运算（加法或乘法），并且每个元素都有逆元\n环：包含两个运算（加法和乘法），但不要求每个非零元素都有乘法逆元\n域：一个特殊的环，非零元素在乘法下也构成群，即可以进行除法（除零外）\n模：类似于向量空间，但标量来自环而非域，因此更为广泛"
   },
   {
     "objectID": "posts/初探SageMath.html",

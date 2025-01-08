@@ -2,7 +2,10 @@
   {
     "listing": "/index.html",
     "items": [
-      "/posts/使用ffmpeg压缩图片 (pwsh).html",
+      "/posts/Geometric_Series.html",
+      "/posts/Qudartic_Formula.html",
+      "/posts/群环域模.html",
+      "/posts/sqrt2_is_not_a_rational_number.html",
       "/posts/博客标签设计.html",
       "/posts/初探SageMath.html",
       "/posts/如何高效获取「长视频」的关键信息.html",
