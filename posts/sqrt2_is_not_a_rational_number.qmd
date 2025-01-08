@@ -1,0 +1,75 @@
+---
+title: "[Proof] sqrt(2) is not a rational number"
+date: "2025-01-07"
+categories: [Math]
+toc: true
+---
+
+This classic proof is associated with
+
+1.  Rational numbers are `Dense` but `Incomplete` (Incomplete means there are many "holes" in the number line for rational numbers)
+2.  Real number is `Complete`
+3.  The definition of `Algebraic Number` and `Transcendental Number`
+
+------------------------------------------------------------------------
+
+$\sqrt{2}$ is not a rational number.
+
+## Proof by contradiction
+
+We know $$\mathbb{Q} = \{ \frac{m}{n} \mid m, n \in\mathbb{Z}, n \neq 0 \}$$
+
+Suppose $\sqrt{ 2 }$ is rational to reach a contradiction
+
+So, $$
+\exists m, n \in \mathbb{Z}, \sqrt{2} = \frac{m}{n}
+$$
+
+And **we also suppose** $\frac{m}{n}$ is in lowest terms
+
+To say $\frac{m}{n}$ in lowest terms means if an integer $d$ divides $m$ and $d$ divides $n$, then $d = 1$ (i.e. $GCD(m,n) =1$)
+
+Obviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor ($GCD$)
+
+Take square on both sides and simplify
+
+$$
+\begin{aligned}
+2 = \frac{m^2}{n^2} \\
+m^2 = 2n^2 
+\end{aligned}
+$$
+
+Thus, $m^2$ is even so that $m$ is even (It is easy to prove by its contrapositive)
+
+So, $\exists k\in \mathbb{Z}, m=2k$
+
+Substitute $m=2k$ back $$
+\begin{aligned}
+    (2k)^2 = 2n^2\\
+    2n^2 = 4k^2 \\
+    n^2 = 2k^2 \\
+\end{aligned}
+$$
+
+Thus, $n^2$ is even so that $n$ is even.
+
+Since $m$ is even and $n$ is even, they have common factor 2 which means $\frac{m}{n}$ isn't in lowest terms.
+
+But we assume $\frac{m}{n}$ is in lowest term (without common factor), we reach a contradiction!
+
+Therefore, $\sqrt{2}$ is not a rational number. So it is irrational number.
+
+## Summary
+
+1.  Proof by contradiction
+
+2.  Prove irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It's easy to associate common divisor/factor with even number and prime numbers)
+
+3.  Even number definition
+
+## Takeaways
+
+1.  Rational or fraction always associate with lowest terms assumption
+
+2.  When we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)
