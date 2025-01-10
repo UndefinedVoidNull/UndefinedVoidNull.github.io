@@ -8,17 +8,33 @@ format: html
 
 ## Intro
 
-There are two common types of proofs 1. If $P$, then $Q$. ($P \implies Q$) 2. $P$ iff $Q$ ($P \iff Q$)
+There are two common types of proofs
+
+1\. If $P$, then $Q$. ($P \implies Q$)
+
+2\. $P$ iff $Q$ ($P \iff Q$)
 
 Remark: `iff` stands for `if and only if`
 
 ## If $P$, then $Q$
 
-There are two ways to prove 1. Conditional Proof 2. Proof by Contradiction 3. Proof by Contrapositive
+There are two ways to prove
+
+1\. Conditional Proof
+
+2\. Proof by Contradiction
+
+3\. Proof by Contrapositive
+
+4\.  Proof by Induction
 
 ## $P$ iff $Q$
 
-There are two ways to prove 1. Prove $P \implies Q$ and then prove $Q \implies P$ 1. Forward $\implies$ 2. Backward $\impliedby$ 2. A chain of `iff` $$
+There are two ways to prove
+
+1\. Prove $P \implies Q$ and then prove $Q \implies P$ (First prove forward $\implies$ and then prove backward $\impliedby$)
+
+2\. A chain of `iff` $$
 \begin{align*}
 &P \\
 &\iff R \\
