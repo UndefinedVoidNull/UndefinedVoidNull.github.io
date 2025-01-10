@@ -190,7 +190,11 @@ window.Quarto = {
 
 <section id="mathbbn" class="level2">
 <h2 class="anchored" data-anchor-id="mathbbn"><span class="math inline">\(\mathbb{N}\)</span></h2>
-<p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span> 1. by <code>Peano Axioms</code> 2. by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</p>
+<p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span></p>
+<ol type="1">
+<li>by <code>Peano Axioms</code></li>
+<li>by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</li>
+</ol>
 <p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\mathbb{N})\)</span> such that</p>
 <ul>
 <li><span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\mathbb{N}\)</span> is a set</li>
@@ -218,7 +222,12 @@ window.Quarto = {
 </section>
 <section id="mathbbr" class="level2">
 <h2 class="anchored" data-anchor-id="mathbbr"><span class="math inline">\(\mathbb{R}\)</span></h2>
-<p>There are 3 common ways to construct <span class="math inline">\(\mathbb{R}\)</span> 1. by Axioms (<code>Field Axioms</code>, <code>Order Axioms</code> and <code>Completeness Axiom</code>) 2. by <code>Cauchy Sequence</code> 3. by <code>Dedekind Cut</code></p>
+<p>There are 3 common ways to construct <span class="math inline">\(\mathbb{R}\)</span></p>
+<ol type="1">
+<li>by Axioms (<code>Field Axioms</code>, <code>Order Axioms</code> and <code>Completeness Axiom</code>)</li>
+<li>by <code>Cauchy Sequence</code></li>
+<li>by <code>Dedekind Cut</code></li>
+</ol>
 <section id="field-axioms" class="level3">
 <h3 class="anchored" data-anchor-id="field-axioms">Field Axioms</h3>
 <p>A1 A2 A3 A4</p>
@@ -333,7 +342,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/UndefinedVoidNull\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

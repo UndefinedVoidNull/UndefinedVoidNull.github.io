@@ -4,6 +4,8 @@ date: "2025-01-01"
 categories: [Record]
 ---
 
+{{<iframe width="560" height="315" src="https://www.youtube.com/embed/0ePN4iwL9wQ?si=DAoJAbEFH-R1XsY8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>}}
+
 [博客标签设计](../%E5%8D%9A%E5%AE%A2%E6%A0%87%E7%AD%BE%E8%AE%BE%E8%AE%A1.qmd)
 
 # H1

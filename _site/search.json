@@ -63,109 +63,53 @@
     "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://marketplace.visualstudio.com/items?itemName=quarto.quarto\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
   },
   {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html",
-    "href": "posts/sqrt2_is_not_a_rational_number.html",
-    "title": "[Proof] sqrt(2) is not a rational number",
+    "objectID": "posts/Quadratic Formula.html",
+    "href": "posts/Quadratic Formula.html",
+    "title": "[Proof] Quadratic Formula",
     "section": "",
-    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+    "text": "\\[\n\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\end{align*}\n\\]\nTherefore,\n\nIf \\(b^2-4ac&gt;0\\), there are two real roots\nIf \\(b^2-4ac=0\\), there is only one real root (or two repeated roots)\nIf \\(b^2-4ac&lt;0\\), there is no real root (or two complex conjugate root)"
   },
   {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Proof by contradiction",
-    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#summary",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#summary",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Summary",
-    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
-  },
-  {
-    "objectID": "posts/Geometric_Series.html",
-    "href": "posts/Geometric_Series.html",
-    "title": "[Proof] Geometric Series",
+    "objectID": "posts/Construct N, Z, Q, R, C.html",
+    "href": "posts/Construct N, Z, Q, R, C.html",
+    "title": "Construct N, Z, Q, R, C",
     "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
   },
   {
-    "objectID": "posts/Geometric_Series.html#geometric-sequence",
-    "href": "posts/Geometric_Series.html#geometric-sequence",
-    "title": "[Proof] Geometric Series",
+    "objectID": "posts/Construct N, Z, Q, R, C.html#mathbbn",
+    "href": "posts/Construct N, Z, Q, R, C.html#mathbbn",
+    "title": "Construct N, Z, Q, R, C",
     "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
   },
   {
-    "objectID": "posts/Geometric_Series.html#finite-series",
-    "href": "posts/Geometric_Series.html#finite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Finite Series",
-    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
+    "objectID": "posts/Construct N, Z, Q, R, C.html#mathbbz",
+    "href": "posts/Construct N, Z, Q, R, C.html#mathbbz",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{Z}\\)",
+    "text": "\\(\\mathbb{Z}\\)\nBy equivalence classes of ordered pairs of \\(N\\), we can construct \\(\\mathbb{Z}\\)\n\\((a, b)\\) to express \\(a - b\\)\n\\[\n\\mathbb{Z} = \\{[(a,b)] \\mid a, b \\in \\mathbb{N} \\}\n\\]"
   },
   {
-    "objectID": "posts/Geometric_Series.html#infinite-series",
-    "href": "posts/Geometric_Series.html#infinite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Infinite Series",
-    "text": "Infinite Series"
+    "objectID": "posts/Construct N, Z, Q, R, C.html#mathbbq",
+    "href": "posts/Construct N, Z, Q, R, C.html#mathbbq",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{Q}\\)",
+    "text": "\\(\\mathbb{Q}\\)\n\\[\n\\mathbb{Q} = \\{\\frac{m}{n}  \\mid m, n \\in \\mathbb{Z}  \\}\n\\]"
   },
   {
-    "objectID": "posts/2_types_of_proof.html",
-    "href": "posts/2_types_of_proof.html",
-    "title": "2 Types of Proof",
-    "section": "",
-    "text": "There are two common types of proofs\n1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
+    "objectID": "posts/Construct N, Z, Q, R, C.html#mathbbr",
+    "href": "posts/Construct N, Z, Q, R, C.html#mathbbr",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{R}\\)",
+    "text": "\\(\\mathbb{R}\\)\nThere are 3 common ways to construct \\(\\mathbb{R}\\)\n\nby Axioms (Field Axioms, Order Axioms and Completeness Axiom)\nby Cauchy Sequence\nby Dedekind Cut\n\n\nField Axioms\nA1 A2 A3 A4\nM1 M2 M3 M4\nDL\n\n\nOrder Axioms\n\n\nCompleteness Axiom\nArchimedean property"
   },
   {
-    "objectID": "posts/2_types_of_proof.html#intro",
-    "href": "posts/2_types_of_proof.html#intro",
-    "title": "2 Types of Proof",
-    "section": "",
-    "text": "There are two common types of proofs\n1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
-  },
-  {
-    "objectID": "posts/2_types_of_proof.html#if-p-then-q",
-    "href": "posts/2_types_of_proof.html#if-p-then-q",
-    "title": "2 Types of Proof",
-    "section": "If \\(P\\), then \\(Q\\)",
-    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove\n1. Conditional Proof\n2. Proof by Contradiction\n3. Proof by Contrapositive\n4. Proof by Induction"
-  },
-  {
-    "objectID": "posts/2_types_of_proof.html#p-iff-q",
-    "href": "posts/2_types_of_proof.html#p-iff-q",
-    "title": "2 Types of Proof",
-    "section": "\\(P\\) iff \\(Q\\)",
-    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove\n1. Prove \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) (First prove forward \\(\\implies\\) and then prove backward \\(\\impliedby\\))\n2. A chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "posts/2_types_of_proof.html#where-to-start",
-    "href": "posts/2_types_of_proof.html#where-to-start",
-    "title": "2 Types of Proof",
-    "section": "Where to start",
-    "text": "Where to start\n\nStart from \\(P\\) (Which part of \\(P\\)?)\nStart from \\(Q\\) (Which part of \\(Q\\)?)\nStart from \\(P\\) and \\(Q\\) at the same time (Which part of \\(P\\), \\(Q\\)?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
-  },
-  {
-    "objectID": "posts/2_types_of_proof.html#the-first-step-and-further-steps",
-    "href": "posts/2_types_of_proof.html#the-first-step-and-further-steps",
-    "title": "2 Types of Proof",
-    "section": "The first step and further steps?",
-    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
-  },
-  {
-    "objectID": "posts/2_types_of_proof.html#change-the-focus-point",
-    "href": "posts/2_types_of_proof.html#change-the-focus-point",
-    "title": "2 Types of Proof",
-    "section": "Change the focus point",
-    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
+    "objectID": "posts/Construct N, Z, Q, R, C.html#mathbbc",
+    "href": "posts/Construct N, Z, Q, R, C.html#mathbbc",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{C}\\)",
+    "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
   },
   {
     "objectID": "index.html",
@@ -175,53 +119,109 @@
     "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html",
-    "href": "posts/ConstructN,Z,Q,R,C.html",
-    "title": "Construct N, Z, Q, R, C",
+    "objectID": "posts/2 types of proof.html",
+    "href": "posts/2 types of proof.html",
+    "title": "2 Types of Proof",
     "section": "",
-    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\) 1. by Peano Axioms 2. by Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+    "text": "There are two common types of proofs\n\nIf \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n\\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\n\nRemark: iff stands for if and only if"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbn",
-    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbn",
-    "title": "Construct N, Z, Q, R, C",
+    "objectID": "posts/2 types of proof.html#intro",
+    "href": "posts/2 types of proof.html#intro",
+    "title": "2 Types of Proof",
     "section": "",
-    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\) 1. by Peano Axioms 2. by Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+    "text": "There are two common types of proofs\n\nIf \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n\\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\n\nRemark: iff stands for if and only if"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbz",
-    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbz",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{Z}\\)",
-    "text": "\\(\\mathbb{Z}\\)\nBy equivalence classes of ordered pairs of \\(N\\), we can construct \\(\\mathbb{Z}\\)\n\\((a, b)\\) to express \\(a - b\\)\n\\[\n\\mathbb{Z} = \\{[(a,b)] \\mid a, b \\in \\mathbb{N} \\}\n\\]"
+    "objectID": "posts/2 types of proof.html#if-p-then-q",
+    "href": "posts/2 types of proof.html#if-p-then-q",
+    "title": "2 Types of Proof",
+    "section": "If \\(P\\), then \\(Q\\)",
+    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove\n\nConditional Proof\nProof by Contradiction\nProof by Contrapositive\nProof by Induction"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbq",
-    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbq",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{Q}\\)",
-    "text": "\\(\\mathbb{Q}\\)\n\\[\n\\mathbb{Q} = \\{\\frac{m}{n}  \\mid m, n \\in \\mathbb{Z}  \\}\n\\]"
+    "objectID": "posts/2 types of proof.html#p-iff-q",
+    "href": "posts/2 types of proof.html#p-iff-q",
+    "title": "2 Types of Proof",
+    "section": "\\(P\\) iff \\(Q\\)",
+    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove\n\nProve \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) (First prove forward \\(\\implies\\) and then prove backward \\(\\impliedby\\))\nA chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbr",
-    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbr",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{R}\\)",
-    "text": "\\(\\mathbb{R}\\)\nThere are 3 common ways to construct \\(\\mathbb{R}\\) 1. by Axioms (Field Axioms, Order Axioms and Completeness Axiom) 2. by Cauchy Sequence 3. by Dedekind Cut\n\nField Axioms\nA1 A2 A3 A4\nM1 M2 M3 M4\nDL\n\n\nOrder Axioms\n\n\nCompleteness Axiom\nArchimedean property"
+    "objectID": "posts/2 types of proof.html#where-to-start",
+    "href": "posts/2 types of proof.html#where-to-start",
+    "title": "2 Types of Proof",
+    "section": "Where to start",
+    "text": "Where to start\n\nStart from \\(P\\) (Which part of \\(P\\)?)\nStart from \\(Q\\) (Which part of \\(Q\\)?)\nStart from \\(P\\) and \\(Q\\) at the same time (Which part of \\(P\\), \\(Q\\)?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
   },
   {
-    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbc",
-    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbc",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{C}\\)",
-    "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
+    "objectID": "posts/2 types of proof.html#the-first-step-and-further-steps",
+    "href": "posts/2 types of proof.html#the-first-step-and-further-steps",
+    "title": "2 Types of Proof",
+    "section": "The first step and further steps?",
+    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
   },
   {
-    "objectID": "posts/Quadratic_Formula.html",
-    "href": "posts/Quadratic_Formula.html",
-    "title": "[Proof] Quadratic Formula",
+    "objectID": "posts/2 types of proof.html#change-the-focus-point",
+    "href": "posts/2 types of proof.html#change-the-focus-point",
+    "title": "2 Types of Proof",
+    "section": "Change the focus point",
+    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
+  },
+  {
+    "objectID": "posts/Geometric Series.html",
+    "href": "posts/Geometric Series.html",
+    "title": "[Proof] Geometric Series",
     "section": "",
-    "text": "\\[\n\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\end{align*}\n\\]\nTherefore,\n\nIf \\(b^2-4ac&gt;0\\), there are two real roots\nIf \\(b^2-4ac=0\\), there is only one real root (or two repeated roots)\nIf \\(b^2-4ac&lt;0\\), there is no real root (or two complex conjugate root)"
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric Series.html#geometric-sequence",
+    "href": "posts/Geometric Series.html#geometric-sequence",
+    "title": "[Proof] Geometric Series",
+    "section": "",
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric Series.html#finite-series",
+    "href": "posts/Geometric Series.html#finite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Finite Series",
+    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric Series.html#infinite-series",
+    "href": "posts/Geometric Series.html#infinite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Infinite Series",
+    "text": "Infinite Series"
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html",
+    "href": "posts/sqrt(2) is not a rational number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "",
+    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "href": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#summary",
+    "href": "posts/sqrt(2) is not a rational number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "href": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
   },
   {
     "objectID": "posts/初探SageMath.html",

@@ -8,6 +8,7 @@ format: html
 
 ## $\mathbb{N}$
 There are 2 common ways to construct $\mathbb{N}$
+
 1. by `Peano Axioms`
 2. by `Set Theory` ($\emptyset$ and $\cup$)
 
@@ -39,6 +40,7 @@ $$
 
 ## $\mathbb{R}$
 There are 3 common ways to construct $\mathbb{R}$
+
 1. by Axioms (`Field Axioms`, `Order Axioms` and `Completeness Axiom`)
 2. by `Cauchy Sequence`
 3. by `Dedekind Cut`
