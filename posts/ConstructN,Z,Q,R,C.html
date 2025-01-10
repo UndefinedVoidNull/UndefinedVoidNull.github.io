@@ -191,7 +191,15 @@ window.Quarto = {
 <section id="mathbbn" class="level2">
 <h2 class="anchored" data-anchor-id="mathbbn"><span class="math inline">\(\mathbb{N}\)</span></h2>
 <p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span> 1. by <code>Peano Axioms</code> 2. by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</p>
-<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\mathbb{N})\)</span> such that - <span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\mathbb{N}\)</span> is a set - <span class="math inline">\(e \in \mathbb{N}\)</span> (neutral element) - <span class="math inline">\(\forall a \in \mathbb{N}, S(a)\in\mathbb{N}\)</span> (successor function is <span class="math inline">\(\mathbb{N}\rightarrow\mathbb{N}\)</span>) - <span class="math inline">\(\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)\)</span> (successor function is injection) - <span class="math inline">\(\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e\)</span> (the range of successor function exclude <span class="math inline">\(e\)</span>, no circle, <span class="math inline">\(e\)</span> is the first) - <span class="math inline">\(\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]\)</span> (induction)</p>
+<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\mathbb{N})\)</span> such that</p>
+<ul>
+<li><span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\mathbb{N}\)</span> is a set</li>
+<li><span class="math inline">\(e \in \mathbb{N}\)</span> (neutral element)</li>
+<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\in\mathbb{N}\)</span> (successor function is <span class="math inline">\(\mathbb{N}\rightarrow\mathbb{N}\)</span>)</li>
+<li><span class="math inline">\(\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)\)</span> (successor function is injection)</li>
+<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e\)</span> (the range of successor function exclude <span class="math inline">\(e\)</span>, no circle, <span class="math inline">\(e\)</span> is the first)</li>
+<li><span class="math inline">\(\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]\)</span> (induction)</li>
+</ul>
 <p>So, we can define <span class="math inline">\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\)</span></p>
 </section>
 <section id="mathbbz" class="level2">
