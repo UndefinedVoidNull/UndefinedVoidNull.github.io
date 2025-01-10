@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-07">
+<meta name="dcterms.date" content="2025-01-10">
 
-<title>群 环 域 模 – Shigure Chizuru</title>
+<title>2 Types of Proof – Shigure Chizuru</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">群 环 域 模</h1>
+      <h1 class="title">2 Types of Proof</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
               </div>
@@ -152,7 +152,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 7, 2025</p>
+        <p class="date">January 10, 2025</p>
       </div>
     </div>
     
@@ -168,24 +168,15 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#群group" id="toc-群group" class="nav-link active" data-scroll-target="#群group"><strong>1. 群（Group）</strong></a>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#if-p-then-q" id="toc-if-p-then-q" class="nav-link" data-scroll-target="#if-p-then-q">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></a></li>
+  <li><a href="#p-iff-q" id="toc-p-iff-q" class="nav-link" data-scroll-target="#p-iff-q"><span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span></a></li>
+  <li><a href="#where-to-start" id="toc-where-to-start" class="nav-link" data-scroll-target="#where-to-start">Where to start</a>
   <ul class="collapse">
-  <li><a href="#例子" id="toc-例子" class="nav-link" data-scroll-target="#例子">例子：</a></li>
+  <li><a href="#by-what" id="toc-by-what" class="nav-link" data-scroll-target="#by-what">by what?</a></li>
   </ul></li>
-  <li><a href="#环ring" id="toc-环ring" class="nav-link" data-scroll-target="#环ring"><strong>2. 环（Ring）</strong></a>
-  <ul class="collapse">
-  <li><a href="#例子-1" id="toc-例子-1" class="nav-link" data-scroll-target="#例子-1">例子：</a></li>
-  </ul></li>
-  <li><a href="#域field" id="toc-域field" class="nav-link" data-scroll-target="#域field"><strong>3. 域（Field）</strong></a>
-  <ul class="collapse">
-  <li><a href="#例子-2" id="toc-例子-2" class="nav-link" data-scroll-target="#例子-2">例子：</a></li>
-  </ul></li>
-  <li><a href="#模module" id="toc-模module" class="nav-link" data-scroll-target="#模module"><strong>4. 模（Module）</strong></a>
-  <ul class="collapse">
-  <li><a href="#模的定义" id="toc-模的定义" class="nav-link" data-scroll-target="#模的定义">模的定义：</a></li>
-  <li><a href="#例子-3" id="toc-例子-3" class="nav-link" data-scroll-target="#例子-3">例子：</a></li>
-  </ul></li>
-  <li><a href="#总结" id="toc-总结" class="nav-link" data-scroll-target="#总结"><strong>总结：</strong></a></li>
+  <li><a href="#the-first-step-and-further-steps" id="toc-the-first-step-and-further-steps" class="nav-link" data-scroll-target="#the-first-step-and-further-steps">The first step and further steps?</a></li>
+  <li><a href="#change-the-focus-point" id="toc-change-the-focus-point" class="nav-link" data-scroll-target="#change-the-focus-point">Change the focus point</a></li>
   </ul>
 </nav>
     </div>
@@ -196,92 +187,68 @@ window.Quarto = {
 
 
 
-<p>以下是<strong>群</strong>、<strong>环</strong>、<strong>域</strong>和<strong>模</strong>的基础定义。这些都是抽象代数中的重要概念，每个都有不同的代数结构和运算规则。</p>
-<section id="群group" class="level2">
-<h2 class="anchored" data-anchor-id="群group"><strong>1. 群（Group）</strong></h2>
-<p><strong>群</strong>是一个集合和一个二元运算的代数结构，满足以下条件：</p>
-<ul>
-<li><p><strong>封闭性</strong>：对于任意 <span class="math inline">\(a, b \in G\)</span>，有 <span class="math inline">\(a \cdot b \in G\)</span></p></li>
-<li><p><strong>结合律</strong>：对于任意 <span class="math inline">\(a, b, c \in G\)</span>，有 <span class="math inline">\((a \cdot b) \cdot c = a \cdot (b \cdot c)\)</span></p></li>
-<li><p><strong>单位元</strong>：存在一个单位元 <span class="math inline">\(e \in G\)</span>，对于任意 <span class="math inline">\(a \in G\)</span>，有 <span class="math inline">\(e \cdot a = a \cdot e = a\)</span></p></li>
-<li><p><strong>逆元</strong>：对于任意 <span class="math inline">\(a \in G\)</span>，存在一个逆元 <span class="math inline">\(a^{-1} \in G\)</span>，使得 <span class="math inline">\(a \cdot a^{-1} = a^{-1} \cdot a = e\)</span></p></li>
-</ul>
-<blockquote class="blockquote">
-<p>如果还满足交换律 <span class="math inline">\(a \cdot b = b \cdot a\)</span> 对于所有 <span class="math inline">\(a, b \in G\)</span>，则称为<strong>交换群</strong>或<strong>阿贝尔群</strong></p>
-</blockquote>
-<section id="例子" class="level3">
-<h3 class="anchored" data-anchor-id="例子">例子：</h3>
-<ul>
-<li>整数集合 <span class="math inline">\(\mathbb{Z}\)</span> 在加法下构成一个交换群，单位元是 0，逆元是负数</li>
-<li>非零实数集合 <span class="math inline">\(\mathbb{R}^*\)</span> 在乘法下构成一个群，单位元是 1，逆元是数的倒数</li>
-</ul>
+<section id="intro" class="level2">
+<h2 class="anchored" data-anchor-id="intro">Intro</h2>
+<p>There are two common types of proofs 1. If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>. (<span class="math inline">\(P \implies Q\)</span>) 2. <span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span> (<span class="math inline">\(P \iff Q\)</span>)</p>
+<p>Remark: <code>iff</code> stands for <code>if and only if</code></p>
 </section>
+<section id="if-p-then-q" class="level2">
+<h2 class="anchored" data-anchor-id="if-p-then-q">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></h2>
+<p>There are two ways to prove 1. Conditional Proof 2. Proof by Contradiction 3. Proof by Contrapositive</p>
 </section>
-<section id="环ring" class="level2">
-<h2 class="anchored" data-anchor-id="环ring"><strong>2. 环（Ring）</strong></h2>
-<p><strong>环</strong>是一个集合，配备了两个二元运算：加法和乘法。环中的元素必须满足以下条件：</p>
-<ul>
-<li><p><strong>加法构成交换群</strong>：环中的加法形成一个交换群（有单位元、逆元和交换性）</p></li>
-<li><p><strong>乘法封闭性</strong>：环中对任意元素 <span class="math inline">\(a, b \in R\)</span>，有 <span class="math inline">\(a \cdot b \in R\)</span></p></li>
-<li><p><strong>乘法结合律</strong>：对于任意 <span class="math inline">\(a, b, c \in R\)</span>，有 <span class="math inline">\((a \cdot b) \cdot c = a \cdot (b \cdot c)\)</span></p></li>
-<li><p><strong>乘法分配律</strong>：乘法对加法满足分配律，即 <span class="math inline">\(a \cdot (b + c) = a \cdot b + a \cdot c\)</span> 和 <span class="math inline">\((a + b) \cdot c = a \cdot c + b \cdot c\)</span></p></li>
-</ul>
-<blockquote class="blockquote">
-<p>如果乘法也满足交换律 <span class="math inline">\(a \cdot b = b \cdot a\)</span> 对于所有 <span class="math inline">\(a, b \in R\)</span>，则称为<strong>交换环</strong></p>
-</blockquote>
-<p>环不要求每个非零元素有乘法逆元，也不要求乘法有单位元</p>
-<section id="例子-1" class="level3">
-<h3 class="anchored" data-anchor-id="例子-1">例子：</h3>
-<ul>
-<li>整数集合 <span class="math inline">\(\mathbb{Z}\)</span> 在加法和乘法下构成一个交换环</li>
-<li>矩阵集合 <span class="math inline">\(M_n(\mathbb{R})\)</span> （实数 <span class="math inline">\(n \times n\)</span> 矩阵）在加法和矩阵乘法下构成一个环（不是交换环，因为矩阵乘法不交换）</li>
-</ul>
+<section id="p-iff-q" class="level2">
+<h2 class="anchored" data-anchor-id="p-iff-q"><span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span></h2>
+<p>There are two ways to prove 1. Prove <span class="math inline">\(P \implies Q\)</span> and then prove <span class="math inline">\(Q \implies P\)</span> 1. Forward <span class="math inline">\(\implies\)</span> 2. Backward <span class="math inline">\(\impliedby\)</span> 2. A chain of <code>iff</code> <span class="math display">\[
+\begin{align*}
+&amp;P \\
+&amp;\iff R \\
+&amp;\iff \dots\\
+&amp;\iff Q
+\end{align*}
+\]</span></p>
 </section>
-</section>
-<section id="域field" class="level2">
-<h2 class="anchored" data-anchor-id="域field"><strong>3. 域（Field）</strong></h2>
-<p><strong>域</strong>是一个环的特例，它要求在加法和乘法下满足更强的条件。域中的元素不仅可以进行加法和乘法，还能进行除法（除了除以零）。一个域必须满足以下条件：</p>
-<ul>
-<li><p><strong>加法构成交换群</strong>：域中的加法构成一个交换群，单位元为 0</p></li>
-<li><p><strong>乘法构成交换群（除零元外）</strong>：域中的非零元素在乘法下构成一个交换群，单位元为 1。对于任意非零元素 <span class="math inline">\(a \in F\)</span>，存在一个乘法逆元 <span class="math inline">\(a^{-1}\)</span>，使得 <span class="math inline">\(a \cdot a^{-1} = 1\)</span></p></li>
-<li><p><strong>分配律</strong>：乘法对加法满足分配律</p></li>
-</ul>
-<section id="例子-2" class="level3">
-<h3 class="anchored" data-anchor-id="例子-2">例子：</h3>
-<ul>
-<li>实数集合 <span class="math inline">\(\mathbb{R}\)</span> 和有理数集合 <span class="math inline">\(\mathbb{Q}\)</span> 都是域</li>
-<li>复数集合 <span class="math inline">\(\mathbb{C}\)</span> 也是一个域</li>
-<li>有限域 <span class="math inline">\(\mathbb{F}_p\)</span>，其中 <span class="math inline">\(p\)</span> 是素数，定义在模 <span class="math inline">\(p\)</span> 加法和乘法上，是一个有限域</li>
-</ul>
-</section>
-</section>
-<section id="模module" class="level2">
-<h2 class="anchored" data-anchor-id="模module"><strong>4. 模（Module）</strong></h2>
-<p><strong>模</strong>是向量空间的广义概念。与向量空间类似，模中的元素可以进行加法和标量乘法，但模中的标量来自一个<strong>环</strong>而不是域。模的定义类似于向量空间，但它只要求标量来自环，因此模比向量空间更广泛。</p>
-<section id="模的定义" class="level3">
-<h3 class="anchored" data-anchor-id="模的定义">模的定义：</h3>
-<p>一个模是一个集合 <span class="math inline">\(M\)</span>，配备了两个运算：</p>
+<section id="where-to-start" class="level2">
+<h2 class="anchored" data-anchor-id="where-to-start">Where to start</h2>
 <ol type="1">
-<li><strong>加法</strong>：模中的元素可以相加，满足交换群的公理。</li>
-<li><strong>标量乘法</strong>：环中的标量可以与模中的元素相乘，满足结合律和分配律。</li>
+<li>Start from <span class="math inline">\(P\)</span> (Which part of <span class="math inline">\(P\)</span>?)</li>
+<li>Start from <span class="math inline">\(Q\)</span> (Which part of <span class="math inline">\(Q\)</span>?)</li>
+<li>Start from <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> at the same time (Which part of <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>?)</li>
+</ol>
+<section id="by-what" class="level3">
+<h3 class="anchored" data-anchor-id="by-what">by what?</h3>
+<ol type="1">
+<li>by the sense of direction</li>
+<li>by cases</li>
+<li>by examples</li>
+<li>by graph</li>
+<li>by attempts</li>
+<li>by analogy</li>
+<li>by pattern-method</li>
+<li>by experiences</li>
+<li>by intuition</li>
+</ol>
+<p>Now we know where to start</p>
+</section>
+</section>
+<section id="the-first-step-and-further-steps" class="level2">
+<h2 class="anchored" data-anchor-id="the-first-step-and-further-steps">The first step and further steps?</h2>
+<ol type="1">
+<li>by definition</li>
+<li>by theorem or propositions</li>
+<li>by transformations/operations</li>
+<li>by techniques</li>
+<li>by axioms</li>
 </ol>
 </section>
-<section id="例子-3" class="level3">
-<h3 class="anchored" data-anchor-id="例子-3">例子：</h3>
-<ul>
-<li>整数集合 <span class="math inline">\(\mathbb{Z}\)</span> 在自身上构成一个模。</li>
-<li>矩阵空间 <span class="math inline">\(M_n(\mathbb{Z})\)</span> 是一个模，其中标量来自于环 <span class="math inline">\(\mathbb{Z}\)</span>，矩阵中的元素来自于整数。</li>
-</ul>
-</section>
-</section>
-<section id="总结" class="level2">
-<h2 class="anchored" data-anchor-id="总结"><strong>总结：</strong></h2>
-<ul>
-<li><strong>群</strong>：一个集合，定义了一个封闭的二元运算（加法或乘法），并且每个元素都有逆元</li>
-<li><strong>环</strong>：包含两个运算（加法和乘法），但不要求每个非零元素都有乘法逆元</li>
-<li><strong>域</strong>：一个特殊的环，非零元素在乘法下也构成群，即可以进行除法（除零外）</li>
-<li><strong>模</strong>：类似于向量空间，但标量来自环而非域，因此更为广泛</li>
-</ul>
+<section id="change-the-focus-point" class="level2">
+<h2 class="anchored" data-anchor-id="change-the-focus-point">Change the focus point</h2>
+<p>When you</p>
+<ol type="1">
+<li>(have no idea how to carry on) get stuck</li>
+<li>(know how to carry on but) find it super hard/complex to going forward in this direction</li>
+<li>finished this part</li>
+<li>feeling I might ignored some important points/things</li>
+</ol>
 
 
 </section>
