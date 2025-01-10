@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-11">
 
-<title>Construct N, Z, Q, R, C – Shigure Chizuru</title>
+<title>test – Shigure Chizuru</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -68,40 +67,11 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -135,112 +105,19 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<header id="title-block-header" class="quarto-title-block default page-columns page-full">
-  <div class="quarto-title-banner page-columns page-full">
-    <div class="quarto-title column-body">
-      <h1 class="title">Construct N, Z, Q, R, C</h1>
-                                <div class="quarto-categories">
-                <div class="quarto-category">Math</div>
-              </div>
-                  </div>
-  </div>
-    
-  
-  <div class="quarto-title-meta">
-
-      
-      <div>
-      <div class="quarto-title-meta-heading">Published</div>
-      <div class="quarto-title-meta-contents">
-        <p class="date">January 11, 2025</p>
-      </div>
-    </div>
-    
-      
-    </div>
-    
-  
-  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<header id="title-block-header" class="quarto-title-block"></header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#mathbbn" id="toc-mathbbn" class="nav-link active" data-scroll-target="#mathbbn"><span class="math inline">\(\mathbb{N}\)</span></a></li>
-  <li><a href="#mathbbz" id="toc-mathbbz" class="nav-link" data-scroll-target="#mathbbz"><span class="math inline">\(\mathbb{Z}\)</span></a></li>
-  <li><a href="#mathbbq" id="toc-mathbbq" class="nav-link" data-scroll-target="#mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></a></li>
-  <li><a href="#mathbbr" id="toc-mathbbr" class="nav-link" data-scroll-target="#mathbbr"><span class="math inline">\(\mathbb{R}\)</span></a>
-  <ul class="collapse">
-  <li><a href="#field-axioms" id="toc-field-axioms" class="nav-link" data-scroll-target="#field-axioms">Field Axioms</a></li>
-  <li><a href="#order-axioms" id="toc-order-axioms" class="nav-link" data-scroll-target="#order-axioms">Order Axioms</a></li>
-  <li><a href="#completeness-axiom" id="toc-completeness-axiom" class="nav-link" data-scroll-target="#completeness-axiom">Completeness Axiom</a></li>
-  </ul></li>
-  <li><a href="#mathbbc" id="toc-mathbbc" class="nav-link" data-scroll-target="#mathbbc"><span class="math inline">\(\mathbb{C}\)</span></a></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
 
 
 
-
-<section id="mathbbn" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbn"><span class="math inline">\(\mathbb{N}\)</span></h2>
-<p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span> 1. by <code>Peano Axioms</code> 2. by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</p>
-<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\mathbb{N})\)</span> such that</p>
-<ul>
-<li><span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\mathbb{N}\)</span> is a set</li>
-<li><span class="math inline">\(e \in \mathbb{N}\)</span> (neutral element)</li>
-<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\in\mathbb{N}\)</span> (successor function is <span class="math inline">\(\mathbb{N}\rightarrow\mathbb{N}\)</span>)</li>
-<li><span class="math inline">\(\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)\)</span> (successor function is injection)</li>
-<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e\)</span> (the range of successor function exclude <span class="math inline">\(e\)</span>, no circle, <span class="math inline">\(e\)</span> is the first)</li>
-<li><span class="math inline">\(\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]\)</span> (induction)</li>
-</ul>
-<p>So, we can define <span class="math inline">\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\)</span></p>
-</section>
-<section id="mathbbz" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbz"><span class="math inline">\(\mathbb{Z}\)</span></h2>
-<p>By equivalence classes of ordered pairs of <span class="math inline">\(N\)</span>, we can construct <span class="math inline">\(\mathbb{Z}\)</span></p>
-<p><span class="math inline">\((a, b)\)</span> to express <span class="math inline">\(a - b\)</span></p>
-<p><span class="math display">\[
-\mathbb{Z} = \{[(a,b)] \mid a, b \in \mathbb{N} \}
-\]</span></p>
-</section>
-<section id="mathbbq" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></h2>
-<p><span class="math display">\[
-\mathbb{Q} = \{\frac{m}{n}  \mid m, n \in \mathbb{Z}  \}
-\]</span></p>
-</section>
-<section id="mathbbr" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbr"><span class="math inline">\(\mathbb{R}\)</span></h2>
-<p>There are 3 common ways to construct <span class="math inline">\(\mathbb{R}\)</span> 1. by Axioms (<code>Field Axioms</code>, <code>Order Axioms</code> and <code>Completeness Axiom</code>) 2. by <code>Cauchy Sequence</code> 3. by <code>Dedekind Cut</code></p>
-<section id="field-axioms" class="level3">
-<h3 class="anchored" data-anchor-id="field-axioms">Field Axioms</h3>
-<p>A1 A2 A3 A4</p>
-<p>M1 M2 M3 M4</p>
-<p>DL</p>
-</section>
-<section id="order-axioms" class="level3">
-<h3 class="anchored" data-anchor-id="order-axioms">Order Axioms</h3>
-</section>
-<section id="completeness-axiom" class="level3">
-<h3 class="anchored" data-anchor-id="completeness-axiom">Completeness Axiom</h3>
-<p>Archimedean property</p>
-</section>
-</section>
-<section id="mathbbc" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbc"><span class="math inline">\(\mathbb{C}\)</span></h2>
-<p><span class="math display">\[
-\mathbb{C} = \{a+bi \mid a, b \in \mathbb{R}, i^2 = -1  \}
-\]</span></p>
+<pre><code></code></pre>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
