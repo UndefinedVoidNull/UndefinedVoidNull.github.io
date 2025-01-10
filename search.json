@@ -14,6 +14,125 @@
     "text": "https://sagecell.sagemath.org/\nhttps://doc.sagemath.org/html/en/tutorial/tour_assignment.html\n# define variables\nx, b, c = var('x b c')\n\n# solve equations\nsolve([x^2 + b*x + c == 0], x) \nsolve([x+y==6, x-y==4], x, y)\n\n# differentiate\nu = var('u')\ndiff(sin(u), u)\n\n# 4-th derivative\ndiff(sin(x^2), x, 4)\n\n# partial\nx, y = var('x,y')\nf = x^2 + 17*y^2\n\nf.diff(x) # w.r.t. x\nf.diff(y) # w.r.t. y\n\n# partial fraction decomposition\nf = 1/((1+x)*(x-1))\nf.partial_fraction(x)\n\n# indefnite integral\nintegral(x*sin(x^2), x)\n# definite integral\nintegral(x/(x^2+1), x, 0, 1)\n\n# solve DEs\nt = var('t')    # define a variable t\nx = function('x')(t)   # define x to be a function of t\nDE = diff(x, t) + x - 1\ndesolve(DE, [x,t])\n\n# lapalce transform\ns = var(\"s\")\nt = var(\"t\")\nf = t^2*exp(t) - sin(t)\nf.laplace(t,s)\n\n# LaTeX\nlatex(sqrt(z^2 + 1/2)) # \\sqrt{z^{2} + \\frac{1}{2}}\n\n# print\nprint(\"Hello World\")"
   },
   {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html",
+    "href": "posts/sqrt2_is_not_a_rational_number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "",
+    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \\[\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#summary",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
+    "href": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html",
+    "href": "posts/Geometric_Series.html",
+    "title": "[Proof] Geometric Series",
+    "section": "",
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html#geometric-sequence",
+    "href": "posts/Geometric_Series.html#geometric-sequence",
+    "title": "[Proof] Geometric Series",
+    "section": "",
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html#finite-series",
+    "href": "posts/Geometric_Series.html#finite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Finite Series",
+    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Geometric_Series.html#infinite-series",
+    "href": "posts/Geometric_Series.html#infinite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Infinite Series",
+    "text": "Infinite Series"
+  },
+  {
+    "objectID": "posts/博客标签设计.html",
+    "href": "posts/博客标签设计.html",
+    "title": "博客标签设计",
+    "section": "",
+    "text": "按动作\n\nRecord 一般记录/随笔\nWorkflow 工作流\nReading 读书笔记\nRepost 转载/转发\nComment/Review 评论\n\n按主题\n\nSOC 社会相关\nECON 经济相关\nPsychology\nData 数据/图表相关\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea 不成熟的想法\nMethod 方法(论)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/如何高效获取「长视频」的关键信息.html",
+    "href": "posts/如何高效获取「长视频」的关键信息.html",
+    "title": "如何高效获取「长视频」的关键信息",
+    "section": "",
+    "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html",
+    "href": "posts/ConstructN,Z,Q,R,C.html",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "",
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\) 1. by Peano Axioms 2. by Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\N)\\) such that - \\(e\\) is an element, \\(S\\) is the a function, \\(\\N\\) is a set - \\(e \\in \\N\\) (neutral element) - \\(\\forall a \\in \\N, S(a)\\in\\N\\) (successor function is \\(\\N\\rightarrow\\N\\)) - \\(\\forall a,b\\in\\N, (S(a)=S(b) \\implies a=b)\\) (successor function is injection) - \\(\\forall a \\in \\N, S(a)\\neq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first) - \\(\\forall P,\\{P(e) \\land \\forall k \\in \\N,[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\N, P(n)]\\) (induction)\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html#n",
+    "href": "posts/ConstructN,Z,Q,R,C.html#n",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "",
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\) 1. by Peano Axioms 2. by Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\N)\\) such that - \\(e\\) is an element, \\(S\\) is the a function, \\(\\N\\) is a set - \\(e \\in \\N\\) (neutral element) - \\(\\forall a \\in \\N, S(a)\\in\\N\\) (successor function is \\(\\N\\rightarrow\\N\\)) - \\(\\forall a,b\\in\\N, (S(a)=S(b) \\implies a=b)\\) (successor function is injection) - \\(\\forall a \\in \\N, S(a)\\neq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first) - \\(\\forall P,\\{P(e) \\land \\forall k \\in \\N,[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\N, P(n)]\\) (induction)\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html#z",
+    "href": "posts/ConstructN,Z,Q,R,C.html#z",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\Z\\)",
+    "text": "\\(\\Z\\)\nBy equivalence classes of ordered pairs of \\(N\\), we can construct \\(\\mathbb{Z}\\)\n\\((a, b)\\) to express \\(a - b\\)\n\\[\n\\mathbb{Z} = \\{[(a,b)] \\mid a, b \\in \\mathbb{N} \\}\n\\]"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbq",
+    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbq",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{Q}\\)",
+    "text": "\\(\\mathbb{Q}\\)\n\\[\n\\mathbb{Q} = \\{\\frac{m}{n}  \\mid m, n \\in \\mathbb{Z}  \\}\n\\]"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbr",
+    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbr",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{R}\\)",
+    "text": "\\(\\mathbb{R}\\)\nThere are 3 common ways to construct \\(\\mathbb{R}\\) 1. by Axioms (Field Axioms, Order Axioms and Completeness Axiom) 2. by Cauchy Sequence 3. by Dedekind Cut\n\nField Axioms\nA1 A2 A3 A4\nM1 M2 M3 M4\nDL\n\n\nOrder Axioms\n\n\nCompleteness Axiom\nArchimedean property"
+  },
+  {
+    "objectID": "posts/ConstructN,Z,Q,R,C.html#mathbbc",
+    "href": "posts/ConstructN,Z,Q,R,C.html#mathbbc",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{C}\\)",
+    "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
+  },
+  {
     "objectID": "posts/群环域模.html",
     "href": "posts/群环域模.html",
     "title": "群 环 域 模",
@@ -56,81 +175,32 @@
     "text": "总结：\n\n群：一个集合，定义了一个封闭的二元运算（加法或乘法），并且每个元素都有逆元\n环：包含两个运算（加法和乘法），但不要求每个非零元素都有乘法逆元\n域：一个特殊的环，非零元素在乘法下也构成群，即可以进行除法（除零外）\n模：类似于向量空间，但标量来自环而非域，因此更为广泛"
   },
   {
-    "objectID": "posts/博客标签设计.html",
-    "href": "posts/博客标签设计.html",
-    "title": "博客标签设计",
-    "section": "",
-    "text": "按动作\n\nRecord 一般记录/随笔\nWorkflow 工作流\nReading 读书笔记\nRepost 转载/转发\nComment/Review 评论\n\n按主题\n\nSOC 社会相关\nECON 经济相关\nPsychology\nData 数据/图表相关\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea 不成熟的想法\nMethod 方法(论)"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
-    "section": "",
-    "text": "2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nInvalid Date\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/如何高效获取「长视频」的关键信息.html",
-    "href": "posts/如何高效获取「长视频」的关键信息.html",
-    "title": "如何高效获取「长视频」的关键信息",
-    "section": "",
-    "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
-  },
-  {
-    "objectID": "posts/Geometric_Series.html",
-    "href": "posts/Geometric_Series.html",
-    "title": "[Proof] Geometric Series",
-    "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
-  },
-  {
-    "objectID": "posts/Geometric_Series.html#geometric-sequence",
-    "href": "posts/Geometric_Series.html#geometric-sequence",
-    "title": "[Proof] Geometric Series",
-    "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
-  },
-  {
-    "objectID": "posts/Geometric_Series.html#finite-series",
-    "href": "posts/Geometric_Series.html#finite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Finite Series",
-    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "posts/Geometric_Series.html#infinite-series",
-    "href": "posts/Geometric_Series.html#infinite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Infinite Series",
-    "text": "Infinite Series"
-  },
-  {
     "objectID": "posts/2_types_of_proof.html",
     "href": "posts/2_types_of_proof.html",
     "title": "2 Types of Proof",
     "section": "",
-    "text": "There are two common types of proofs 1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\)) 2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
+    "text": "There are two common types of proofs\n1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
   },
   {
     "objectID": "posts/2_types_of_proof.html#intro",
     "href": "posts/2_types_of_proof.html#intro",
     "title": "2 Types of Proof",
     "section": "",
-    "text": "There are two common types of proofs 1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\)) 2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
+    "text": "There are two common types of proofs\n1. If \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n2. \\(P\\) iff \\(Q\\) (\\(P \\iff Q\\))\nRemark: iff stands for if and only if"
   },
   {
     "objectID": "posts/2_types_of_proof.html#if-p-then-q",
     "href": "posts/2_types_of_proof.html#if-p-then-q",
     "title": "2 Types of Proof",
     "section": "If \\(P\\), then \\(Q\\)",
-    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove 1. Conditional Proof 2. Proof by Contradiction 3. Proof by Contrapositive"
+    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove\n1. Conditional Proof\n2. Proof by Contradiction\n3. Proof by Contrapositive\n4. Proof by Induction"
   },
   {
     "objectID": "posts/2_types_of_proof.html#p-iff-q",
     "href": "posts/2_types_of_proof.html#p-iff-q",
     "title": "2 Types of Proof",
     "section": "\\(P\\) iff \\(Q\\)",
-    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove 1. Prove \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) 1. Forward \\(\\implies\\) 2. Backward \\(\\impliedby\\) 2. A chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
+    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove\n1. Prove \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) (First prove forward \\(\\implies\\) and then prove backward \\(\\impliedby\\))\n2. A chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
   },
   {
     "objectID": "posts/2_types_of_proof.html#where-to-start",
@@ -152,34 +222,6 @@
     "title": "2 Types of Proof",
     "section": "Change the focus point",
     "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html",
-    "href": "posts/sqrt2_is_not_a_rational_number.html",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "",
-    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#proof-by-contradiction",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Proof by contradiction",
-    "text": "Proof by contradiction\nWe know \\[\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#summary",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#summary",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Summary",
-    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
-  },
-  {
-    "objectID": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
-    "href": "posts/sqrt2_is_not_a_rational_number.html#takeaways",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
   },
   {
     "objectID": "posts/welcome/index.html",

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-10">
+<meta name="dcterms.date" content="2025-01-11">
 
-<title>2 Types of Proof – Shigure Chizuru</title>
+<title>Construct N, Z, Q, R, C – Shigure Chizuru</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,7 +138,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">2 Types of Proof</h1>
+      <h1 class="title">Construct N, Z, Q, R, C</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
               </div>
@@ -152,7 +152,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 10, 2025</p>
+        <p class="date">January 11, 2025</p>
       </div>
     </div>
     
@@ -168,15 +168,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#if-p-then-q" id="toc-if-p-then-q" class="nav-link" data-scroll-target="#if-p-then-q">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></a></li>
-  <li><a href="#p-iff-q" id="toc-p-iff-q" class="nav-link" data-scroll-target="#p-iff-q"><span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span></a></li>
-  <li><a href="#where-to-start" id="toc-where-to-start" class="nav-link" data-scroll-target="#where-to-start">Where to start</a>
+  <li><a href="#n" id="toc-n" class="nav-link active" data-scroll-target="#n"><span class="math inline">\(\N\)</span></a></li>
+  <li><a href="#z" id="toc-z" class="nav-link" data-scroll-target="#z"><span class="math inline">\(\Z\)</span></a></li>
+  <li><a href="#mathbbq" id="toc-mathbbq" class="nav-link" data-scroll-target="#mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></a></li>
+  <li><a href="#mathbbr" id="toc-mathbbr" class="nav-link" data-scroll-target="#mathbbr"><span class="math inline">\(\mathbb{R}\)</span></a>
   <ul class="collapse">
-  <li><a href="#by-what" id="toc-by-what" class="nav-link" data-scroll-target="#by-what">by what?</a></li>
+  <li><a href="#field-axioms" id="toc-field-axioms" class="nav-link" data-scroll-target="#field-axioms">Field Axioms</a></li>
+  <li><a href="#order-axioms" id="toc-order-axioms" class="nav-link" data-scroll-target="#order-axioms">Order Axioms</a></li>
+  <li><a href="#completeness-axiom" id="toc-completeness-axiom" class="nav-link" data-scroll-target="#completeness-axiom">Completeness Axiom</a></li>
   </ul></li>
-  <li><a href="#the-first-step-and-further-steps" id="toc-the-first-step-and-further-steps" class="nav-link" data-scroll-target="#the-first-step-and-further-steps">The first step and further steps?</a></li>
-  <li><a href="#change-the-focus-point" id="toc-change-the-focus-point" class="nav-link" data-scroll-target="#change-the-focus-point">Change the focus point</a></li>
+  <li><a href="#mathbbc" id="toc-mathbbc" class="nav-link" data-scroll-target="#mathbbc"><span class="math inline">\(\mathbb{C}\)</span></a></li>
   </ul>
 </nav>
     </div>
@@ -187,76 +188,48 @@ window.Quarto = {
 
 
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>There are two common types of proofs</p>
-<p>1. If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span>. (<span class="math inline">\(P \implies Q\)</span>)</p>
-<p>2. <span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span> (<span class="math inline">\(P \iff Q\)</span>)</p>
-<p>Remark: <code>iff</code> stands for <code>if and only if</code></p>
+<section id="n" class="level2">
+<h2 class="anchored" data-anchor-id="n"><span class="math inline">\(\N\)</span></h2>
+<p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span> 1. by <code>Peano Axioms</code> 2. by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</p>
+<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\N)\)</span> such that - <span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\N\)</span> is a set - <span class="math inline">\(e \in \N\)</span> (neutral element) - <span class="math inline">\(\forall a \in \N, S(a)\in\N\)</span> (successor function is <span class="math inline">\(\N\rightarrow\N\)</span>) - <span class="math inline">\(\forall a,b\in\N, (S(a)=S(b) \implies a=b)\)</span> (successor function is injection) - <span class="math inline">\(\forall a \in \N, S(a)\neq e\)</span> (the range of successor function exclude <span class="math inline">\(e\)</span>, no circle, <span class="math inline">\(e\)</span> is the first) - <span class="math inline">\(\forall P,\{P(e) \land \forall k \in \N,[P(k)\implies P(S(k))]\} \implies [\forall n \in \N, P(n)]\)</span> (induction)</p>
+<p>So, we can define <span class="math inline">\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\)</span></p>
 </section>
-<section id="if-p-then-q" class="level2">
-<h2 class="anchored" data-anchor-id="if-p-then-q">If <span class="math inline">\(P\)</span>, then <span class="math inline">\(Q\)</span></h2>
-<p>There are two ways to prove</p>
-<p>1. Conditional Proof</p>
-<p>2. Proof by Contradiction</p>
-<p>3. Proof by Contrapositive</p>
-<p>4. Proof by Induction</p>
-</section>
-<section id="p-iff-q" class="level2">
-<h2 class="anchored" data-anchor-id="p-iff-q"><span class="math inline">\(P\)</span> iff <span class="math inline">\(Q\)</span></h2>
-<p>There are two ways to prove</p>
-<p>1. Prove <span class="math inline">\(P \implies Q\)</span> and then prove <span class="math inline">\(Q \implies P\)</span> (First prove forward <span class="math inline">\(\implies\)</span> and then prove backward <span class="math inline">\(\impliedby\)</span>)</p>
-<p>2. A chain of <code>iff</code> <span class="math display">\[
-\begin{align*}
-&amp;P \\
-&amp;\iff R \\
-&amp;\iff \dots\\
-&amp;\iff Q
-\end{align*}
+<section id="z" class="level2">
+<h2 class="anchored" data-anchor-id="z"><span class="math inline">\(\Z\)</span></h2>
+<p>By equivalence classes of ordered pairs of <span class="math inline">\(N\)</span>, we can construct <span class="math inline">\(\mathbb{Z}\)</span></p>
+<p><span class="math inline">\((a, b)\)</span> to express <span class="math inline">\(a - b\)</span></p>
+<p><span class="math display">\[
+\mathbb{Z} = \{[(a,b)] \mid a, b \in \mathbb{N} \}
 \]</span></p>
 </section>
-<section id="where-to-start" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-start">Where to start</h2>
-<ol type="1">
-<li>Start from <span class="math inline">\(P\)</span> (Which part of <span class="math inline">\(P\)</span>?)</li>
-<li>Start from <span class="math inline">\(Q\)</span> (Which part of <span class="math inline">\(Q\)</span>?)</li>
-<li>Start from <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span> at the same time (Which part of <span class="math inline">\(P\)</span>, <span class="math inline">\(Q\)</span>?)</li>
-</ol>
-<section id="by-what" class="level3">
-<h3 class="anchored" data-anchor-id="by-what">by what?</h3>
-<ol type="1">
-<li>by the sense of direction</li>
-<li>by cases</li>
-<li>by examples</li>
-<li>by graph</li>
-<li>by attempts</li>
-<li>by analogy</li>
-<li>by pattern-method</li>
-<li>by experiences</li>
-<li>by intuition</li>
-</ol>
-<p>Now we know where to start</p>
+<section id="mathbbq" class="level2">
+<h2 class="anchored" data-anchor-id="mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></h2>
+<p><span class="math display">\[
+\mathbb{Q} = \{\frac{m}{n}  \mid m, n \in \mathbb{Z}  \}
+\]</span></p>
+</section>
+<section id="mathbbr" class="level2">
+<h2 class="anchored" data-anchor-id="mathbbr"><span class="math inline">\(\mathbb{R}\)</span></h2>
+<p>There are 3 common ways to construct <span class="math inline">\(\mathbb{R}\)</span> 1. by Axioms (<code>Field Axioms</code>, <code>Order Axioms</code> and <code>Completeness Axiom</code>) 2. by <code>Cauchy Sequence</code> 3. by <code>Dedekind Cut</code></p>
+<section id="field-axioms" class="level3">
+<h3 class="anchored" data-anchor-id="field-axioms">Field Axioms</h3>
+<p>A1 A2 A3 A4</p>
+<p>M1 M2 M3 M4</p>
+<p>DL</p>
+</section>
+<section id="order-axioms" class="level3">
+<h3 class="anchored" data-anchor-id="order-axioms">Order Axioms</h3>
+</section>
+<section id="completeness-axiom" class="level3">
+<h3 class="anchored" data-anchor-id="completeness-axiom">Completeness Axiom</h3>
+<p>Archimedean property</p>
 </section>
 </section>
-<section id="the-first-step-and-further-steps" class="level2">
-<h2 class="anchored" data-anchor-id="the-first-step-and-further-steps">The first step and further steps?</h2>
-<ol type="1">
-<li>by definition</li>
-<li>by theorem or propositions</li>
-<li>by transformations/operations</li>
-<li>by techniques</li>
-<li>by axioms</li>
-</ol>
-</section>
-<section id="change-the-focus-point" class="level2">
-<h2 class="anchored" data-anchor-id="change-the-focus-point">Change the focus point</h2>
-<p>When you</p>
-<ol type="1">
-<li>(have no idea how to carry on) get stuck</li>
-<li>(know how to carry on but) find it super hard/complex to going forward in this direction</li>
-<li>finished this part</li>
-<li>feeling I might ignored some important points/things</li>
-</ol>
+<section id="mathbbc" class="level2">
+<h2 class="anchored" data-anchor-id="mathbbc"><span class="math inline">\(\mathbb{C}\)</span></h2>
+<p><span class="math display">\[
+\mathbb{C} = \{a+bi \mid a, b \in \mathbb{R}, i^2 = -1  \}
+\]</span></p>
 
 
 </section>

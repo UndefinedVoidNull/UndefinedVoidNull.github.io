@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/ConstructN,Z,Q,R,C.html",
       "/posts/2_types_of_proof.html",
       "/posts/Geometric_Series.html",
       "/posts/群环域模.html",
@@ -10,7 +11,6 @@
       "/posts/博客标签设计.html",
       "/posts/初探SageMath.html",
       "/posts/如何高效获取「长视频」的关键信息.html",
-      "/posts/test.html",
       "/posts/welcome/index.html"
     ]
   }
