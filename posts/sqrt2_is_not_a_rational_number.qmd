@@ -11,7 +11,7 @@ This classic proof is associated with
 2.  Real number is `Complete`
 3.  The definition of `Algebraic Number` and `Transcendental Number`
 
-------------------------------------------------------------------------
+---
 
 $\sqrt{2}$ is not a rational number.
 

@@ -34,7 +34,8 @@ There are two ways to prove
 
 1\. Prove $P \implies Q$ and then prove $Q \implies P$ (First prove forward $\implies$ and then prove backward $\impliedby$)
 
-2\. A chain of `iff` $$
+2\. A chain of `iff` 
+$$
 \begin{align*}
 &P \\
 &\iff R \\

@@ -6,22 +6,22 @@ toc: true
 format: html
 ---
 
-## $\N$
+## $\mathbb{N}$
 There are 2 common ways to construct $\mathbb{N}$
 1. by `Peano Axioms`
 2. by `Set Theory` ($\emptyset$ and $\cup$)
 
-Dedekind–Peano Structure is the ternary tuple $(e,S,\N)$ such that
-- $e$ is an element, $S$ is the a function, $\N$ is a set
-- $e \in \N$ (neutral element)
-- $\forall a \in \N, S(a)\in\N$ (successor function is $\N\rightarrow\N$)
-- $\forall a,b\in\N, (S(a)=S(b) \implies a=b)$ (successor function is injection)
-- $\forall a \in \N, S(a)\neq e$ (the range of successor function exclude $e$, no circle, $e$ is the first)
-- $\forall P,\{P(e) \land \forall k \in \N,[P(k)\implies P(S(k))]\} \implies [\forall n \in \N, P(n)]$ (induction)
+Dedekind–Peano Structure is the ternary tuple $(e,S,\mathbb{N})$ such that
+- $e$ is an element, $S$ is the a function, $\mathbb{N}$ is a set
+- $e \in \mathbb{N}$ (neutral element)
+- $\forall a \in \mathbb{N}, S(a)\in\mathbb{N}$ (successor function is $\mathbb{N}\rightarrow\mathbb{N}$)
+- $\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)$ (successor function is injection)
+- $\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e$ (the range of successor function exclude $e$, no circle, $e$ is the first)
+- $\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]$ (induction)
 
 So, we can define $0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...$
 
-## $\Z$
+## $\mathbb{Z}$
 By equivalence classes of ordered pairs of $N$, we can construct $\mathbb{Z}$
 
 $(a, b)$ to express $a - b$
