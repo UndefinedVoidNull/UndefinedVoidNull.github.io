@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-07">
 
-<title>[Proof] Quadratic Formula – Shigure Chizuru</title>
+<title>[Proof] sqrt(2) is not a rational number – Shigure Chizuru</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -138,7 +138,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">[Proof] Quadratic Formula</h1>
+      <h1 class="title">[Proof] sqrt(2) is not a rational number</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
               </div>
@@ -163,7 +163,17 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#proof-by-contradiction" id="toc-proof-by-contradiction" class="nav-link active" data-scroll-target="#proof-by-contradiction">Proof by contradiction</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#takeaways" id="toc-takeaways" class="nav-link" data-scroll-target="#takeaways">Takeaways</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -171,24 +181,64 @@ window.Quarto = {
 
 
 
-<p><span class="math display">\[
-\begin{align*}
-&amp;ax^2+bx+c=0 \ (a \neq 0) \\
-&amp;x^2+\frac{b}{a}x+\frac{c}{a}=0\\&amp;(x+\frac{b}{2a})^2=-\frac{c}{a}+\frac{b^2}{4a^2}\\
-&amp;(x+\frac{b}{2a})^2=\frac{-4ac+b^2}{4a^2}\\
-&amp;x+\frac{b}{2a}=\pm\sqrt{\frac{b^2-4ac}{4a^2}}\\
-&amp;x=\pm\sqrt{\frac{b^2-4ac}{4a^2}}-\frac{b}{2a}\\
-&amp;x=\pm\frac{\sqrt{b^2-4ac}}{2a}-\frac{b}{2a}\\
-&amp;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\end{align*}
+<p>This classic proof is associated with</p>
+<ol type="1">
+<li>Rational numbers are <code>Dense</code> but <code>Incomplete</code> (Incomplete means there are many “holes” in the number line for rational numbers)</li>
+<li>Real number is <code>Complete</code></li>
+<li>The definition of <code>Algebraic Number</code> and <code>Transcendental Number</code></li>
+</ol>
+<hr>
+<p><span class="math inline">\(\sqrt{2}\)</span> is not a rational number.</p>
+<section id="proof-by-contradiction" class="level2">
+<h2 class="anchored" data-anchor-id="proof-by-contradiction">Proof by contradiction</h2>
+<p>We know <span class="math display">\[
+\mathbb{Q} = \{ \frac{m}{n} \mid m, n \in\mathbb{Z}, n \neq 0 \}
 \]</span></p>
-<p>Therefore,</p>
-<ul>
-<li><p>If <span class="math inline">\(b^2-4ac&gt;0\)</span>, there are two real roots</p></li>
-<li><p>If <span class="math inline">\(b^2-4ac=0\)</span>, there is only one real root (or two repeated roots)</p></li>
-<li><p>If <span class="math inline">\(b^2-4ac&lt;0\)</span>, there is no real root (or two complex conjugate root)</p></li>
-</ul>
+<p>Suppose <span class="math inline">\(\sqrt{ 2 }\)</span> is rational to reach a contradiction</p>
+<p>So, <span class="math display">\[
+\exists m, n \in \mathbb{Z}, \sqrt{2} = \frac{m}{n}
+\]</span></p>
+<p>And <strong>we also suppose</strong> <span class="math inline">\(\frac{m}{n}\)</span> is in lowest terms</p>
+<p>To say <span class="math inline">\(\frac{m}{n}\)</span> in lowest terms means if an integer <span class="math inline">\(d\)</span> divides <span class="math inline">\(m\)</span> and <span class="math inline">\(d\)</span> divides <span class="math inline">\(n\)</span>, then <span class="math inline">\(d = 1\)</span> (i.e.&nbsp;<span class="math inline">\(GCD(m,n) =1\)</span>)</p>
+<p>Obviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (<span class="math inline">\(GCD\)</span>)</p>
+<p>Take square on both sides and simplify</p>
+<p><span class="math display">\[
+\begin{aligned}
+2 = \frac{m^2}{n^2} \\
+m^2 = 2n^2
+\end{aligned}
+\]</span></p>
+<p>Thus, <span class="math inline">\(m^2\)</span> is even so that <span class="math inline">\(m\)</span> is even (It is easy to prove by its contrapositive)</p>
+<p>So, <span class="math inline">\(\exists k\in \mathbb{Z}, m=2k\)</span></p>
+<p>Substitute <span class="math inline">\(m=2k\)</span> back <span class="math display">\[
+\begin{aligned}
+    (2k)^2 = 2n^2\\
+    2n^2 = 4k^2 \\
+    n^2 = 2k^2 \\
+\end{aligned}
+\]</span></p>
+<p>Thus, <span class="math inline">\(n^2\)</span> is even so that <span class="math inline">\(n\)</span> is even.</p>
+<p>Since <span class="math inline">\(m\)</span> is even and <span class="math inline">\(n\)</span> is even, they have common factor 2 which means <span class="math inline">\(\frac{m}{n}\)</span> isn’t in lowest terms.</p>
+<p>But we assume <span class="math inline">\(\frac{m}{n}\)</span> is in lowest term (without common factor), we reach a contradiction!</p>
+<p>Therefore, <span class="math inline">\(\sqrt{2}\)</span> is not a rational number. So it is irrational number.</p>
+</section>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ol type="1">
+<li><p>Proof by contradiction</p></li>
+<li><p>Prove irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)</p></li>
+<li><p>Even number definition</p></li>
+</ol>
+</section>
+<section id="takeaways" class="level2">
+<h2 class="anchored" data-anchor-id="takeaways">Takeaways</h2>
+<ol type="1">
+<li><p>Rational or fraction always associate with lowest terms assumption</p></li>
+<li><p>When we prove by contradiction, we can add an additional true assumption (i.e.&nbsp;transform to a new form) to change where the contradiction gonna happen (i.e.&nbsp;change our goal)</p></li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -281,7 +331,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/UndefinedVoidNull\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

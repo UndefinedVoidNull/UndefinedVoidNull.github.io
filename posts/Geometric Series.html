@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-07">
 
-<title>[Proof] Quadratic Formula – Shigure Chizuru</title>
+<title>[Proof] Geometric Series – Shigure Chizuru</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -101,7 +101,7 @@ window.Quarto = {
 <link rel="stylesheet" href="../styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -138,7 +138,7 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">[Proof] Quadratic Formula</h1>
+      <h1 class="title">[Proof] Geometric Series</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
               </div>
@@ -163,7 +163,17 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#geometric-sequence" id="toc-geometric-sequence" class="nav-link active" data-scroll-target="#geometric-sequence">Geometric Sequence</a></li>
+  <li><a href="#finite-series" id="toc-finite-series" class="nav-link" data-scroll-target="#finite-series">Finite Series</a></li>
+  <li><a href="#infinite-series" id="toc-infinite-series" class="nav-link" data-scroll-target="#infinite-series">Infinite Series</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
 
@@ -171,24 +181,23 @@ window.Quarto = {
 
 
 
+<section id="geometric-sequence" class="level2">
+<h2 class="anchored" data-anchor-id="geometric-sequence">Geometric Sequence</h2>
 <p><span class="math display">\[
-\begin{align*}
-&amp;ax^2+bx+c=0 \ (a \neq 0) \\
-&amp;x^2+\frac{b}{a}x+\frac{c}{a}=0\\&amp;(x+\frac{b}{2a})^2=-\frac{c}{a}+\frac{b^2}{4a^2}\\
-&amp;(x+\frac{b}{2a})^2=\frac{-4ac+b^2}{4a^2}\\
-&amp;x+\frac{b}{2a}=\pm\sqrt{\frac{b^2-4ac}{4a^2}}\\
-&amp;x=\pm\sqrt{\frac{b^2-4ac}{4a^2}}-\frac{b}{2a}\\
-&amp;x=\pm\frac{\sqrt{b^2-4ac}}{2a}-\frac{b}{2a}\\
-&amp;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}\end{align*}
+a_{n+1} = q \cdot a_n
 \]</span></p>
-<p>Therefore,</p>
-<ul>
-<li><p>If <span class="math inline">\(b^2-4ac&gt;0\)</span>, there are two real roots</p></li>
-<li><p>If <span class="math inline">\(b^2-4ac=0\)</span>, there is only one real root (or two repeated roots)</p></li>
-<li><p>If <span class="math inline">\(b^2-4ac&lt;0\)</span>, there is no real root (or two complex conjugate root)</p></li>
-</ul>
+</section>
+<section id="finite-series" class="level2">
+<h2 class="anchored" data-anchor-id="finite-series">Finite Series</h2>
+<p><span class="math display">\[
+\begin{align*}    S_n &amp;= a_1 + a_2 + \cdots + a_{n-1} + a_n \\    q*S_n &amp;= a_2 + a_3 + \cdots + a_n + a_{n+1} \\    S_n - q*S_n &amp;= a_1 - a_{n+1}\\    (1-q)S_n &amp;= a_1 - a_{n+1}\\    S_n &amp;= \frac{a_1-a_{n+1}}{1-q}\\\end{align*}
+\]</span></p>
+</section>
+<section id="infinite-series" class="level2">
+<h2 class="anchored" data-anchor-id="infinite-series">Infinite Series</h2>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -281,7 +290,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/UndefinedVoidNull\.github\.io\/");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
