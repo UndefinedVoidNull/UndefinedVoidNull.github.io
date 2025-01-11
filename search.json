@@ -126,6 +126,20 @@
     "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
   },
   {
+    "objectID": "posts/2pdf.html",
+    "href": "posts/2pdf.html",
+    "title": "2pdf.ps1",
+    "section": "",
+    "text": "https://manual.calibre-ebook.com/generated/en/ebook-convert.html\nparam (\n    [string]$inputFile\n)\n\nif (-not $inputFile) {\n    Write-Host \"Usage: 2pdf 'inputfile'\"\n    exit 1\n}\n\n# Ensure the input file exists\nif (-not (Test-Path $inputFile)) {\n    Write-Host \"Error: File '$inputFile' does not exist.\"\n    exit 1\n}\n\n# Determine the output file name by changing the extension to .pdf\n$outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n# Run ebook-convert\ntry {\n    ebook-convert $inputFile $outputFile\n    Write-Host \"Converted '$inputFile' to '$outputFile'\"\n} catch {\n    Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n}"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2pdf.ps1\n\n\n\n\n\n\nCode\n\n\nPWSH\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalc3 Notes\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
     "objectID": "posts/2 types of proof.html",
     "href": "posts/2 types of proof.html",
     "title": "2 Types of Proof",
@@ -173,13 +187,6 @@
     "title": "2 Types of Proof",
     "section": "Change the focus point",
     "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
-    "section": "",
-    "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalc3 Notes\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Calc3 Notes.html",
