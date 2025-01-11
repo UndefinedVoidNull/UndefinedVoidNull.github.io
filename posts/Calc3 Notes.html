@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-10">
 
-<title>Calc3 Notes – Shigure Chizuru</title>
+<title>Calc3 Notes – llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,8 +69,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -109,7 +124,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Shigure Chizuru</span>
+    <span class="navbar-title">llf(x) is planting</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -205,7 +220,7 @@ window.Quarto = {
 
 <section id="vector-operations" class="level1">
 <h1>Vector Operations</h1>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{align*}
 &amp;\vec{u} =&lt; u_1 ,u_2 ,u_3&gt; \\
 &amp;\vec{v} =&lt; v_1 ,v_2 ,\ v_3&gt; \\
@@ -214,49 +229,49 @@ window.Quarto = {
 &amp;\vec{u} +\vec{v} =&lt; u_{1} +v_{1} ,u_{2} +v_{2} ,u_{3} +v_{3}  &gt;\\
 &amp;\vec{u} -\vec{v} =\vec{u} +( -\vec{v}) =&lt; u_{1} -v_{1} ,u_{2} -v_{2} ,u_{3} -v_{3}  &gt;\\
 &amp;\end{align*}
-\]</span></p>
+</span></p>
 </section>
 <section id="dot-product-evaluate-works-perp-test" class="level1">
 <h1>Dot Product (Evaluate works, Perp test)</h1>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{align*}
 \vec{u} \cdotp \vec{v}
 &amp;=|\vec{u} |\ |\vec{v} |\ cos( \theta ) \\
 &amp;=u_{1} v_{1} +u_{2} v_{2} +u_{3} v_{3} \ ( Cosine\ Rule)
 \end{align*}
-\]</span></p>
+</span></p>
 </section>
 <section id="cross-product" class="level1">
 <h1>Cross Product</h1>
 <p>Generate a vector perp to both two vectors, Parallel test, Evaluate Area</p>
-<p><span class="math display">\[
+<p><span class="math display">
 \vec{u} \times \vec{v} =\ \begin{vmatrix}
 \hat{i} &amp; \hat{j} &amp; \hat{k}\\
 u_{1} &amp; u_{2} &amp; u_{3}\\
 v_{1} &amp; v_{2} &amp; v_{3}
 \end{vmatrix}\\
-\]</span></p>
-<p><span class="math display">\[
+</span></p>
+<p><span class="math display">
 \begin{align*}
 |\vec{u} \times \vec{v} |
 &amp;=|\vec{u} |\ |\vec{v} |\ sin( \theta )\\
 &amp;=\text{Area\ of\ Parallelogram}\\
 &amp;=\text{2 Times Area of Triangle}
 \end{align*}
-\]</span></p>
+</span></p>
 <section id="box-product" class="level2">
 <h2 class="anchored" data-anchor-id="box-product">Box Product</h2>
 </section>
 <section id="projection-and-scalar-projection" class="level2">
 <h2 class="anchored" data-anchor-id="projection-and-scalar-projection">Projection and Scalar Projection</h2>
 $$
-<span class="math display">\[\begin{aligned}
+<span class="math display">\begin{aligned}
 &amp;Proj_{\vec{u}}\vec{v}=|\vec{v}|cos(\theta)\widehat{u}=|\vec{v}|\frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\frac{\vec{u}}{|\vec{u}|}=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|^2}\vec{u}\\
 
 &amp;Scal_{\vec{u}}\vec{v}=|\vec{v}|\cos(\theta)=|\vec{v}|\frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|}\\
 
 &amp;|Proj_{\vec{u}}\vec{v}|(maginititude)=|Scal_{\vec{u}}\vec{v}| (absvalue)
-\end{aligned}\]</span>
+\end{aligned}</span>
 <p>$$</p>
 </section>
 </section>
@@ -264,7 +279,7 @@ $$
 <h1>Line, Plane, Curve and Surface Equations</h1>
 <section id="plane" class="level2">
 <h2 class="anchored" data-anchor-id="plane">Plane</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{align*}
 &amp;\vec{n} \ =\ &lt; a,b,c &gt;\ ( normal\ vector) ,\ P=( x_{0} ,y_{0} ,z_{0}) ,\ Q=( x,y,z)\\
 &amp;\overrightarrow{PQ} \ =\ &lt; x-x_{0} ,y-y_{0} ,\ z-z_{0}  &gt;\ ( a\ vector\ in\ the\ plane)\\
@@ -272,30 +287,30 @@ $$
 &amp;\Longrightarrow Dot-Normal\ Form:\ a( x-x_{0}) +b( y-y_{0}) +c( z-z_{0}) =0\ \\
 &amp;\Longrightarrow General\ Form:\ ax+by+cz=d\ ( d\ is\ a\ constant) \ \\
 \end{align*}
-\]</span></p>
+</span></p>
 </section>
 <section id="line" class="level2">
 <h2 class="anchored" data-anchor-id="line">Line</h2>
-<p>Take a line as the intersection of two planes ( general form) <span class="math display">\[
+<p>Take a line as the intersection of two planes ( general form) <span class="math display">
 \begin{cases}
 a_{1} x+b_{1} y+c_{1} z+d_{1} =0\\
 a_{1} x+b_{1} y+c_{1} z+d_{1} =0
 \end{cases}
-\]</span></p>
+</span></p>
 </section>
 <section id="parameterization-of-line-dot-direction-form" class="level2">
 <h2 class="anchored" data-anchor-id="parameterization-of-line-dot-direction-form">Parameterization of line (dot-direction form)</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \vec{v} = &lt; a,b,c &gt; \text{(parallel to the line)}\\
 r( t) =\ &lt; x_{0} +at,\ y_{0} +bt,\ z_{0} +ct &gt;
-\]</span></p>
+</span></p>
 <section id="surface" class="level3">
 <h3 class="anchored" data-anchor-id="surface">Surface</h3>
-<p>Explicit Form: <span class="math inline">\(z=f( x,y)\)</span> Implicit Form: <span class="math inline">\(F(x,y,z)=0\)</span> <span class="math inline">\(\vec{r}( t) =\, &lt; x( u,v) ,y( u,v) ,z( u,v)&gt;\)</span></p>
+<p>Explicit Form: <span class="math inline">z=f( x,y)</span> Implicit Form: <span class="math inline">F(x,y,z)=0</span> <span class="math inline">\vec{r}( t) =\, &lt; x( u,v) ,y( u,v) ,z( u,v)&gt;</span></p>
 </section>
 <section id="curve" class="level3">
 <h3 class="anchored" data-anchor-id="curve">Curve</h3>
-<p>See curve as the intersection of two surfaces <span class="math display">\[
+<p>See curve as the intersection of two surfaces <span class="math display">
 \begin{align*}
 \begin{cases}
 F( x,y,z) =0\\
@@ -303,17 +318,17 @@ G( x,y,z) =0
 \end{cases}\\
 \vec{r}( t) =\, &lt; x(t) ,y(t) ,z(t)&gt;
 \end{align*}
-\]</span></p>
+</span></p>
 </section>
 </section>
 </section>
 <section id="arc-length-unit-tangent-vector-unit-normal-vector-binormal-vector-curvature-and-torsion" class="level1">
 <h1>Arc Length; (Unit) Tangent Vector, (Unit) Normal Vector, Binormal Vector; Curvature and Torsion</h1>
-<p>Arc Length: <span class="math inline">\(s= \int _{a}^{t} |\vec{r} '( t) |\ dt=\int _{a}^{b} |\vec{r} '( t) |\ dt\)</span></p>
-<p>Unit Tangent Vector: <span class="math inline">\(\vec{T}( t) =\frac{\vec{r} '( t)}{|\vec{r} '( t) |}\)</span></p>
-<p>Unit Normal Vector: <span class="math inline">\(\vec{N}( t) =\frac{\vec{T} '( t)}{|\vec{T} '( t) |}\)</span> Unit Binormal Vector: <span class="math inline">\(\vec{B}( t) =\vec{T} \times \vec{N}\)</span></p>
-<p>Curvature: <span class="math inline">\(\kappa =\left| \frac{d\vec{T}}{ds}\right|\)</span></p>
-<p>Torsion: <span class="math display">\[
+<p>Arc Length: <span class="math inline">s= \int _{a}^{t} |\vec{r} '( t) |\ dt=\int _{a}^{b} |\vec{r} '( t) |\ dt</span></p>
+<p>Unit Tangent Vector: <span class="math inline">\vec{T}( t) =\frac{\vec{r} '( t)}{|\vec{r} '( t) |}</span></p>
+<p>Unit Normal Vector: <span class="math inline">\vec{N}( t) =\frac{\vec{T} '( t)}{|\vec{T} '( t) |}</span> Unit Binormal Vector: <span class="math inline">\vec{B}( t) =\vec{T} \times \vec{N}</span></p>
+<p>Curvature: <span class="math inline">\kappa =\left| \frac{d\vec{T}}{ds}\right|</span></p>
+<p>Torsion: <span class="math display">
 \begin{align*}
 &amp;\frac{d\vec{B}}{ds} =\frac{d(\vec{T} \times \overrightarrow{N)}}{ds}\\
 &amp;=\frac{d\vec{T}}{ds} \times \vec{N} +\vec{T} \times \frac{d\vec{N}}{ds}\\
@@ -331,44 +346,44 @@ G( x,y,z) =0
 &amp;\Longrightarrow \tau =\ -\frac{d\vec{B}}{ds} \cdotp \vec{N} \ \ by\ \vec{N} \cdotp \vec{N} \ =1\\
 &amp;\Longrightarrow |\tau |=\left| -\frac{d\vec{B}}{ds} \cdotp \vec{N}\right| =\left| \frac{d\vec{B}}{ds}\right| |\vec{N} |\ cos( \theta ) \ \xRightarrow[|\vec{N} |=1]{\theta =0}\left| \frac{d\vec{B}}{ds}\right| \\
 \end{align*}
-\]</span> We call <span class="math inline">\(\kappa\)</span> curvature, <span class="math inline">\(\tau\)</span> torsion.</p>
+</span> We call <span class="math inline">\kappa</span> curvature, <span class="math inline">\tau</span> torsion.</p>
 </section>
 <section id="partial-derivative-chain-rule-level-curve-gradient" class="level1">
 <h1>Partial Derivative, Chain Rule, Level Curve, Gradient</h1>
-<p>Crtical Points, Local Min/Max (Point), Saddle Point, Abs Min/Max, Lagrange Multiplier Crtical Points: <span class="math inline">\(\ f_{x} =f_{y} =0\ or\ f_{x} \ DNE\ \ or\ f_{y} \ DNE\)</span></p>
+<p>Crtical Points, Local Min/Max (Point), Saddle Point, Abs Min/Max, Lagrange Multiplier Crtical Points: <span class="math inline">\ f_{x} =f_{y} =0\ or\ f_{x} \ DNE\ \ or\ f_{y} \ DNE</span></p>
 </section>
 <section id="vector-field-line-integral-surface-integral" class="level1">
 <h1>Vector Field, Line Integral, Surface Integral</h1>
 <section id="potential-functions-and-conservative" class="level2">
 <h2 class="anchored" data-anchor-id="potential-functions-and-conservative">Potential Functions and Conservative</h2>
-<p>If exist function <span class="math inline">\(\phi\)</span> such that <span class="math inline">\(\vec{F}  = \nabla \phi\)</span> , we say function <span class="math inline">\(\vec{F}\)</span> is conservative, and call <span class="math inline">\(\phi\)</span> the potential function of gradient vector field <span class="math inline">\(\vec{F}\)</span></p>
-<p>Conservative Discriminator <span class="math display">\[
+<p>If exist function <span class="math inline">\phi</span> such that <span class="math inline">\vec{F}  = \nabla \phi</span> , we say function <span class="math inline">\vec{F}</span> is conservative, and call <span class="math inline">\phi</span> the potential function of gradient vector field <span class="math inline">\vec{F}</span></p>
+<p>Conservative Discriminator <span class="math display">
 \vec{F} =\, &lt; f,\ g,\ h &gt;,
-\]</span> If <span class="math inline">\(f_{y} =g_{x}\)</span> and <span class="math inline">\(f_{z} =h_{x}\)</span> and $ g_{z} =h_{y}$, then vector field <span class="math inline">\(vec{F}\)</span> is conservative</p>
-<p>Fundamental Thm of Line Integral If <span class="math inline">\(\vec{F} = &lt; f, g, h &gt;\)</span> is conservative, then Circulation=<span class="math inline">\(\oint _{a}^{b}\vec{F} \cdotp \vec{T} \ ds=\phi ( b) -\phi ( a)\\\)</span></p>
-<p>Definition of <span class="math inline">\(\nabla\)</span> Operator <span class="math display">\[\nabla \ :=\ &lt; \frac{\partial \ }{\partial x} ,\ \frac{\partial \ }{\partial y} ,\ \frac{\partial \ }{\partial z}  &gt;\\\]</span></p>
-<p>Definition of Curl and Divergence Curl(<span class="math inline">\(\vec{F}\)</span>) = <span class="math inline">\(\nabla \times \vec{F}\)</span> Divergence(<span class="math inline">\(\vec{F}\)</span>) =<span class="math inline">\(\nabla \cdotp \vec{F}\)</span></p>
+</span> If <span class="math inline">f_{y} =g_{x}</span> and <span class="math inline">f_{z} =h_{x}</span> and $ g_{z} =h_{y}$, then vector field <span class="math inline">vec{F}</span> is conservative</p>
+<p>Fundamental Thm of Line Integral If <span class="math inline">\vec{F} = &lt; f, g, h &gt;</span> is conservative, then Circulation=<span class="math inline">\oint _{a}^{b}\vec{F} \cdotp \vec{T} \ ds=\phi ( b) -\phi ( a)\\</span></p>
+<p>Definition of <span class="math inline">\nabla</span> Operator <span class="math display">\nabla \ :=\ &lt; \frac{\partial \ }{\partial x} ,\ \frac{\partial \ }{\partial y} ,\ \frac{\partial \ }{\partial z}  &gt;\\</span></p>
+<p>Definition of Curl and Divergence Curl(<span class="math inline">\vec{F}</span>) = <span class="math inline">\nabla \times \vec{F}</span> Divergence(<span class="math inline">\vec{F}</span>) =<span class="math inline">\nabla \cdotp \vec{F}</span></p>
 <p>Green’s Thm ( special case of Stoke’s Thm,when the surface is flat)</p>
-<p>Circulation= <span class="math display">\[\oint _{C}\vec{F} \cdotp \vec{T} \ ds=\iint _{R} Curl\ \vec{F} \ dA\ \ ( Curl\ Form)\\\]</span></p>
-<p>Flux= <span class="math display">\[
+<p>Circulation= <span class="math display">\oint _{C}\vec{F} \cdotp \vec{T} \ ds=\iint _{R} Curl\ \vec{F} \ dA\ \ ( Curl\ Form)\\</span></p>
+<p>Flux= <span class="math display">
 \oint _{C}\vec{F} \cdotp \vec{N} \ ds\ =\iint _{R} Divergence\ \vec{F} \ dA\ ( Divergence\ Form)\\
-\]</span></p>
+</span></p>
 </section>
 <section id="stokes-thm" class="level2">
 <h2 class="anchored" data-anchor-id="stokes-thm">Stoke’s Thm</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \begin{align*}
 &amp;\oint _{C}\vec{F} \cdotp \vec{T} \ ds\ ( circulation\ across\ boundary)\\
 &amp;=\iint _{S} Curl(\vec{F}) \cdotp \vec{N} \ dA\ ( surface\ intergal)\\
 &amp;=\iint _{S} Curl(\vec{F}) \cdotp \left(\overrightarrow{t_{u}} \times \overrightarrow{t_{v}}\right) \ dA\\
 \end{align*}
-\]</span></p>
+</span></p>
 </section>
 <section id="divergence-thm" class="level2">
 <h2 class="anchored" data-anchor-id="divergence-thm">Divergence Thm</h2>
-<p><span class="math display">\[
+<p><span class="math display">
 \oiint_S \vec{F} \cdotp \vec{N} \ dS=\iiint _{D} Div(\vec{F}) \ dV
-\]</span></p>
+</span></p>
 
 
 </section>
