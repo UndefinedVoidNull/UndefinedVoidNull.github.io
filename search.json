@@ -49,18 +49,32 @@
     "text": "按动作\n\nRecord 一般记录/随笔\nWorkflow 工作流\nReading 读书笔记\nRepost 转载/转发\nComment/Review 评论\n\n按主题\n\nSOC 社会相关\nECON 经济相关\nPsychology\nData 数据/图表相关\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea 不成熟的想法\nMethod 方法(论)"
   },
   {
-    "objectID": "posts/welcome/index.html",
-    "href": "posts/welcome/index.html",
-    "title": "Quarto Markdown (.qmd) Testing",
+    "objectID": "posts/sqrt(2) is not a rational number.html",
+    "href": "posts/sqrt(2) is not a rational number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
     "section": "",
-    "text": "博客标签设计"
+    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
   },
   {
-    "objectID": "posts/welcome/index.html#h2",
-    "href": "posts/welcome/index.html#h2",
-    "title": "Quarto Markdown (.qmd) Testing",
-    "section": "H2",
-    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://marketplace.visualstudio.com/items?itemName=quarto.quarto\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+    "objectID": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "href": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#summary",
+    "href": "posts/sqrt(2) is not a rational number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "href": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
   },
   {
     "objectID": "posts/Quadratic Formula.html",
@@ -112,13 +126,6 @@
     "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Shigure Chizuru",
-    "section": "",
-    "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "posts/2 types of proof.html",
     "href": "posts/2 types of proof.html",
     "title": "2 Types of Proof",
@@ -168,6 +175,76 @@
     "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Shigure Chizuru",
+    "section": "",
+    "text": "Construct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalc3 Notes\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html",
+    "href": "posts/Calc3 Notes.html",
+    "title": "Calc3 Notes",
+    "section": "",
+    "text": "\\[\n\\begin{align*}\n&\\vec{u} =&lt; u_1 ,u_2 ,u_3&gt; \\\\\n&\\vec{v} =&lt; v_1 ,v_2 ,\\ v_3&gt; \\\\\n&|\\vec{u} |=\\sqrt{u_1^2 +u_2^2 +u_3^2}\\\\\n&\\hat{u} =\\frac{\\vec{u}}{|\\vec{u}|}\\\\\n&\\vec{u} +\\vec{v} =&lt; u_{1} +v_{1} ,u_{2} +v_{2} ,u_{3} +v_{3}  &gt;\\\\\n&\\vec{u} -\\vec{v} =\\vec{u} +( -\\vec{v}) =&lt; u_{1} -v_{1} ,u_{2} -v_{2} ,u_{3} -v_{3}  &gt;\\\\\n&\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#box-product",
+    "href": "posts/Calc3 Notes.html#box-product",
+    "title": "Calc3 Notes",
+    "section": "Box Product",
+    "text": "Box Product"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#projection-and-scalar-projection",
+    "href": "posts/Calc3 Notes.html#projection-and-scalar-projection",
+    "title": "Calc3 Notes",
+    "section": "Projection and Scalar Projection",
+    "text": "Projection and Scalar Projection\n$$\n\\[\\begin{aligned}\n&Proj_{\\vec{u}}\\vec{v}=|\\vec{v}|cos(\\theta)\\widehat{u}=|\\vec{v}|\\frac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}||\\vec{v}|}\\frac{\\vec{u}}{|\\vec{u}|}=\\frac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}|^2}\\vec{u}\\\\\n\n&Scal_{\\vec{u}}\\vec{v}=|\\vec{v}|\\cos(\\theta)=|\\vec{v}|\\frac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}||\\vec{v}|}=\\frac{\\vec{u}\\cdot\\vec{v}}{|\\vec{u}|}\\\\\n\n&|Proj_{\\vec{u}}\\vec{v}|(maginititude)=|Scal_{\\vec{u}}\\vec{v}| (absvalue)\n\\end{aligned}\\]\n$$"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#plane",
+    "href": "posts/Calc3 Notes.html#plane",
+    "title": "Calc3 Notes",
+    "section": "Plane",
+    "text": "Plane\n\\[\n\\begin{align*}\n&\\vec{n} \\ =\\ &lt; a,b,c &gt;\\ ( normal\\ vector) ,\\ P=( x_{0} ,y_{0} ,z_{0}) ,\\ Q=( x,y,z)\\\\\n&\\overrightarrow{PQ} \\ =\\ &lt; x-x_{0} ,y-y_{0} ,\\ z-z_{0}  &gt;\\ ( a\\ vector\\ in\\ the\\ plane)\\\\\n&\\vec{n} \\cdotp \\overrightarrow{PQ} =0\\ ( orthognal)\\\\\n&\\Longrightarrow Dot-Normal\\ Form:\\ a( x-x_{0}) +b( y-y_{0}) +c( z-z_{0}) =0\\ \\\\\n&\\Longrightarrow General\\ Form:\\ ax+by+cz=d\\ ( d\\ is\\ a\\ constant) \\ \\\\\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#line",
+    "href": "posts/Calc3 Notes.html#line",
+    "title": "Calc3 Notes",
+    "section": "Line",
+    "text": "Line\nTake a line as the intersection of two planes ( general form) \\[\n\\begin{cases}\na_{1} x+b_{1} y+c_{1} z+d_{1} =0\\\\\na_{1} x+b_{1} y+c_{1} z+d_{1} =0\n\\end{cases}\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#parameterization-of-line-dot-direction-form",
+    "href": "posts/Calc3 Notes.html#parameterization-of-line-dot-direction-form",
+    "title": "Calc3 Notes",
+    "section": "Parameterization of line (dot-direction form)",
+    "text": "Parameterization of line (dot-direction form)\n\\[\n\\vec{v} = &lt; a,b,c &gt; \\text{(parallel to the line)}\\\\\nr( t) =\\ &lt; x_{0} +at,\\ y_{0} +bt,\\ z_{0} +ct &gt;\n\\]\n\nSurface\nExplicit Form: \\(z=f( x,y)\\) Implicit Form: \\(F(x,y,z)=0\\) \\(\\vec{r}( t) =\\, &lt; x( u,v) ,y( u,v) ,z( u,v)&gt;\\)\n\n\nCurve\nSee curve as the intersection of two surfaces \\[\n\\begin{align*}\n\\begin{cases}\nF( x,y,z) =0\\\\\nG( x,y,z) =0\n\\end{cases}\\\\\n\\vec{r}( t) =\\, &lt; x(t) ,y(t) ,z(t)&gt;\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#potential-functions-and-conservative",
+    "href": "posts/Calc3 Notes.html#potential-functions-and-conservative",
+    "title": "Calc3 Notes",
+    "section": "Potential Functions and Conservative",
+    "text": "Potential Functions and Conservative\nIf exist function \\(\\phi\\) such that \\(\\vec{F}  = \\nabla \\phi\\) , we say function \\(\\vec{F}\\) is conservative, and call \\(\\phi\\) the potential function of gradient vector field \\(\\vec{F}\\)\nConservative Discriminator \\[\n\\vec{F} =\\, &lt; f,\\ g,\\ h &gt;,\n\\] If \\(f_{y} =g_{x}\\) and \\(f_{z} =h_{x}\\) and $ g_{z} =h_{y}$, then vector field \\(vec{F}\\) is conservative\nFundamental Thm of Line Integral If \\(\\vec{F} = &lt; f, g, h &gt;\\) is conservative, then Circulation=\\(\\oint _{a}^{b}\\vec{F} \\cdotp \\vec{T} \\ ds=\\phi ( b) -\\phi ( a)\\\\\\)\nDefinition of \\(\\nabla\\) Operator \\[\\nabla \\ :=\\ &lt; \\frac{\\partial \\ }{\\partial x} ,\\ \\frac{\\partial \\ }{\\partial y} ,\\ \\frac{\\partial \\ }{\\partial z}  &gt;\\\\\\]\nDefinition of Curl and Divergence Curl(\\(\\vec{F}\\)) = \\(\\nabla \\times \\vec{F}\\) Divergence(\\(\\vec{F}\\)) =\\(\\nabla \\cdotp \\vec{F}\\)\nGreen’s Thm ( special case of Stoke’s Thm,when the surface is flat)\nCirculation= \\[\\oint _{C}\\vec{F} \\cdotp \\vec{T} \\ ds=\\iint _{R} Curl\\ \\vec{F} \\ dA\\ \\ ( Curl\\ Form)\\\\\\]\nFlux= \\[\n\\oint _{C}\\vec{F} \\cdotp \\vec{N} \\ ds\\ =\\iint _{R} Divergence\\ \\vec{F} \\ dA\\ ( Divergence\\ Form)\\\\\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#stokes-thm",
+    "href": "posts/Calc3 Notes.html#stokes-thm",
+    "title": "Calc3 Notes",
+    "section": "Stoke’s Thm",
+    "text": "Stoke’s Thm\n\\[\n\\begin{align*}\n&\\oint _{C}\\vec{F} \\cdotp \\vec{T} \\ ds\\ ( circulation\\ across\\ boundary)\\\\\n&=\\iint _{S} Curl(\\vec{F}) \\cdotp \\vec{N} \\ dA\\ ( surface\\ intergal)\\\\\n&=\\iint _{S} Curl(\\vec{F}) \\cdotp \\left(\\overrightarrow{t_{u}} \\times \\overrightarrow{t_{v}}\\right) \\ dA\\\\\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "posts/Calc3 Notes.html#divergence-thm",
+    "href": "posts/Calc3 Notes.html#divergence-thm",
+    "title": "Calc3 Notes",
+    "section": "Divergence Thm",
+    "text": "Divergence Thm\n\\[\n\\oiint_S \\vec{F} \\cdotp \\vec{N} \\ dS=\\iiint _{D} Div(\\vec{F}) \\ dV\n\\]"
+  },
+  {
     "objectID": "posts/Geometric Series.html",
     "href": "posts/Geometric Series.html",
     "title": "[Proof] Geometric Series",
@@ -196,32 +273,18 @@
     "text": "Infinite Series"
   },
   {
-    "objectID": "posts/sqrt(2) is not a rational number.html",
-    "href": "posts/sqrt(2) is not a rational number.html",
-    "title": "[Proof] sqrt(2) is not a rational number",
+    "objectID": "posts/Quarto Markdown (.qmd) Testing.html",
+    "href": "posts/Quarto Markdown (.qmd) Testing.html",
+    "title": "Quarto Markdown (.qmd) Testing",
     "section": "",
-    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+    "text": "&lt;博客标签设计.qmd&gt;"
   },
   {
-    "objectID": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "href": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Proof by contradiction",
-    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
-  },
-  {
-    "objectID": "posts/sqrt(2) is not a rational number.html#summary",
-    "href": "posts/sqrt(2) is not a rational number.html#summary",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Summary",
-    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
-  },
-  {
-    "objectID": "posts/sqrt(2) is not a rational number.html#takeaways",
-    "href": "posts/sqrt(2) is not a rational number.html#takeaways",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+    "objectID": "posts/Quarto Markdown (.qmd) Testing.html#h2",
+    "href": "posts/Quarto Markdown (.qmd) Testing.html#h2",
+    "title": "Quarto Markdown (.qmd) Testing",
+    "section": "H2",
+    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\n\nFundamental Theorem of Caculus\n\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\n\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\n\n\n\n\n\n\nNote\n\n\n\n\\(a \\neq 0\\)\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\nalt text\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
   },
   {
     "objectID": "posts/初探SageMath.html",
