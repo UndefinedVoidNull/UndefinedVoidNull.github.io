@@ -1,0 +1,99 @@
+---
+title: "Quarto Markdown (.qmd) Testing"
+date: "2025-01-01"
+categories: [Record]
+---
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/x3tPr3nkzqQ?si=H1kkfb5Gs9X394uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+
+<博客标签设计.qmd>
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6
+
+------------------------------------------------------------------------
+
+- List
+  - List
+    - List
+      - List
+    - List
+  - List
+- List
+
+1.  First
+2.  Second
+    1.  First
+        1.  First
+3.  Third
+4.  Forth
+
+---
+
+What is `JavaScript` ?
+
+``` js
+console.log("Hello")
+```
+
+---
+
+Fundamental Theorem of Caculus
+
+:   $$
+    \int_a^b f'(x) \, dx = f(b) - f(a)
+    $$
+
+> Thm: Multiple Lines Theorem
+
+$$
+\begin{align*}
+&ax^2+bx+c = 0 \\ 
+&x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align*}
+$$
+
+::: callout-note
+$a \neq 0$
+:::
+
+---
+
+> Quote:
+>
+> > Nested Quote:
+> >
+> > > Nested Quote:
+
+---
+
+**bold**
+
+*italic*
+
+***bold italic***
+
+---
+
+[Google](https://www.google.com)
+
+<https://quarto.org/docs/get-started/>
+
+![alt text](<images/Quarto Markdown (.qmd) Testing/image.png>)
+
+---
+
+| A\\B | B1      | B2      |
+|------|---------|---------|
+| A1   | A1 x B1 | A1 x B2 |
+| A2   | A2 x B1 | A2 x B2 |
