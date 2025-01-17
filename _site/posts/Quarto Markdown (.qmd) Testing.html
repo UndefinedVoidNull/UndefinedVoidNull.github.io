@@ -281,14 +281,10 @@ window.Quarto = {
 <p>What is <code>JavaScript</code> ?</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode js code-with-copy"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">"Hello"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
-<dl>
-<dt>Fundamental Theorem of Caculus</dt>
-<dd>
+<p>Fundamental Theorem of Caculus</p>
 <p><span class="math display">
-\int_a^b f'(x) \, dx = f(b) - f(a)
-</span></p>
-</dd>
-</dl>
+    \int_a^b f'(x) \, dx = f(b) - f(a)
+    </span></p>
 <blockquote class="blockquote">
 <p>Thm: Multiple Lines Theorem</p>
 </blockquote>
@@ -456,7 +452,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/llfx\.lol");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
