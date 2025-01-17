@@ -2,8 +2,6 @@
 title: "Construct N, Z, Q, R, C"
 date: "2025-01-11"
 categories: [Math]
-toc: true
-format: html
 ---
 
 ## $\mathbb{N}$

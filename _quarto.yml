@@ -1,16 +1,18 @@
 project:
   type: website
-
+toc: true
 website:
-  title: "Shigure Chizuru"
+  favicon: favicon.png
+  title: "llf(x) is planting"
   navbar:
     right:
       - text: "About"
         href: about.qmd
       - icon: github
-        href: https://github.com/UndefinedVoidNull/UndefinedVoidNull.github.io
+        href: https://github.com/UndefinedVoidNull/UndefinedVoidNull.github.io 
 format:
   html:
     theme:
       - cosmo
     css: styles.css
+    html-math-method: katex

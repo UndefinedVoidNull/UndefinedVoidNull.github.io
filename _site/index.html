@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Shigure Chizuru</title>
+<title>llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,6 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./favicon.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-listing/list.min.js"></script>
 <script src="site_libs/quarto-listing/quarto-listing.js"></script>
 <script src="site_libs/quarto-html/quarto.js"></script>
@@ -98,8 +99,22 @@ ul.task-list li input[type="checkbox"] {
   })
   </script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -139,7 +154,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">Shigure Chizuru</span>
+    <span class="navbar-title">llf(x) is planting</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -170,7 +185,7 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(11)</span></div><div class="category" data-category="Q29kZQ==">Code <span class="quarto-category-count">(1)</span></div><div class="category" data-category="SWRlYQ==">Idea <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWF0aA==">Math <span class="quarto-category-count">(8)</span></div><div class="category" data-category="UmVjb3Jk">Record <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VG9vbA==">Tool <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29ya2Zsb3c=">Workflow <span class="quarto-category-count">(1)</span></div></div></div>
+    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(12)</span></div><div class="category" data-category="Q29kZQ==">Code <span class="quarto-category-count">(2)</span></div><div class="category" data-category="SWRlYQ==">Idea <span class="quarto-category-count">(1)</span></div><div class="category" data-category="TWF0aA==">Math <span class="quarto-category-count">(8)</span></div><div class="category" data-category="UmVjb3Jk">Record <span class="quarto-category-count">(2)</span></div><div class="category" data-category="VG9vbA==">Tool <span class="quarto-category-count">(1)</span></div><div class="category" data-category="V29ya2Zsb3c=">Workflow <span class="quarto-category-count">(1)</span></div><div class="category" data-category="cHdzaA==">pwsh <span class="quarto-category-count">(1)</span></div></div></div>
 <!-- main -->
 <main class="content quarto-banner-title-block column-page-left" id="quarto-document-content">
 
@@ -183,7 +198,7 @@ window.Quarto = {
 
 <div class="quarto-listing quarto-listing-container-default" id="listing-listing">
 <div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="TWF0aA==" data-listing-date-sort="1736571600000" data-listing-file-modified-sort="1736549177950" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="186">
+<div class="quarto-post image-right" data-index="0" data-categories="TWF0aA==" data-listing-date-sort="1736571600000" data-listing-file-modified-sort="1736568899717" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="186">
 <div class="thumbnail">
 <p><a href="./posts/Construct N, Z, Q, R, C.html" class="no-external"></a></p><a href="./posts/Construct N, Z, Q, R, C.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -202,7 +217,7 @@ Math
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Construct N, Z, Q, R, C.html" class="no-external">There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span></a>
+<a href="./posts/Construct N, Z, Q, R, C.html" class="no-external">There are 2 common ways to construct <span class="math inline">\mathbb{N}</span></a>
 </div>
 </div>
 <div class="metadata">
@@ -213,7 +228,7 @@ Jan 11, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="1" data-categories="TWF0aA==" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1736549257897" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201">
+<div class="quarto-post image-right" data-index="1" data-categories="TWF0aA==" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1736568889052" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="201">
 <div class="thumbnail">
 <p><a href="./posts/2 types of proof.html" class="no-external"></a></p><a href="./posts/2 types of proof.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -243,7 +258,40 @@ Jan 10, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="2" data-categories="TWF0aA==" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1736557888067" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="694">
+<div class="quarto-post image-right" data-index="2" data-categories="Q29kZSUyQ3B3c2g=" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1736568966649" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="91">
+<div class="thumbnail">
+<p><a href="./posts/2pdf.html" class="no-external"></a></p><a href="./posts/2pdf.html" class="no-external">
+<div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
+</a><p><a href="./posts/2pdf.html" class="no-external"></a></p>
+</div>
+<div class="body">
+<h3 class="no-anchor listing-title">
+<a href="./posts/2pdf.html" class="no-external">2pdf.ps1</a>
+</h3>
+<div class="listing-subtitle">
+<a href="./posts/2pdf.html" class="no-external"></a>
+</div>
+<div class="listing-categories">
+<div class="listing-category" onclick="window.quartoListingCategory('Q29kZQ=='); return false;">
+Code
+</div>
+<div class="listing-category" onclick="window.quartoListingCategory('cHdzaA=='); return false;">
+pwsh
+</div>
+</div>
+<div class="listing-description">
+<a href="./posts/2pdf.html" class="no-external">https://manual.calibre-ebook.com/generated/en/ebook-convert.html</a>
+</div>
+</div>
+<div class="metadata">
+<a href="./posts/2pdf.html" class="no-external">
+<div class="listing-date">
+Jan 10, 2025
+</div>
+</a>
+</div>
+</div>
+<div class="quarto-post image-right" data-index="3" data-categories="TWF0aA==" data-listing-date-sort="1736485200000" data-listing-file-modified-sort="1736568969008" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="694">
 <div class="thumbnail">
 <p><a href="./posts/Calc3 Notes.html" class="no-external"></a></p><a href="./posts/Calc3 Notes.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -262,7 +310,7 @@ Math
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Calc3 Notes.html" class="no-external"><span class="math display">\[
+<a href="./posts/Calc3 Notes.html" class="no-external"><span class="math display">
 \begin{align*}
 &amp;\vec{u} =&lt; u_1 ,u_2 ,u_3&gt; \\
 &amp;\vec{v} =&lt; v_1 ,v_2 ,\ v_3&gt; \\
@@ -279,7 +327,7 @@ Jan 10, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="3" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736544647662" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
+<div class="quarto-post image-right" data-index="4" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736544647662" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="64">
 <div class="thumbnail">
 <p><a href="./posts/Geometric Series.html" class="no-external"></a></p><a href="./posts/Geometric Series.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -298,9 +346,9 @@ Math
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Geometric Series.html" class="no-external"><span class="math display">\[
+<a href="./posts/Geometric Series.html" class="no-external"><span class="math display">
 a_{n+1} = q \cdot a_n
-\]</span></a>
+</span></a>
 </div>
 </div>
 <div class="metadata">
@@ -311,7 +359,7 @@ Jan 7, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="4" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736310532451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
+<div class="quarto-post image-right" data-index="5" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736310532451" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="43">
 <div class="thumbnail">
 <p><a href="./posts/Quadratic Formula.html" class="no-external"></a></p><a href="./posts/Quadratic Formula.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -330,7 +378,7 @@ Math
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Quadratic Formula.html" class="no-external"><span class="math display">\[
+<a href="./posts/Quadratic Formula.html" class="no-external"><span class="math display">
 \begin{align*}
 &amp;ax^2+bx+c=0 \ (a \neq 0)…</span></a>
 </div>
@@ -343,7 +391,7 @@ Jan 7, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="5" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736545066411" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="322">
+<div class="quarto-post image-right" data-index="6" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736568976667" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="322">
 <div class="thumbnail">
 <p><a href="./posts/sqrt(2) is not a rational number.html" class="no-external"></a></p><a href="./posts/sqrt(2) is not a rational number.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -373,7 +421,7 @@ Jan 7, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="6" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736302873529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="264">
+<div class="quarto-post image-right" data-index="7" data-categories="TWF0aA==" data-listing-date-sort="1736226000000" data-listing-file-modified-sort="1736302873529" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="264">
 <div class="thumbnail">
 <p><a href="./posts/群环域模.html" class="no-external"></a></p><a href="./posts/群环域模.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -403,7 +451,7 @@ Jan 7, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="7" data-categories="TWF0aCUyQ0NvZGU=" data-listing-date-sort="1736139600000" data-listing-file-modified-sort="1736556337135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
+<div class="quarto-post image-right" data-index="8" data-categories="TWF0aCUyQ0NvZGU=" data-listing-date-sort="1736139600000" data-listing-file-modified-sort="1736556337135" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="108">
 <div class="thumbnail">
 <p><a href="./posts/初探SageMath.html" class="no-external"></a></p><a href="./posts/初探SageMath.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -436,7 +484,7 @@ Jan 6, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="8" data-categories="UmVjb3JkJTJDSWRlYQ==" data-listing-date-sort="1736139600000" data-listing-file-modified-sort="1736219238220" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
+<div class="quarto-post image-right" data-index="9" data-categories="UmVjb3JkJTJDSWRlYQ==" data-listing-date-sort="1736139600000" data-listing-file-modified-sort="1736219238220" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="164">
 <div class="thumbnail">
 <p><a href="./posts/博客标签设计.html" class="no-external"></a></p><a href="./posts/博客标签设计.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -469,7 +517,7 @@ Jan 6, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="9" data-categories="V29ya2Zsb3clMkNUb29s" data-listing-date-sort="1735880400000" data-listing-file-modified-sort="1736217550336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
+<div class="quarto-post image-right" data-index="10" data-categories="V29ya2Zsb3clMkNUb29s" data-listing-date-sort="1735880400000" data-listing-file-modified-sort="1736217550336" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="50">
 <div class="thumbnail">
 <p><a href="./posts/如何高效获取「长视频」的关键信息.html" class="no-external"></a></p><a href="./posts/如何高效获取「长视频」的关键信息.html" class="no-external">
 <div class="listing-item-img-placeholder card-img-top" >&nbsp;</div>
@@ -502,7 +550,7 @@ Jan 3, 2025
 </a>
 </div>
 </div>
-<div class="quarto-post image-right" data-index="10" data-categories="UmVjb3Jk" data-listing-date-sort="1735707600000" data-listing-file-modified-sort="1736557743032" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
+<div class="quarto-post image-right" data-index="11" data-categories="UmVjb3Jk" data-listing-date-sort="1735707600000" data-listing-file-modified-sort="1736566931295" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163">
 <div class="thumbnail">
 <p><a href="./posts/Quarto Markdown (.qmd) Testing.html" class="no-external"></a></p><a href="./posts/Quarto Markdown (.qmd) Testing.html" class="no-external">
 <p class="card-img-top"><img src="posts\images\Quarto Markdown (.qmd) Testing\image.png"  class="thumbnail-image card-img"/></p>
@@ -521,7 +569,7 @@ Record
 </div>
 </div>
 <div class="listing-description">
-<a href="./posts/Quarto Markdown (.qmd) Testing.html" class="no-external">&lt;博客标签设计.qmd&gt;</a>
+<a href="./posts/Quarto Markdown (.qmd) Testing.html" class="no-external">博客标签设计</a>
 </div>
 </div>
 <div class="metadata">
@@ -627,7 +675,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/UndefinedVoidNull\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

@@ -2,8 +2,6 @@
 title: "Calc3 Notes"
 date: "2025-01-10"
 categories: [Math]
-toc: true
-format: html
 ---
 
 # Vector Operations

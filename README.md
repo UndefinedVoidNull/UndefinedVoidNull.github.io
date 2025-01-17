@@ -1,19 +1,21 @@
 # Blog
-https://UndefinedVoidNull.github.io
-https://quarto.org/docs/publishing/github-pages.html
+- https://UndefinedVoidNull.github.io
+- https://quarto.org/docs/publishing/github-pages.html
 
 ## Command
 ```bash
+quarto create project # choose blog
+
 quarto render
 
-quarto preview
-
+quarto preview # most of time should use VSCode build-in markdown preview 
 quarto preview --port 3000
 
-quarto publish gh-pages
+quarto publish gh-pages # it will render before publish
+quarto publish gh-pages --no-prompt # don't prompt with y/n
 ```
 
-## pandoc markdown
+## Pandoc Markdown Syntax
 If a paragraph followed by a list/quotation/table,
 then it's **required to have a empty line between paragraph and list/quotation/table.**
 Otherwise, list/quotation/table can not be properly rendered.
@@ -31,7 +33,6 @@ number-sections: true
 ---
 ```
 
-
 ## VSCode Snippets
 Make sure disable or uninstall the Quarto VSCode extension.
 
@@ -42,12 +43,27 @@ Make sure disable or uninstall the Quarto VSCode extension.
 - Configure File Association for '.qmd'
 - Choose `Markdown`
 
-
 ### Configure Snippets
-
-`Markdown.json`
+`markdown.json`
 ```json
 {
+	// Place your snippets for markdown here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "drawbacks template": {
+	// 	"prefix": "db",
+	// 	"body": [
+	// 		"内容: $1",
+	// 		"高发期: $2",
+	// 		"危害程度: $3",
+	// 		"危害处: $4",
+	// 		"原因: $5",
+	// 		"解决方案: $0"
+	// 	],
+	// 	"description": "drawbacks template"
+	// },
 	"h2": {
 		"prefix": "h2",
 		"body": "## "
@@ -75,27 +91,44 @@ Make sure disable or uninstall the Quarto VSCode extension.
 			"title: \"$1\"",
 			"date: \"2025-$2-$3\"",
 			"categories: [$4]",
-			"toc: true",
-			"format: html",
 			"---",
 			"",
 			"$5"
 		],
 		"description": ".qmd metadata"
 	},
-	"$$": {
+	"$$align*": {
+		"prefix": "math",
+		"body": [
+			"$$",
+			"\\begin{align*}",
+			"$1",
+			"\\end{align*}",
+			"$$",
+			"",
+		]
+	},
+	"m": {
 		"prefix": "m",
 		"body": [
 			"$$",
+			"\\begin{align*}",
 			"$1",
+			"\\end{align*}",
 			"$$",
 			"",
-			"$2"
+		]
+	},
+	"c": {
+		"prefix": "c",
+		"body": [
+			"```$1",
+			"$0",
+			"```"
 		],
-		"description": "$$"
 	},
 	"code area": {
-		"prefix": "c",
+		"prefix": "code",
 		"body": [
 			"```$1",
 			"$0",
@@ -106,6 +139,22 @@ Make sure disable or uninstall the Quarto VSCode extension.
 		"prefix": "js",
 		"body": [
 			"```js",
+			"$0",
+			"```"
+		],
+	},
+	"json": {
+		"prefix": "json",
+		"body": [
+			"```json",
+			"$0",
+			"```"
+		],
+	},
+	"yaml": {
+		"prefix": "yaml",
+		"body": [
+			"```yaml",
 			"$0",
 			"```"
 		],
@@ -145,8 +194,8 @@ Make sure disable or uninstall the Quarto VSCode extension.
 			"$$"
 		],
 	},
-	"defn": {
-		"prefix": "\\defn",
+	"def": {
+		"prefix": "def",
 		"body": [
 			"**Definition:** ($1)",
 			"$$",
@@ -157,7 +206,7 @@ Make sure disable or uninstall the Quarto VSCode extension.
 		],
 	},
 	"proof": {
-		"prefix": "\\proof",
+		"prefix": "proof",
 		"body": [
 			"**Proof:** ",
 			"$$",
@@ -173,25 +222,27 @@ Make sure disable or uninstall the Quarto VSCode extension.
 			"**Remark:** $1",
 		],
 	},
+	"link": {
+		"prefix": "link",
+		"body": [
+			"[${1:text}](${2:url})$0",
+		],
+	},
+	"table": {
+		"prefix": "table",
+		"body": [
+			"| $1  | $2  | $3  |",
+			"| --- | --- | --- |",
+			"| $4  | $5  | $6  |",
+			"| $7  | $8  | $9  |",
+		],
+	},
 }
 ```
 
 `latex.json`
 ```json
 {
-	// Place your snippets for latex here. Each snippet is defined under a snippet name and has a prefix, body and 
-	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
-	// same ids are connected.
-	// Example:
-	// "Print to console": {
-	// 	"prefix": "log",
-	// 	"body": [
-	// 		"console.log('$1');",
-	// 		"$2"
-	// 	],
-	// 	"description": "Log output to console"
-	// }
 	"f": {
 		"prefix": "\\f",
 		"body": [
@@ -199,7 +250,7 @@ Make sure disable or uninstall the Quarto VSCode extension.
 		]
 	},
 	"align*": {
-		"prefix": "\\align",
+		"prefix": "align",
 		"body": [
 			"\\begin{align*}",
 			"$1",

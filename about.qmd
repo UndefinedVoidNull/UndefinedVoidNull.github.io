@@ -1,5 +1,5 @@
 ---
-title: "Shigure Chizuru"
+title: "llf(x)"
 image: profile.jpg
 about:
   template: jolla
@@ -14,3 +14,4 @@ about:
   #     text: Github
   #     href: https://github.com
 ---
+🐲🐍🐴🐐🐒🐔🐶🐷🐭🐮🐯🐰🏝️🏖️🏜️🌄🌅🥑🍉🙏

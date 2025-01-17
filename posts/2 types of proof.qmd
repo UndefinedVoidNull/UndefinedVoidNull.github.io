@@ -2,8 +2,6 @@
 title: "2 Types of Proof"
 date: "2025-01-10"
 categories: [Math]
-toc: true
-format: html
 ---
 
 ## Intro

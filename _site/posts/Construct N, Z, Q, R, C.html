@@ -8,7 +8,7 @@
 
 <meta name="dcterms.date" content="2025-01-11">
 
-<title>Construct N, Z, Q, R, C – Shigure Chizuru</title>
+<title>Construct N, Z, Q, R, C – llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,6 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="../site_libs/quarto-search/fuse.min.js"></script>
 <script src="../site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
 <script src="../site_libs/quarto-html/quarto.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
 <script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -68,8 +69,22 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -109,7 +124,7 @@ window.Quarto = {
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">Shigure Chizuru</span>
+    <span class="navbar-title">llf(x) is planting</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -168,16 +183,16 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#mathbbn" id="toc-mathbbn" class="nav-link active" data-scroll-target="#mathbbn"><span class="math inline">\(\mathbb{N}\)</span></a></li>
-  <li><a href="#mathbbz" id="toc-mathbbz" class="nav-link" data-scroll-target="#mathbbz"><span class="math inline">\(\mathbb{Z}\)</span></a></li>
-  <li><a href="#mathbbq" id="toc-mathbbq" class="nav-link" data-scroll-target="#mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></a></li>
-  <li><a href="#mathbbr" id="toc-mathbbr" class="nav-link" data-scroll-target="#mathbbr"><span class="math inline">\(\mathbb{R}\)</span></a>
+  <li><a href="#mathbbn" id="toc-mathbbn" class="nav-link active" data-scroll-target="#mathbbn"><span class="math inline">\mathbb{N}</span></a></li>
+  <li><a href="#mathbbz" id="toc-mathbbz" class="nav-link" data-scroll-target="#mathbbz"><span class="math inline">\mathbb{Z}</span></a></li>
+  <li><a href="#mathbbq" id="toc-mathbbq" class="nav-link" data-scroll-target="#mathbbq"><span class="math inline">\mathbb{Q}</span></a></li>
+  <li><a href="#mathbbr" id="toc-mathbbr" class="nav-link" data-scroll-target="#mathbbr"><span class="math inline">\mathbb{R}</span></a>
   <ul class="collapse">
   <li><a href="#field-axioms" id="toc-field-axioms" class="nav-link" data-scroll-target="#field-axioms">Field Axioms</a></li>
   <li><a href="#order-axioms" id="toc-order-axioms" class="nav-link" data-scroll-target="#order-axioms">Order Axioms</a></li>
   <li><a href="#completeness-axiom" id="toc-completeness-axiom" class="nav-link" data-scroll-target="#completeness-axiom">Completeness Axiom</a></li>
   </ul></li>
-  <li><a href="#mathbbc" id="toc-mathbbc" class="nav-link" data-scroll-target="#mathbbc"><span class="math inline">\(\mathbb{C}\)</span></a></li>
+  <li><a href="#mathbbc" id="toc-mathbbc" class="nav-link" data-scroll-target="#mathbbc"><span class="math inline">\mathbb{C}</span></a></li>
   </ul>
 </nav>
     </div>
@@ -189,40 +204,40 @@ window.Quarto = {
 
 
 <section id="mathbbn" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbn"><span class="math inline">\(\mathbb{N}\)</span></h2>
-<p>There are 2 common ways to construct <span class="math inline">\(\mathbb{N}\)</span></p>
+<h2 class="anchored" data-anchor-id="mathbbn"><span class="math inline">\mathbb{N}</span></h2>
+<p>There are 2 common ways to construct <span class="math inline">\mathbb{N}</span></p>
 <ol type="1">
 <li>by <code>Peano Axioms</code></li>
-<li>by <code>Set Theory</code> (<span class="math inline">\(\emptyset\)</span> and <span class="math inline">\(\cup\)</span>)</li>
+<li>by <code>Set Theory</code> (<span class="math inline">\emptyset</span> and <span class="math inline">\cup</span>)</li>
 </ol>
-<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">\((e,S,\mathbb{N})\)</span> such that</p>
+<p>Dedekind–Peano Structure is the ternary tuple <span class="math inline">(e,S,\mathbb{N})</span> such that</p>
 <ul>
-<li><span class="math inline">\(e\)</span> is an element, <span class="math inline">\(S\)</span> is the a function, <span class="math inline">\(\mathbb{N}\)</span> is a set</li>
-<li><span class="math inline">\(e \in \mathbb{N}\)</span> (neutral element)</li>
-<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\in\mathbb{N}\)</span> (successor function is <span class="math inline">\(\mathbb{N}\rightarrow\mathbb{N}\)</span>)</li>
-<li><span class="math inline">\(\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)\)</span> (successor function is injection)</li>
-<li><span class="math inline">\(\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e\)</span> (the range of successor function exclude <span class="math inline">\(e\)</span>, no circle, <span class="math inline">\(e\)</span> is the first)</li>
-<li><span class="math inline">\(\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]\)</span> (induction)</li>
+<li><span class="math inline">e</span> is an element, <span class="math inline">S</span> is the a function, <span class="math inline">\mathbb{N}</span> is a set</li>
+<li><span class="math inline">e \in \mathbb{N}</span> (neutral element)</li>
+<li><span class="math inline">\forall a \in \mathbb{N}, S(a)\in\mathbb{N}</span> (successor function is <span class="math inline">\mathbb{N}\rightarrow\mathbb{N}</span>)</li>
+<li><span class="math inline">\forall a,b\in\mathbb{N}, (S(a)=S(b) \implies a=b)</span> (successor function is injection)</li>
+<li><span class="math inline">\forall a \in \mathbb{N}, S(a)\mathbb{N}eq e</span> (the range of successor function exclude <span class="math inline">e</span>, no circle, <span class="math inline">e</span> is the first)</li>
+<li><span class="math inline">\forall P,\{P(e) \land \forall k \in \mathbb{N},[P(k)\implies P(S(k))]\} \implies [\forall n \in \mathbb{N}, P(n)]</span> (induction)</li>
 </ul>
-<p>So, we can define <span class="math inline">\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\)</span></p>
+<p>So, we can define <span class="math inline">0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...</span></p>
 </section>
 <section id="mathbbz" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbz"><span class="math inline">\(\mathbb{Z}\)</span></h2>
-<p>By equivalence classes of ordered pairs of <span class="math inline">\(N\)</span>, we can construct <span class="math inline">\(\mathbb{Z}\)</span></p>
-<p><span class="math inline">\((a, b)\)</span> to express <span class="math inline">\(a - b\)</span></p>
-<p><span class="math display">\[
+<h2 class="anchored" data-anchor-id="mathbbz"><span class="math inline">\mathbb{Z}</span></h2>
+<p>By equivalence classes of ordered pairs of <span class="math inline">N</span>, we can construct <span class="math inline">\mathbb{Z}</span></p>
+<p><span class="math inline">(a, b)</span> to express <span class="math inline">a - b</span></p>
+<p><span class="math display">
 \mathbb{Z} = \{[(a,b)] \mid a, b \in \mathbb{N} \}
-\]</span></p>
+</span></p>
 </section>
 <section id="mathbbq" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbq"><span class="math inline">\(\mathbb{Q}\)</span></h2>
-<p><span class="math display">\[
+<h2 class="anchored" data-anchor-id="mathbbq"><span class="math inline">\mathbb{Q}</span></h2>
+<p><span class="math display">
 \mathbb{Q} = \{\frac{m}{n}  \mid m, n \in \mathbb{Z}  \}
-\]</span></p>
+</span></p>
 </section>
 <section id="mathbbr" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbr"><span class="math inline">\(\mathbb{R}\)</span></h2>
-<p>There are 3 common ways to construct <span class="math inline">\(\mathbb{R}\)</span></p>
+<h2 class="anchored" data-anchor-id="mathbbr"><span class="math inline">\mathbb{R}</span></h2>
+<p>There are 3 common ways to construct <span class="math inline">\mathbb{R}</span></p>
 <ol type="1">
 <li>by Axioms (<code>Field Axioms</code>, <code>Order Axioms</code> and <code>Completeness Axiom</code>)</li>
 <li>by <code>Cauchy Sequence</code></li>
@@ -243,10 +258,10 @@ window.Quarto = {
 </section>
 </section>
 <section id="mathbbc" class="level2">
-<h2 class="anchored" data-anchor-id="mathbbc"><span class="math inline">\(\mathbb{C}\)</span></h2>
-<p><span class="math display">\[
+<h2 class="anchored" data-anchor-id="mathbbc"><span class="math inline">\mathbb{C}</span></h2>
+<p><span class="math display">
 \mathbb{C} = \{a+bi \mid a, b \in \mathbb{R}, i^2 = -1  \}
-\]</span></p>
+</span></p>
 
 
 </section>
@@ -342,7 +357,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/UndefinedVoidNull\.github\.io\/");
+      var filterRegex = new RegExp('/' + window.location.host + '/');
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

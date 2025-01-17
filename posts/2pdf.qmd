@@ -1,0 +1,36 @@
+---
+title: "2pdf.ps1"
+date: "2025-01-10"
+categories: [Code, pwsh]
+---
+
+<https://manual.calibre-ebook.com/generated/en/ebook-convert.html>
+
+`2pdf.ps1`
+```powershell 
+param (
+    [string]$inputFile
+)
+
+if (-not $inputFile) {
+    Write-Host "Usage: 2pdf 'inputfile'"
+    exit 1
+}
+
+# Ensure the input file exists
+if (-not (Test-Path $inputFile)) {
+    Write-Host "Error: File '$inputFile' does not exist."
+    exit 1
+}
+
+# Determine the output file name by changing the extension to .pdf
+$outputFile = [System.IO.Path]::ChangeExtension($inputFile, "pdf")
+
+# Run ebook-convert
+try {
+    ebook-convert $inputFile $outputFile
+    Write-Host "Converted '$inputFile' to '$outputFile'"
+} catch {
+    Write-Host "Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format."
+}
+```

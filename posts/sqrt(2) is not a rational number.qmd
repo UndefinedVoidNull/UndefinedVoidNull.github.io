@@ -2,7 +2,6 @@
 title: "[Proof] sqrt(2) is not a rational number"
 date: "2025-01-07"
 categories: [Math]
-toc: true
 ---
 
 This classic proof is associated with
