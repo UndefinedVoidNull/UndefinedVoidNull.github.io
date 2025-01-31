@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="dcterms.date" content="2025-01-10">
+
+<title>Calc3 Notes – llf(x) is planting</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-ddd961a2510921635943dfbbd19534c4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <script>document.addEventListener("DOMContentLoaded", function () {
+ var mathElements = document.getElementsByClassName("math");
+ var macros = [];
+ for (var i = 0; i < mathElements.length; i++) {
+  var texText = mathElements[i].firstChild;
+  if (mathElements[i].tagName == "SPAN") {
+   katex.render(texText.data, mathElements[i], {
+    displayMode: mathElements[i].classList.contains('display'),
+    throwOnError: false,
+    macros: macros,
+    fleqn: false
+   });
+}}});
+  </script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top quarto-banner">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">llf(x) is planting</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html"> 
+<span class="menu-text">About</span></a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/UndefinedVoidNull/UndefinedVoidNull.github.io"> <i class="bi bi-github" role="img">
+</i> 
+<span class="menu-text"></span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<header id="title-block-header" class="quarto-title-block default page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-body">
+      <h1 class="title">Calc3 Notes</h1>
+                                <div class="quarto-categories">
+                <div class="quarto-category">Math</div>
+              </div>
+                  </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta">
+
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 10, 2025</p>
+      </div>
+    </div>
+    
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#vector-operations" id="toc-vector-operations" class="nav-link active" data-scroll-target="#vector-operations">Vector Operations</a></li>
+  <li><a href="#dot-product-evaluate-works-perp-test" id="toc-dot-product-evaluate-works-perp-test" class="nav-link" data-scroll-target="#dot-product-evaluate-works-perp-test">Dot Product (Evaluate works, Perp test)</a></li>
+  <li><a href="#cross-product" id="toc-cross-product" class="nav-link" data-scroll-target="#cross-product">Cross Product</a>
+  <ul class="collapse">
+  <li><a href="#box-product" id="toc-box-product" class="nav-link" data-scroll-target="#box-product">Box Product</a></li>
+  <li><a href="#projection-and-scalar-projection" id="toc-projection-and-scalar-projection" class="nav-link" data-scroll-target="#projection-and-scalar-projection">Projection and Scalar Projection</a></li>
+  </ul></li>
+  <li><a href="#line-plane-curve-and-surface-equations" id="toc-line-plane-curve-and-surface-equations" class="nav-link" data-scroll-target="#line-plane-curve-and-surface-equations">Line, Plane, Curve and Surface Equations</a>
+  <ul class="collapse">
+  <li><a href="#plane" id="toc-plane" class="nav-link" data-scroll-target="#plane">Plane</a></li>
+  <li><a href="#line" id="toc-line" class="nav-link" data-scroll-target="#line">Line</a></li>
+  <li><a href="#parameterization-of-line-dot-direction-form" id="toc-parameterization-of-line-dot-direction-form" class="nav-link" data-scroll-target="#parameterization-of-line-dot-direction-form">Parameterization of line (dot-direction form)</a>
+  <ul class="collapse">
+  <li><a href="#surface" id="toc-surface" class="nav-link" data-scroll-target="#surface">Surface</a></li>
+  <li><a href="#curve" id="toc-curve" class="nav-link" data-scroll-target="#curve">Curve</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#arc-length-unit-tangent-vector-unit-normal-vector-binormal-vector-curvature-and-torsion" id="toc-arc-length-unit-tangent-vector-unit-normal-vector-binormal-vector-curvature-and-torsion" class="nav-link" data-scroll-target="#arc-length-unit-tangent-vector-unit-normal-vector-binormal-vector-curvature-and-torsion">Arc Length; (Unit) Tangent Vector, (Unit) Normal Vector, Binormal Vector; Curvature and Torsion</a></li>
+  <li><a href="#partial-derivative-chain-rule-level-curve-gradient" id="toc-partial-derivative-chain-rule-level-curve-gradient" class="nav-link" data-scroll-target="#partial-derivative-chain-rule-level-curve-gradient">Partial Derivative, Chain Rule, Level Curve, Gradient</a></li>
+  <li><a href="#vector-field-line-integral-surface-integral" id="toc-vector-field-line-integral-surface-integral" class="nav-link" data-scroll-target="#vector-field-line-integral-surface-integral">Vector Field, Line Integral, Surface Integral</a>
+  <ul class="collapse">
+  <li><a href="#potential-functions-and-conservative" id="toc-potential-functions-and-conservative" class="nav-link" data-scroll-target="#potential-functions-and-conservative">Potential Functions and Conservative</a></li>
+  <li><a href="#stokes-thm" id="toc-stokes-thm" class="nav-link" data-scroll-target="#stokes-thm">Stoke’s Thm</a></li>
+  <li><a href="#divergence-thm" id="toc-divergence-thm" class="nav-link" data-scroll-target="#divergence-thm">Divergence Thm</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content quarto-banner-title-block" id="quarto-document-content">
+
+
+
+
+
+<section id="vector-operations" class="level1">
+<h1>Vector Operations</h1>
+<p><span class="math display">
+\begin{align*}
+&amp;\vec{u} =&lt; u_1 ,u_2 ,u_3&gt; \\
+&amp;\vec{v} =&lt; v_1 ,v_2 ,\ v_3&gt; \\
+&amp;|\vec{u} |=\sqrt{u_1^2 +u_2^2 +u_3^2}\\
+&amp;\hat{u} =\frac{\vec{u}}{|\vec{u}|}\\
+&amp;\vec{u} +\vec{v} =&lt; u_{1} +v_{1} ,u_{2} +v_{2} ,u_{3} +v_{3}  &gt;\\
+&amp;\vec{u} -\vec{v} =\vec{u} +( -\vec{v}) =&lt; u_{1} -v_{1} ,u_{2} -v_{2} ,u_{3} -v_{3}  &gt;\\
+&amp;\end{align*}
+</span></p>
+</section>
+<section id="dot-product-evaluate-works-perp-test" class="level1">
+<h1>Dot Product (Evaluate works, Perp test)</h1>
+<p><span class="math display">
+\begin{align*}
+\vec{u} \cdotp \vec{v}
+&amp;=|\vec{u} |\ |\vec{v} |\ cos( \theta ) \\
+&amp;=u_{1} v_{1} +u_{2} v_{2} +u_{3} v_{3} \ ( Cosine\ Rule)
+\end{align*}
+</span></p>
+</section>
+<section id="cross-product" class="level1">
+<h1>Cross Product</h1>
+<p>Generate a vector perp to both two vectors, Parallel test, Evaluate Area</p>
+<p><span class="math display">
+\vec{u} \times \vec{v} =\ \begin{vmatrix}
+\hat{i} &amp; \hat{j} &amp; \hat{k}\\
+u_{1} &amp; u_{2} &amp; u_{3}\\
+v_{1} &amp; v_{2} &amp; v_{3}
+\end{vmatrix}\\
+</span></p>
+<p><span class="math display">
+\begin{align*}
+|\vec{u} \times \vec{v} |
+&amp;=|\vec{u} |\ |\vec{v} |\ sin( \theta )\\
+&amp;=\text{Area\ of\ Parallelogram}\\
+&amp;=\text{2 Times Area of Triangle}
+\end{align*}
+</span></p>
+<section id="box-product" class="level2">
+<h2 class="anchored" data-anchor-id="box-product">Box Product</h2>
+</section>
+<section id="projection-and-scalar-projection" class="level2">
+<h2 class="anchored" data-anchor-id="projection-and-scalar-projection">Projection and Scalar Projection</h2>
+$$
+<span class="math display">\begin{aligned}
+&amp;Proj_{\vec{u}}\vec{v}=|\vec{v}|cos(\theta)\widehat{u}=|\vec{v}|\frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}\frac{\vec{u}}{|\vec{u}|}=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|^2}\vec{u}\\
+
+&amp;Scal_{\vec{u}}\vec{v}=|\vec{v}|\cos(\theta)=|\vec{v}|\frac{\vec{u}\cdot\vec{v}}{|\vec{u}||\vec{v}|}=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|}\\
+
+&amp;|Proj_{\vec{u}}\vec{v}|(maginititude)=|Scal_{\vec{u}}\vec{v}| (absvalue)
+\end{aligned}</span>
+<p>$$</p>
+</section>
+</section>
+<section id="line-plane-curve-and-surface-equations" class="level1">
+<h1>Line, Plane, Curve and Surface Equations</h1>
+<section id="plane" class="level2">
+<h2 class="anchored" data-anchor-id="plane">Plane</h2>
+<p><span class="math display">
+\begin{align*}
+&amp;\vec{n} \ =\ &lt; a,b,c &gt;\ ( normal\ vector) ,\ P=( x_{0} ,y_{0} ,z_{0}) ,\ Q=( x,y,z)\\
+&amp;\overrightarrow{PQ} \ =\ &lt; x-x_{0} ,y-y_{0} ,\ z-z_{0}  &gt;\ ( a\ vector\ in\ the\ plane)\\
+&amp;\vec{n} \cdotp \overrightarrow{PQ} =0\ ( orthognal)\\
+&amp;\Longrightarrow Dot-Normal\ Form:\ a( x-x_{0}) +b( y-y_{0}) +c( z-z_{0}) =0\ \\
+&amp;\Longrightarrow General\ Form:\ ax+by+cz=d\ ( d\ is\ a\ constant) \ \\
+\end{align*}
+</span></p>
+</section>
+<section id="line" class="level2">
+<h2 class="anchored" data-anchor-id="line">Line</h2>
+<p>Take a line as the intersection of two planes ( general form) <span class="math display">
+\begin{cases}
+a_{1} x+b_{1} y+c_{1} z+d_{1} =0\\
+a_{1} x+b_{1} y+c_{1} z+d_{1} =0
+\end{cases}
+</span></p>
+</section>
+<section id="parameterization-of-line-dot-direction-form" class="level2">
+<h2 class="anchored" data-anchor-id="parameterization-of-line-dot-direction-form">Parameterization of line (dot-direction form)</h2>
+<p><span class="math display">
+\vec{v} = &lt; a,b,c &gt; \text{(parallel to the line)}\\
+r( t) =\ &lt; x_{0} +at,\ y_{0} +bt,\ z_{0} +ct &gt;
+</span></p>
+<section id="surface" class="level3">
+<h3 class="anchored" data-anchor-id="surface">Surface</h3>
+<p>Explicit Form: <span class="math inline">z=f( x,y)</span> Implicit Form: <span class="math inline">F(x,y,z)=0</span> <span class="math inline">\vec{r}( t) =\, &lt; x( u,v) ,y( u,v) ,z( u,v)&gt;</span></p>
+</section>
+<section id="curve" class="level3">
+<h3 class="anchored" data-anchor-id="curve">Curve</h3>
+<p>See curve as the intersection of two surfaces <span class="math display">
+\begin{align*}
+\begin{cases}
+F( x,y,z) =0\\
+G( x,y,z) =0
+\end{cases}\\
+\vec{r}( t) =\, &lt; x(t) ,y(t) ,z(t)&gt;
+\end{align*}
+</span></p>
+</section>
+</section>
+</section>
+<section id="arc-length-unit-tangent-vector-unit-normal-vector-binormal-vector-curvature-and-torsion" class="level1">
+<h1>Arc Length; (Unit) Tangent Vector, (Unit) Normal Vector, Binormal Vector; Curvature and Torsion</h1>
+<p>Arc Length: <span class="math inline">s= \int _{a}^{t} |\vec{r} '( t) |\ dt=\int _{a}^{b} |\vec{r} '( t) |\ dt</span></p>
+<p>Unit Tangent Vector: <span class="math inline">\vec{T}( t) =\frac{\vec{r} '( t)}{|\vec{r} '( t) |}</span></p>
+<p>Unit Normal Vector: <span class="math inline">\vec{N}( t) =\frac{\vec{T} '( t)}{|\vec{T} '( t) |}</span> Unit Binormal Vector: <span class="math inline">\vec{B}( t) =\vec{T} \times \vec{N}</span></p>
+<p>Curvature: <span class="math inline">\kappa =\left| \frac{d\vec{T}}{ds}\right|</span></p>
+<p>Torsion: <span class="math display">
+\begin{align*}
+&amp;\frac{d\vec{B}}{ds} =\frac{d(\vec{T} \times \overrightarrow{N)}}{ds}\\
+&amp;=\frac{d\vec{T}}{ds} \times \vec{N} +\vec{T} \times \frac{d\vec{N}}{ds}\\
+&amp;=\ \kappa \vec{N} \times \vec{N} +\vec{T} \times \frac{d\vec{N}}{ds} \ \ by\ \vec{N} =\frac{\frac{d\vec{T}}{ds}}{|\frac{d\vec{T}}{ds} |} =\frac{1}{\kappa }\frac{d\vec{T}}{ds} \Longrightarrow \frac{d\vec{T}}{ds} \\
+&amp;=\kappa \vec{N}\\
+&amp;=\vec{T} \times \frac{d\vec{N}}{ds} \ \ by\ \kappa \vec{N} \times \vec{N} =0\ ( parallel)\\
+&amp;\Longrightarrow \frac{d\vec{B}}{ds} =\vec{T} \times \frac{d\vec{N}}{ds}\\
+&amp;\Longrightarrow \\
+&amp;( 1) \ \frac{d\vec{B}}{ds} \perp \vec{T} \ by\ cross\ product\\
+&amp;( 2) \ \frac{d\vec{B}}{ds} \perp \vec{B} \ by\ |\vec{B} |=1( constant) \Longrightarrow \vec{B} '\cdotp \vec{B} =0\ like\ tangent\ line\ of\ circle\perp radius\\
+&amp;\Longrightarrow \frac{d\vec{B}}{ds} //\ \vec{T} \times \vec{B}\\
+&amp;\Longrightarrow \frac{d\vec{B}}{ds} //\ \vec{N} \ \ {\displaystyle by\ \ \vec{T} \times \vec{B} \ //\ \vec{N}}\\
+&amp;\Longrightarrow \frac{d\vec{B}}{ds} =-\tau \vec{N} \ ( negative\ by\ convention)\\
+&amp;\Longrightarrow \ -\frac{d\vec{B}}{ds} \cdotp \vec{N} =\tau \vec{N} \cdotp \vec{N}\\
+&amp;\Longrightarrow \tau =\ -\frac{d\vec{B}}{ds} \cdotp \vec{N} \ \ by\ \vec{N} \cdotp \vec{N} \ =1\\
+&amp;\Longrightarrow |\tau |=\left| -\frac{d\vec{B}}{ds} \cdotp \vec{N}\right| =\left| \frac{d\vec{B}}{ds}\right| |\vec{N} |\ cos( \theta ) \ \xRightarrow[|\vec{N} |=1]{\theta =0}\left| \frac{d\vec{B}}{ds}\right| \\
+\end{align*}
+</span> We call <span class="math inline">\kappa</span> curvature, <span class="math inline">\tau</span> torsion.</p>
+</section>
+<section id="partial-derivative-chain-rule-level-curve-gradient" class="level1">
+<h1>Partial Derivative, Chain Rule, Level Curve, Gradient</h1>
+<p>Crtical Points, Local Min/Max (Point), Saddle Point, Abs Min/Max, Lagrange Multiplier Crtical Points: <span class="math inline">\ f_{x} =f_{y} =0\ or\ f_{x} \ DNE\ \ or\ f_{y} \ DNE</span></p>
+</section>
+<section id="vector-field-line-integral-surface-integral" class="level1">
+<h1>Vector Field, Line Integral, Surface Integral</h1>
+<section id="potential-functions-and-conservative" class="level2">
+<h2 class="anchored" data-anchor-id="potential-functions-and-conservative">Potential Functions and Conservative</h2>
+<p>If exist function <span class="math inline">\phi</span> such that <span class="math inline">\vec{F}  = \nabla \phi</span> , we say function <span class="math inline">\vec{F}</span> is conservative, and call <span class="math inline">\phi</span> the potential function of gradient vector field <span class="math inline">\vec{F}</span></p>
+<p>Conservative Discriminator <span class="math display">
+\vec{F} =\, &lt; f,\ g,\ h &gt;,
+</span> If <span class="math inline">f_{y} =g_{x}</span> and <span class="math inline">f_{z} =h_{x}</span> and $ g_{z} =h_{y}$, then vector field <span class="math inline">vec{F}</span> is conservative</p>
+<p>Fundamental Thm of Line Integral If <span class="math inline">\vec{F} = &lt; f, g, h &gt;</span> is conservative, then Circulation=<span class="math inline">\oint _{a}^{b}\vec{F} \cdotp \vec{T} \ ds=\phi ( b) -\phi ( a)\\</span></p>
+<p>Definition of <span class="math inline">\nabla</span> Operator <span class="math display">\nabla \ :=\ &lt; \frac{\partial \ }{\partial x} ,\ \frac{\partial \ }{\partial y} ,\ \frac{\partial \ }{\partial z}  &gt;\\</span></p>
+<p>Definition of Curl and Divergence Curl(<span class="math inline">\vec{F}</span>) = <span class="math inline">\nabla \times \vec{F}</span> Divergence(<span class="math inline">\vec{F}</span>) =<span class="math inline">\nabla \cdotp \vec{F}</span></p>
+<p>Green’s Thm ( special case of Stoke’s Thm,when the surface is flat)</p>
+<p>Circulation= <span class="math display">\oint _{C}\vec{F} \cdotp \vec{T} \ ds=\iint _{R} Curl\ \vec{F} \ dA\ \ ( Curl\ Form)\\</span></p>
+<p>Flux= <span class="math display">
+\oint _{C}\vec{F} \cdotp \vec{N} \ ds\ =\iint _{R} Divergence\ \vec{F} \ dA\ ( Divergence\ Form)\\
+</span></p>
+</section>
+<section id="stokes-thm" class="level2">
+<h2 class="anchored" data-anchor-id="stokes-thm">Stoke’s Thm</h2>
+<p><span class="math display">
+\begin{align*}
+&amp;\oint _{C}\vec{F} \cdotp \vec{T} \ ds\ ( circulation\ across\ boundary)\\
+&amp;=\iint _{S} Curl(\vec{F}) \cdotp \vec{N} \ dA\ ( surface\ intergal)\\
+&amp;=\iint _{S} Curl(\vec{F}) \cdotp \left(\overrightarrow{t_{u}} \times \overrightarrow{t_{v}}\right) \ dA\\
+\end{align*}
+</span></p>
+</section>
+<section id="divergence-thm" class="level2">
+<h2 class="anchored" data-anchor-id="divergence-thm">Divergence Thm</h2>
+<p><span class="math display">
+\oiint_S \vec{F} \cdotp \vec{N} \ dS=\iiint _{D} Div(\vec{F}) \ dV
+</span></p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp("https:\/\/llfx\.lol");
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,17 +1,22 @@
 ---
-title: "2 Types of Proof"
-date: "2025-01-10"
+title: "How to write a proof"
+date: "2025-02-01"
 categories: [Math]
 ---
 
+Conditional Proof
+Proof by Cases
+Proof by Contradiction
+Proof by Induction
+
 ## Intro
 
-There are two common types of proofs
+There are 3 common types of proofs
 
 1. If $P$, then $Q$. ($P \implies Q$)
-2. $P$ iff $Q$ ($P \iff Q$)
+2. $P$ iff $Q$ ($P \iff Q$) (`iff` stands for `if and only if`)
+3. If $P$ then (a), (b) and (c) are equivalent
 
-Remark: `iff` stands for `if and only if`
 
 ## If $P$, then $Q$
 There are two ways to prove

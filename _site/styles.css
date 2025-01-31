@@ -3,3 +3,13 @@
     display: none;
 }
   
+blockquote {
+    border-left-color: skyblue;
+}
+
+/* li::marker {
+    content: "• "; 
+    color: #cbd5e1;   
+    font-size: 1em; 
+} */
+  

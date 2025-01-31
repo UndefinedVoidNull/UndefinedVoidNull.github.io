@@ -56,18 +56,102 @@
     "text": "被打, 被欺负, 被误会, 被欺骗, 被造谣\n饥饿，美食\n没睡够 😴\n看画, 看书精彩内容, 音乐 🎨📚🎶\n和朋友玩，游戏\n解出难题，理解难题，复习，好成绩 🧩📚🏆\n面向个人需求的代码 💻\nddl，拖延，考试 ⏳📅📝\n聊天 💬\n晚上 🌙\n家庭关系, 朋友关系, 男女关系 👨‍👩‍👧‍👦👫💑\naha moment，一语点醒梦中人 💡\n生病"
   },
   {
-    "objectID": "posts/Scrcpy Wireless Android Casting.html",
-    "href": "posts/Scrcpy Wireless Android Casting.html",
-    "title": "Scrcpy Wireless Android Casting",
+    "objectID": "posts/sqrt(2) is not a rational number.html",
+    "href": "posts/sqrt(2) is not a rational number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
     "section": "",
-    "text": "Escrcpy\nMaybe Escrcpy is a better solution https://github.com/viarotel-org/escrcpy\n\n\nConnect to the phone\n\nDownload and unzip scrcpy (If your are using Windows, download scrcpy-win64-$version.zip) https://github.com/Genymobile/scrcpy/releases/\nConnect phone to PC via USB cable\nMake sure turn on the USB debugging on your phone\nOpen terminal inside the scrcpy folder\n./adb devices\n./adb tcpip 5555\nUnplug USB cable\nGo to settings search ip in settings and remember the ip address (Make sure your phone and PC are in the same LAN i.e. connect to same WIFI)\n./adb connect 192.168.1.xx:5555\n./scrcpy.exe\nIf you want to disconnect, first use ./adb devices to check the ip address and port. Then ./adb disconnect 192.168.1.xx:5555\n\n\n\nUsage\n\nRight Click: Back\nMiddle Click: Home\nYou can use clipboard across PC and your phone\nCreate a desktop shortcut for scrcpy.exe (Maybe rename it to My Phone)\nIf scrcpy doesn’t support audio forwarding for your phone. You can try Bluetooth Audio Receiver\nYou can add the scrcpy folder path to the PATH environmental variable so that you can directly use adb and scrcpy commands in the terminal\nhttps://github.com/Genymobile/scrcpy"
+    "text": "This classic proof is associated with\n\\sqrt{2} is not a rational number."
   },
   {
-    "objectID": "posts/Quadratic Formula.html",
-    "href": "posts/Quadratic Formula.html",
-    "title": "[Proof] Quadratic Formula",
+    "objectID": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "href": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\nSuppose \\sqrt{ 2 } is rational to reach a contradiction\nSo, \n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\nAnd we also suppose \\frac{m}{n} is in lowest terms\nTo say \\frac{m}{n} in lowest terms means if an integer d divides m and d divides n, then d = 1 (i.e. GCD(m,n) =1)\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (GCD)\nTake square on both sides and simplify\n\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\nThus, m^2 is even so that m is even (It is easy to prove by its contrapositive)\nSo, \\exists k\\in \\mathbb{Z}, m=2k\nSubstitute m=2k back \n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\nThus, n^2 is even so that n is even.\nSince m is even and n is even, they have common factor 2 which means \\frac{m}{n} isn’t in lowest terms.\nBut we assume \\frac{m}{n} is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\sqrt{2} is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#summary",
+    "href": "posts/sqrt(2) is not a rational number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "href": "posts/sqrt(2) is not a rational number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+  },
+  {
+    "objectID": "posts/Quarto Markdown (.qmd) Testing.html",
+    "href": "posts/Quarto Markdown (.qmd) Testing.html",
+    "title": "Quarto Markdown (.qmd) Testing",
     "section": "",
-    "text": "\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\\end{align*}\n\nTherefore,\n\nIf b^2-4ac&gt;0, there are two real roots\nIf b^2-4ac=0, there is only one real root (or two repeated roots)\nIf b^2-4ac&lt;0, there is no real root (or two complex conjugate root)"
+    "text": "博客标签设计"
+  },
+  {
+    "objectID": "posts/Quarto Markdown (.qmd) Testing.html#h2",
+    "href": "posts/Quarto Markdown (.qmd) Testing.html#h2",
+    "title": "Quarto Markdown (.qmd) Testing",
+    "section": "H2",
+    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Caculus\n\n    \\int_a^b f'(x) \\, dx = f(b) - f(a)\n    \n\nThm: Multiple Lines Theorem\n\n\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\n\n\n\n\n\n\nNote\n\n\n\na \\neq 0\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\nalt text\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+  },
+  {
+    "objectID": "posts/Math Playground.html",
+    "href": "posts/Math Playground.html",
+    "title": "Math Playground",
+    "section": "",
+    "text": "TODO: Math Review # Anki Math::Basic - Set theory - Logic - Binomial Thm - Pascal’s Triangle - n choose k - n permute k - Limit - 2 important limits - Derivative, definition, common - Integral - 高斯消元法 - Matrix Multiplication - Inverse - Rank - EigenValue - Probability - Stat\n$ \\begin{align*}\nax^2\n\\end{align*} $"
+  },
+  {
+    "objectID": "posts/How to write a proof.html",
+    "href": "posts/How to write a proof.html",
+    "title": "How to write a proof",
+    "section": "",
+    "text": "Conditional Proof Proof by Cases Proof by Contradiction Proof by Induction"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#intro",
+    "href": "posts/How to write a proof.html#intro",
+    "title": "How to write a proof",
+    "section": "Intro",
+    "text": "Intro\nThere are 3 common types of proofs\n\nIf P, then Q. (P \\implies Q)\nP iff Q (P \\iff Q) (iff stands for if and only if)\nIf P then (a), (b) and (c) are equivalent"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#if-p-then-q",
+    "href": "posts/How to write a proof.html#if-p-then-q",
+    "title": "How to write a proof",
+    "section": "If P, then Q",
+    "text": "If P, then Q\nThere are two ways to prove\n\nConditional Proof\nProof by Contradiction\nProof by Contrapositive\nProof by Induction"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#p-iff-q",
+    "href": "posts/How to write a proof.html#p-iff-q",
+    "title": "How to write a proof",
+    "section": "P iff Q",
+    "text": "P iff Q\nThere are two ways to prove\n\nProve P \\implies Q and then prove Q \\implies P (First prove forward \\implies and then prove backward \\impliedby)\nA chain of iff \n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#where-to-start",
+    "href": "posts/How to write a proof.html#where-to-start",
+    "title": "How to write a proof",
+    "section": "Where to start",
+    "text": "Where to start\n\nStart from P (Which part of P?)\nStart from Q (Which part of Q?)\nStart from P and Q at the same time (Which part of P, Q?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#the-first-step-and-further-steps",
+    "href": "posts/How to write a proof.html#the-first-step-and-further-steps",
+    "title": "How to write a proof",
+    "section": "The first step and further steps?",
+    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
+  },
+  {
+    "objectID": "posts/How to write a proof.html#change-the-focus-point",
+    "href": "posts/How to write a proof.html#change-the-focus-point",
+    "title": "How to write a proof",
+    "section": "Change the focus point",
+    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
   },
   {
     "objectID": "posts/Construct N, Z, Q, R, C.html",
@@ -110,76 +194,6 @@
     "title": "Construct N, Z, Q, R, C",
     "section": "\\mathbb{C}",
     "text": "\\mathbb{C}\n\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}"
-  },
-  {
-    "objectID": "posts/2pdf.html",
-    "href": "posts/2pdf.html",
-    "title": "2pdf.ps1",
-    "section": "",
-    "text": "https://manual.calibre-ebook.com/generated/en/ebook-convert.html\n2pdf.ps1\nparam (\n    [string]$inputFile\n)\n\nif (-not $inputFile) {\n    Write-Host \"Usage: 2pdf 'inputfile'\"\n    exit 1\n}\n\n# Ensure the input file exists\nif (-not (Test-Path $inputFile)) {\n    Write-Host \"Error: File '$inputFile' does not exist.\"\n    exit 1\n}\n\n# Determine the output file name by changing the extension to .pdf\n$outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n# Run ebook-convert\ntry {\n    ebook-convert $inputFile $outputFile\n    Write-Host \"Converted '$inputFile' to '$outputFile'\"\n} catch {\n    Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n}"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "llf(x) is planting",
-    "section": "",
-    "text": "Scrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n个人史情绪波动时刻与场景\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nConstruct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2 Types of Proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n2pdf.ps1\n\n\n\n\n\n\nCode\n\n\npwsh\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalc3 Notes\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "llf(x)",
-    "section": "",
-    "text": "🐲🐍🐴🐐🐒🐔🐶🐷🐭🐮🐯🐰🏝️🏖️🏜️🌄🌅🥑🍉🙏"
-  },
-  {
-    "objectID": "posts/2 types of proof.html",
-    "href": "posts/2 types of proof.html",
-    "title": "2 Types of Proof",
-    "section": "",
-    "text": "There are two common types of proofs\n\nIf P, then Q. (P \\implies Q)\nP iff Q (P \\iff Q)\n\nRemark: iff stands for if and only if"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#intro",
-    "href": "posts/2 types of proof.html#intro",
-    "title": "2 Types of Proof",
-    "section": "",
-    "text": "There are two common types of proofs\n\nIf P, then Q. (P \\implies Q)\nP iff Q (P \\iff Q)\n\nRemark: iff stands for if and only if"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#if-p-then-q",
-    "href": "posts/2 types of proof.html#if-p-then-q",
-    "title": "2 Types of Proof",
-    "section": "If P, then Q",
-    "text": "If P, then Q\nThere are two ways to prove\n\nConditional Proof\nProof by Contradiction\nProof by Contrapositive\nProof by Induction"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#p-iff-q",
-    "href": "posts/2 types of proof.html#p-iff-q",
-    "title": "2 Types of Proof",
-    "section": "P iff Q",
-    "text": "P iff Q\nThere are two ways to prove\n\nProve P \\implies Q and then prove Q \\implies P (First prove forward \\implies and then prove backward \\impliedby)\nA chain of iff \n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#where-to-start",
-    "href": "posts/2 types of proof.html#where-to-start",
-    "title": "2 Types of Proof",
-    "section": "Where to start",
-    "text": "Where to start\n\nStart from P (Which part of P?)\nStart from Q (Which part of Q?)\nStart from P and Q at the same time (Which part of P, Q?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#the-first-step-and-further-steps",
-    "href": "posts/2 types of proof.html#the-first-step-and-further-steps",
-    "title": "2 Types of Proof",
-    "section": "The first step and further steps?",
-    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
-  },
-  {
-    "objectID": "posts/2 types of proof.html#change-the-focus-point",
-    "href": "posts/2 types of proof.html#change-the-focus-point",
-    "title": "2 Types of Proof",
-    "section": "Change the focus point",
-    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
   },
   {
     "objectID": "posts/Calc3 Notes.html",
@@ -245,6 +259,34 @@
     "text": "Divergence Thm\n\n\\oiint_S \\vec{F} \\cdotp \\vec{N} \\ dS=\\iiint _{D} Div(\\vec{F}) \\ dV"
   },
   {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "llf(x) is planting",
+    "section": "",
+    "text": "Binomial Option Pricing: Chap 1\n\n\n\n\n\n\nMath\n\n\nFinance\n\n\n\n\n\n\n\n\n\nFeb 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nHow to write a proof\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nFeb 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Line Tools\n\n\n\n\n\n\nCode\n\n\nPowershell\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n三类CSS\n\n\n\n\n\n\nCode\n\n\nCSS\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMath Playground\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 23, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nInequalities\n\n\n\n\n\n\nMath\n\n\nInequality\n\n\n\n\n\n\n\n\n\nJan 22, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nScrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n个人史情绪波动时刻与场景\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nConstruct N, Z, Q, R, C\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 11, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCalc3 Notes\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 10, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Geometric Series\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] Quadratic Formula\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n[Proof] sqrt(2) is not a rational number\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n群 环 域 模\n\n\n\n\n\n\nMath\n\n\n\n\n\n\n\n\n\nJan 7, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n初探SageMath\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n博客标签设计\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\n如何高效获取「长视频」的关键信息\n\n\n\n\n\n\nWorkflow\n\n\nTool\n\n\n\n\n\n\n\n\n\nJan 3, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "llf(x)",
+    "section": "",
+    "text": "🐲🐍🐴🐐🐒🐔🐶🐷🐭🐮🐯🐰🏝️🏖️🏜️🌄🌅🥑🍉🙏"
+  },
+  {
+    "objectID": "posts/Binomial Option Pricing.html",
+    "href": "posts/Binomial Option Pricing.html",
+    "title": "Binomial Option Pricing: Chap 1",
+    "section": "",
+    "text": "Intro\nBinomial Model\nFair Price\nArbitrage\nReplicating a portfolio\n\n\nBasic Concepts\nStriking Price K\nCall Option\nPut Option\nForward Contract\nLong, Short Position Buy, Sell Lend, Borrow\n\n\nVariables and Parameters\n\nt\nX_n: ?\n\\Delta_n\nB_n\nS_n\nV_n\nK\nu\nd\nr\n(1+r)\n\\frac{1}{1+r}\np\n\\tilde{p}\nq\n\\tilde{q}\n\n\n\nEvolution\n\n\nBackwards\n\n\nNo Arbitrage Assumption\n\n0 &lt; d &lt; 1+r &lt; u\n\nChap 2 # Convex Function # Jensen’s Inequality"
+  },
+  {
+    "objectID": "posts/Command Line Tools.html",
+    "href": "posts/Command Line Tools.html",
+    "title": "Command Line Tools",
+    "section": "",
+    "text": "1. Setup\n\nPowershell 7\n\nhttps://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows\nnotepad $profile or code $profile\n\nhttps://gist.github.com/UndefinedVoidNull/055e23f8d9df82cf650d4e5f0a8f6f06\nSet-Alias -Name ALIAS_NAME -Value COMMAND -Scope Global\n\n\nWindows Terminal\n\nSet AHK Shortcut: **Win + to open wt.exe** ```ahk #::Run, wt.exe ```\n\nMSYS2\n\nhttps://www.msys2.org/\nAdd C:\\msys64\\usr\\bin to $env:path\n\nStarship\n\nhttps://starship.rs/\nConfig:\n\nWin+R: %USERPROFILE%\\.config\\starship.toml\nhttps://gist.github.com/UndefinedVoidNull/24cd0afd8bab03950723eebcc4a5806b\n\n\nOn-My-Posh (Not Recommend)\n\nhttps://ohmyposh.dev/\n\n\n\n\n2. Basic Tools\n\nPackage Manager\n\nwinget\nchoco\nscoop\n\nlsd (ls)\n\nhttps://github.com/lsd-rs/lsd\n\nz zoxide (smarter cd)\n\nhttps://github.com/ajeetdsouza/zoxide\n\nrg ripgrep (grep)\n\nhttps://github.com/BurntSushi/ripgrep\n\nbat (cat)\n\nhttps://github.com/sharkdp/bat\n\nfd (find)\n\nhttps://github.com/sharkdp/fd\n\nfzf (fuzzy find)\n\nhttps://github.com/junegunn/fzf\n\ndua Disk Usage Analyzer (du)\n\nhttps://github.com/Byron/dua-cli\n\ngsudo (sudo)\n\nhttps://github.com/gerardog/gsudo\n\nicdiff Improved colored diff (diff)\n\nhttps://github.com/jeffkaufman/icdiff\n\nnew (New-Item) (Paste into $profile)\n\nfunction new {\n    param(\n        [Parameter(Mandatory)]\n        [string]$Name\n    )\n\n    if ($Name -match '\\.') {\n        # Contains a dot, assume it's a file\n        New-Item -Path $Name -ItemType File -Force\n    } else {\n        # No dot, assume it's a directory\n        New-Item -Path $Name -ItemType Directory -Force\n    }\n}\n\n\n3. Application Tools\n\nconda Anaconda\n\nhttps://www.anaconda.com/download-success\n\ngh GitHub CLI\n\nhttps://cli.github.com/\n\nffmpeg\n\nhttps://www.ffmpeg.org/\n\nmagick ImageMagick\n\nhttps://imagemagick.org/script/command-line-tools.php\n\nhttp httpie (curl)\n\nhttps://github.com/httpie/cli\n\nyt-dlp\n\nhttps://github.com/yt-dlp/yt-dlp\n\naria2c\n\nhttps://aria2.github.io/\n\ncalibre\n\nhttps://calibre-ebook.com/download_windows\nhttps://manual.calibre-ebook.com/generated/en/cli-index.html\nebook-convert\n\nhttps://manual.calibre-ebook.com/generated/en/ebook-convert.html\n\n2pdf (Paste into $profile)\n\nfunction 2pdf {\n  param (\n      [string]$inputFile\n  )\n\n  if (-not $inputFile) {\n      Write-Host \"Usage: 2pdf 'inputfile'\"\n      return\n  }\n\n  # Ensure the input file exists\n  if (-not (Test-Path $inputFile)) {\n      Write-Host \"Error: File '$inputFile' does not exist.\"\n      return\n  }\n\n  # Determine the output file name by changing the extension to .pdf\n  $outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n  # Run ebook-convert\n  try {\n      ebook-convert $inputFile $outputFile\n      Write-Host \"Converted '$inputFile' to '$outputFile'\"\n  } catch {\n      Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n  }\n}\n\n\n\n4. Commons\n\ncode (Open With Visual Studio Code)\nh (history)\ncls (clear)\npwd print current directory\nipconfig /flushdns\nnetsh interface ip show dns\nnetsh wlan show profiles\nnetsh wlan show profile name=\"Wi-Fi_Name\" key=clear\nping\nssh\nssh-keygen\nftp\nrobocopy\nps Get-Process\nkill Stop-Process\ngc -head 10 Get-Content (head)\ngc -tail 10 Get-Content (tail)\nRename-Item old_name new_name (mv)\nGet-Alias\n\n\n\n5. Git\nhttps://git-scm.com/downloads/win\n\n.git\n.gitignore\n\ngit init\ngit add # add files to staging area\ngit commit -m \"...\" # commit to local repo\n\ngit clone\ngit push origin main\ngit push origin\ngit push\ngit pull # fetch and merge\ngit fetch\ngit merge\ngit rebase\n\ngit branch\ngit checkout\ngit merge\n\ngit status\ngit log\ngit diff\n\n\n6. Win + R\n\nshell:startup\n%USERPROFILE%\n%USERPROFILE%/Desktop\n%USERPROFILE%/Downloads\n%USERPROFILE%/Documents\n%USERPROFILE%/Pictures\n%ALLUSERSPROFILE%\n%APPDATA%\n%LOCALAPPDATA%\n%WINDIR%\n%WINDIR%\\system32\n%WINDIR%\\system32\\drivers\\etc\\hosts\n%PROGRAMFILES%\n%PROGRAMFILES(X86)%\n%TEMP%"
+  },
+  {
     "objectID": "posts/Geometric Series.html",
     "href": "posts/Geometric Series.html",
     "title": "[Proof] Geometric Series",
@@ -273,46 +315,67 @@
     "text": "Infinite Series"
   },
   {
-    "objectID": "posts/Quarto Markdown (.qmd) Testing.html",
-    "href": "posts/Quarto Markdown (.qmd) Testing.html",
-    "title": "Quarto Markdown (.qmd) Testing",
+    "objectID": "posts/Inequalities.html",
+    "href": "posts/Inequalities.html",
+    "title": "Inequalities",
     "section": "",
-    "text": "博客标签设计"
+    "text": "TODO: inequality # 1. Triangle Inequality The sum of any two sides &gt; the remaining side\n\n\n\\begin{align}\n|x+y| \\leq |x| + |y|\n\\end{align}\n\nCorollary: \n\\begin{align}\n||a| - |b| |\\leq |a-b| \\\\\n|a-b| \\leq |a| + |b|\n\\end{align}\n Proof: \n\\begin{align*}\n&|a| = |a-b+b| \\leq |a-b|+|b| \\\\\n&|a| -|b| \\leq |a-b| \\\\\n\\end{align*}\n\n\n\\begin{align*}\n&|b| = |b-a+a| \\leq |b-a|+|a| \\\\\n&|b|-|a| \\leq |b-a| \\\\\n&|a|-|b| \\geq -|b-a| \\\\\n\\end{align*}\n\n\n2. Bernoulli’s Inequality\n\n\\begin{align}\n\\forall n \\in \\mathbb{N} ,\n(1+x)^n \\leq 1+nx\n\\end{align}\n\n\n\n3. Archimedean Property\nThere not exists a infinitely large real number\n\n\\begin{align}\n\\forall x \\in \\mathbb{R},\n\\exists n \\in \\mathbb{N},\nx \\lt n\n\\end{align}\n\nThere not exists a infinitely small positive real number \n\\begin{align}\n\\forall x \\gt 0,\n\\exists n \\in \\mathbb{N},\n\\frac{1}{n} \\lt x\n\\end{align}"
   },
   {
-    "objectID": "posts/Quarto Markdown (.qmd) Testing.html#h2",
-    "href": "posts/Quarto Markdown (.qmd) Testing.html#h2",
-    "title": "Quarto Markdown (.qmd) Testing",
-    "section": "H2",
-    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Caculus\n\n    \\int_a^b f'(x) \\, dx = f(b) - f(a)\n    \n\nThm: Multiple Lines Theorem\n\n\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\n\n\n\n\n\n\nNote\n\n\n\na \\neq 0\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\nalt text\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
-  },
-  {
-    "objectID": "posts/sqrt(2) is not a rational number.html",
-    "href": "posts/sqrt(2) is not a rational number.html",
-    "title": "[Proof] sqrt(2) is not a rational number",
+    "objectID": "posts/Quadratic Formula.html",
+    "href": "posts/Quadratic Formula.html",
+    "title": "[Proof] Quadratic Formula",
     "section": "",
-    "text": "This classic proof is associated with\n\\sqrt{2} is not a rational number."
+    "text": "\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\nTherefore,\n\nIf b^2-4ac&gt;0, there are two real roots\nIf b^2-4ac=0, there is only one real root (or two repeated roots)\nIf b^2-4ac&lt;0, there is no real root (or two complex conjugate root)"
   },
   {
-    "objectID": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "href": "posts/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Proof by contradiction",
-    "text": "Proof by contradiction\nWe know \n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\nSuppose \\sqrt{ 2 } is rational to reach a contradiction\nSo, \n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\nAnd we also suppose \\frac{m}{n} is in lowest terms\nTo say \\frac{m}{n} in lowest terms means if an integer d divides m and d divides n, then d = 1 (i.e. GCD(m,n) =1)\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (GCD)\nTake square on both sides and simplify\n\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\nThus, m^2 is even so that m is even (It is easy to prove by its contrapositive)\nSo, \\exists k\\in \\mathbb{Z}, m=2k\nSubstitute m=2k back \n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\nThus, n^2 is even so that n is even.\nSince m is even and n is even, they have common factor 2 which means \\frac{m}{n} isn’t in lowest terms.\nBut we assume \\frac{m}{n} is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\sqrt{2} is not a rational number. So it is irrational number."
+    "objectID": "posts/Scrcpy Wireless Android Casting.html",
+    "href": "posts/Scrcpy Wireless Android Casting.html",
+    "title": "Scrcpy Wireless Android Casting",
+    "section": "",
+    "text": "Escrcpy\nMaybe Escrcpy is a better solution https://github.com/viarotel-org/escrcpy\n\n\nConnect to the phone\n\nDownload and unzip scrcpy (If your are using Windows, download scrcpy-win64-$version.zip) https://github.com/Genymobile/scrcpy/releases/\nConnect phone to PC via USB cable\nMake sure turn on the USB debugging on your phone\nOpen terminal inside the scrcpy folder\n./adb devices\n./adb tcpip 5555\nUnplug USB cable\nGo to settings search ip in settings and remember the ip address (Make sure your phone and PC are in the same LAN i.e. connect to same WIFI)\n./adb connect 192.168.1.xx:5555\n./scrcpy.exe\nIf you want to disconnect, first use ./adb devices to check the ip address and port. Then ./adb disconnect 192.168.1.xx:5555\n\n\n\nUsage\n\nRight Click: Back\nMiddle Click: Home\nYou can use clipboard across PC and your phone\nCreate a desktop shortcut for scrcpy.exe (Maybe rename it to My Phone)\nIf scrcpy doesn’t support audio forwarding for your phone. You can try Bluetooth Audio Receiver\nYou can add the scrcpy folder path to the PATH environmental variable so that you can directly use adb and scrcpy commands in the terminal\nhttps://github.com/Genymobile/scrcpy"
   },
   {
-    "objectID": "posts/sqrt(2) is not a rational number.html#summary",
-    "href": "posts/sqrt(2) is not a rational number.html#summary",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Summary",
-    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+    "objectID": "posts/三类CSS.html",
+    "href": "posts/三类CSS.html",
+    "title": "三类CSS",
+    "section": "",
+    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;\n\n\n\n&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;\n\n\n\n&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
   },
   {
-    "objectID": "posts/sqrt(2) is not a rational number.html#takeaways",
-    "href": "posts/sqrt(2) is not a rational number.html#takeaways",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+    "objectID": "posts/三类CSS.html#style-inline-css",
+    "href": "posts/三类CSS.html#style-inline-css",
+    "title": "三类CSS",
+    "section": "",
+    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "posts/三类CSS.html#headstyle-css",
+    "href": "posts/三类CSS.html#headstyle-css",
+    "title": "三类CSS",
+    "section": "",
+    "text": "&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "posts/三类CSS.html#headlinkrelstylesheet-hrefxxx.css",
+    "href": "posts/三类CSS.html#headlinkrelstylesheet-hrefxxx.css",
+    "title": "三类CSS",
+    "section": "",
+    "text": "&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "posts/三类CSS.html#import-xxx.css-jsx",
+    "href": "posts/三类CSS.html#import-xxx.css-jsx",
+    "title": "三类CSS",
+    "section": "import ‘xxx.css’ (jsx)",
+    "text": "import ‘xxx.css’ (jsx)\nimport './styles.css';"
+  },
+  {
+    "objectID": "posts/三类CSS.html#style-tag-vue",
+    "href": "posts/三类CSS.html#style-tag-vue",
+    "title": "三类CSS",
+    "section": "style tag (vue)",
+    "text": "style tag (vue)\n&lt;style&gt;\n/* ... */\n&lt;/style&gt;"
   },
   {
     "objectID": "posts/初探SageMath.html",

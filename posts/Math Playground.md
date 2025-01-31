@@ -1,0 +1,32 @@
+---
+title: "Math Playground"
+date: "2025-01-23"
+categories: [Math]
+---
+
+TODO: Math Review
+# Anki Math::Basic
+- Set theory
+- Logic
+- Binomial Thm
+- Pascal's Triangle
+- n choose k
+- n permute k
+- Limit
+- 2 important limits
+- Derivative, definition, common
+- Integral
+- 高斯消元法
+- Matrix Multiplication
+- Inverse
+- Rank
+- EigenValue
+- Probability
+- Stat
+
+
+$
+\begin{align*}
+ax^2
+\end{align*}
+$
