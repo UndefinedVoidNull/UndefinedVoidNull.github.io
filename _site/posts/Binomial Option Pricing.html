@@ -213,7 +213,9 @@ window.Quarto = {
 <p>Call Option</p>
 <p>Put Option</p>
 <p>Forward Contract</p>
-<p>Long, Short Position Buy, Sell Lend, Borrow</p>
+<p>Long, Short Position</p>
+<p>Buy, Sell</p>
+<p>Lend, Borrow</p>
 </section>
 <section id="variables-and-parameters" class="level1">
 <h1>Variables and Parameters</h1>
@@ -343,7 +345,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/llfx\.lol");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

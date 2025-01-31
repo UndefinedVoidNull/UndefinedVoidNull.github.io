@@ -11,7 +11,8 @@ categories: [Code, Powershell]
     - <https://gist.github.com/UndefinedVoidNull/055e23f8d9df82cf650d4e5f0a8f6f06>
     - `Set-Alias -Name ALIAS_NAME -Value COMMAND -Scope Global`
 - Windows Terminal
-  - Set AHK Shortcut: **Win + `  to open wt.exe**
+  - Set AHK Shortcut: **Win + Backtick  to open wt.exe**
+  
   ```ahk
   #`::Run, wt.exe
   ```
@@ -169,6 +170,7 @@ git status
 git log
 git diff
 ```
+
 # 6. `Win + R` 
 - `shell:startup`
 - `%USERPROFILE%`

@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-23">
+<meta name="dcterms.date" content="2025-01-03">
 
-<title>Math Playground – llf(x) is planting</title>
+<title>如何高效获取「长视频」的关键信息 – llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -69,49 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="../styles.css">
 </head>
@@ -153,9 +110,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">Math Playground</h1>
+      <h1 class="title">如何高效获取「长视频」的关键信息</h1>
                                 <div class="quarto-categories">
-                <div class="quarto-category">Math</div>
+                <div class="quarto-category">Workflow</div>
+                <div class="quarto-category">Tool</div>
               </div>
                   </div>
   </div>
@@ -167,7 +125,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 23, 2025</p>
+        <p class="date">January 3, 2025</p>
       </div>
     </div>
     
@@ -188,10 +146,17 @@ window.Quarto = {
 
 
 
-<p>TODO: Math Review # Anki Math::Basic - Set theory - Logic - Binomial Thm - Pascal’s Triangle - n choose k - n permute k - Limit - 2 important limits - Derivative, definition, common - Integral - 高斯消元法 - Matrix Multiplication - Inverse - Rank - EigenValue - Probability - Stat</p>
-<p>$ <span class="math display">\begin{align*}
-ax^2
-\end{align*}</span> $</p>
+<ol type="1">
+<li><p>去<a href="https://downsub.com/">DownSub</a>等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕</p></li>
+<li><p>将txt文件在VS Code中进行预处理, 比如将 \n 换成 Space (正则表达式)</p></li>
+<li><p>将txt文件喂给AI让其详细总结</p></li>
+<li><p>由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的<a href="https://chat.mistral.ai/chat">Le Chat</a>一般可以一次性翻译. 也可以尝试<a href="https://chat.deepseek.com/">Deepseek</a>或者<a href="https://kimi.moonshot.cn/">Kimi.ai</a>. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)</p></li>
+<li><p>(推荐) 将txt的内容粘贴进Word Docx中. 使用<a href="https://translate.google.com/?sl=en&amp;tl=zh-CN&amp;op=docs">Google Translate</a>或者<a href="https://www.deepl.com/en/translator/files">DeepL</a>, <a href="https://documents.reverso.net/Default.aspx?lang=en">Reverso</a>(这两个需要付费)上传Docx进行翻译</p></li>
+<li><p>新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出</p></li>
+<li><p>将摘抄部分发到互联网上, 然后分享给朋友</p></li>
+<li><p>将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹</p></li>
+</ol>
+<p>PS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如<a href="https://chromewebstore.google.com/detail/%E8%B1%86%E5%8C%85%EF%BC%8C%E6%B5%8F%E8%A7%88%E5%99%A8-ai-%E5%8A%A9%E6%89%8B/dbjibobgilijgolhjdcbdebjhejelffo">豆包</a>, <a href="https://chromewebstore.google.com/detail/youtube-summary-with-chat/nmmicjeknamkfloonkhhcjmomieiodli?hl=en-US">YouTube Summary</a></p>
 
 
 
@@ -286,7 +251,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/llfx\.lol");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

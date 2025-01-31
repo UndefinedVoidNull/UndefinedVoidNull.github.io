@@ -23,7 +23,9 @@ Put Option
 Forward Contract
 
 Long, Short Position
+
 Buy, Sell
+
 Lend, Borrow
 
 # Variables and Parameters
