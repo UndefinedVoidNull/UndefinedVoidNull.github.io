@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-07">
+<meta name="dcterms.date" content="2025-02-01">
 
-<title>[Proof] Quadratic Formula – llf(x) is planting</title>
+<title>Binomial Option Pricing: Chap 1 – llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,9 +153,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">[Proof] Quadratic Formula</h1>
+      <h1 class="title">Binomial Option Pricing: Chap 1</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
+                <div class="quarto-category">Finance</div>
               </div>
                   </div>
   </div>
@@ -167,7 +168,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 7, 2025</p>
+        <p class="date">February 1, 2025</p>
       </div>
     </div>
     
@@ -178,8 +179,19 @@ window.Quarto = {
   </header><div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
+  <li><a href="#basic-concepts" id="toc-basic-concepts" class="nav-link" data-scroll-target="#basic-concepts">Basic Concepts</a></li>
+  <li><a href="#variables-and-parameters" id="toc-variables-and-parameters" class="nav-link" data-scroll-target="#variables-and-parameters">Variables and Parameters</a></li>
+  <li><a href="#evolution" id="toc-evolution" class="nav-link" data-scroll-target="#evolution">Evolution</a></li>
+  <li><a href="#backwards" id="toc-backwards" class="nav-link" data-scroll-target="#backwards">Backwards</a></li>
+  <li><a href="#no-arbitrage-assumption" id="toc-no-arbitrage-assumption" class="nav-link" data-scroll-target="#no-arbitrage-assumption">No Arbitrage Assumption</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content quarto-banner-title-block" id="quarto-document-content">
@@ -188,25 +200,59 @@ window.Quarto = {
 
 
 
-<p><span class="math display">
-\begin{align*}
-&amp;ax^2+bx+c=0 \ (a \neq 0) \\
-&amp;x^2+\frac{b}{a}x+\frac{c}{a}=0\\&amp;(x+\frac{b}{2a})^2=-\frac{c}{a}+\frac{b^2}{4a^2}\\
-&amp;(x+\frac{b}{2a})^2=\frac{-4ac+b^2}{4a^2}\\
-&amp;x+\frac{b}{2a}=\pm\sqrt{\frac{b^2-4ac}{4a^2}}\\
-&amp;x=\pm\sqrt{\frac{b^2-4ac}{4a^2}}-\frac{b}{2a}\\
-&amp;x=\pm\frac{\sqrt{b^2-4ac}}{2a}-\frac{b}{2a}\\
-&amp;x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
-\end{align*}
-</span></p>
-<p>Therefore,</p>
+<section id="intro" class="level1">
+<h1>Intro</h1>
+<p>Binomial Model</p>
+<p>Fair Price</p>
+<p>Arbitrage</p>
+<p>Replicating a portfolio</p>
+</section>
+<section id="basic-concepts" class="level1">
+<h1>Basic Concepts</h1>
+<p>Striking Price <span class="math inline">K</span></p>
+<p>Call Option</p>
+<p>Put Option</p>
+<p>Forward Contract</p>
+<p>Long, Short Position</p>
+<p>Buy, Sell</p>
+<p>Lend, Borrow</p>
+</section>
+<section id="variables-and-parameters" class="level1">
+<h1>Variables and Parameters</h1>
 <ul>
-<li><p>If <span class="math inline">b^2-4ac&gt;0</span>, there are two real roots</p></li>
-<li><p>If <span class="math inline">b^2-4ac=0</span>, there is only one real root (or two repeated roots)</p></li>
-<li><p>If <span class="math inline">b^2-4ac&lt;0</span>, there is no real root (or two complex conjugate root)</p></li>
+<li><p><span class="math inline">t</span></p></li>
+<li><p><span class="math inline">X_n</span>: ?</p></li>
+<li><p><span class="math inline">\Delta_n</span></p></li>
+<li><p><span class="math inline">B_n</span></p></li>
+<li><p><span class="math inline">S_n</span></p></li>
+<li><p><span class="math inline">V_n</span></p></li>
+<li><p><span class="math inline">K</span></p></li>
+<li><p><span class="math inline">u</span></p></li>
+<li><p><span class="math inline">d</span></p></li>
+<li><p><span class="math inline">r</span></p></li>
+<li><p><span class="math inline">(1+r)</span></p></li>
+<li><p><span class="math inline">\frac{1}{1+r}</span></p></li>
+<li><p><span class="math inline">p</span></p></li>
+<li><p><span class="math inline">\tilde{p}</span></p></li>
+<li><p><span class="math inline">q</span></p></li>
+<li><p><span class="math inline">\tilde{q}</span></p></li>
 </ul>
+</section>
+<section id="evolution" class="level1">
+<h1>Evolution</h1>
+</section>
+<section id="backwards" class="level1">
+<h1>Backwards</h1>
+</section>
+<section id="no-arbitrage-assumption" class="level1">
+<h1>No Arbitrage Assumption</h1>
+<p><span class="math display">
+0 &lt; d &lt; 1+r &lt; u
+</span></p>
+<p>Chap 2 # Convex Function # Jensen’s Inequality</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

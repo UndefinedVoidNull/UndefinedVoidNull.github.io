@@ -6,9 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="dcterms.date" content="2025-01-10">
+<meta name="dcterms.date" content="2025-01-22">
 
-<title>2 Types of Proof – llf(x) is planting</title>
+<title>Inequalities – llf(x) is planting</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -153,9 +153,10 @@ window.Quarto = {
 <header id="title-block-header" class="quarto-title-block default page-columns page-full">
   <div class="quarto-title-banner page-columns page-full">
     <div class="quarto-title column-body">
-      <h1 class="title">2 Types of Proof</h1>
+      <h1 class="title">Inequalities</h1>
                                 <div class="quarto-categories">
                 <div class="quarto-category">Math</div>
+                <div class="quarto-category">Inequality</div>
               </div>
                   </div>
   </div>
@@ -167,7 +168,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Published</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">January 10, 2025</p>
+        <p class="date">January 22, 2025</p>
       </div>
     </div>
     
@@ -183,15 +184,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#intro" id="toc-intro" class="nav-link active" data-scroll-target="#intro">Intro</a></li>
-  <li><a href="#if-p-then-q" id="toc-if-p-then-q" class="nav-link" data-scroll-target="#if-p-then-q">If <span class="math inline">P</span>, then <span class="math inline">Q</span></a></li>
-  <li><a href="#p-iff-q" id="toc-p-iff-q" class="nav-link" data-scroll-target="#p-iff-q"><span class="math inline">P</span> iff <span class="math inline">Q</span></a></li>
-  <li><a href="#where-to-start" id="toc-where-to-start" class="nav-link" data-scroll-target="#where-to-start">Where to start</a>
-  <ul class="collapse">
-  <li><a href="#by-what" id="toc-by-what" class="nav-link" data-scroll-target="#by-what">by what?</a></li>
-  </ul></li>
-  <li><a href="#the-first-step-and-further-steps" id="toc-the-first-step-and-further-steps" class="nav-link" data-scroll-target="#the-first-step-and-further-steps">The first step and further steps?</a></li>
-  <li><a href="#change-the-focus-point" id="toc-change-the-focus-point" class="nav-link" data-scroll-target="#change-the-focus-point">Change the focus point</a></li>
+  <li><a href="#bernoullis-inequality" id="toc-bernoullis-inequality" class="nav-link active" data-scroll-target="#bernoullis-inequality">2. Bernoulli’s Inequality</a></li>
+  <li><a href="#archimedean-property" id="toc-archimedean-property" class="nav-link" data-scroll-target="#archimedean-property">3. Archimedean Property</a></li>
   </ul>
 </nav>
     </div>
@@ -202,82 +196,57 @@ window.Quarto = {
 
 
 
-<section id="intro" class="level2">
-<h2 class="anchored" data-anchor-id="intro">Intro</h2>
-<p>There are two common types of proofs</p>
-<ol type="1">
-<li>If <span class="math inline">P</span>, then <span class="math inline">Q</span>. (<span class="math inline">P \implies Q</span>)</li>
-<li><span class="math inline">P</span> iff <span class="math inline">Q</span> (<span class="math inline">P \iff Q</span>)</li>
-</ol>
-<p>Remark: <code>iff</code> stands for <code>if and only if</code></p>
-</section>
-<section id="if-p-then-q" class="level2">
-<h2 class="anchored" data-anchor-id="if-p-then-q">If <span class="math inline">P</span>, then <span class="math inline">Q</span></h2>
-<p>There are two ways to prove</p>
-<ol type="1">
-<li>Conditional Proof</li>
-<li>Proof by Contradiction</li>
-<li>Proof by Contrapositive</li>
-<li>Proof by Induction</li>
-</ol>
-</section>
-<section id="p-iff-q" class="level2">
-<h2 class="anchored" data-anchor-id="p-iff-q"><span class="math inline">P</span> iff <span class="math inline">Q</span></h2>
-<p>There are two ways to prove</p>
-<ol type="1">
-<li>Prove <span class="math inline">P \implies Q</span> and then prove <span class="math inline">Q \implies P</span> (First prove forward <span class="math inline">\implies</span> and then prove backward <span class="math inline">\impliedby</span>)</li>
-<li>A chain of <code>iff</code> <span class="math display">
+<p>TODO: inequality # 1. Triangle Inequality The sum of any two sides &gt; the remaining side</p>
+<p><img src="images/3 basic inequality about sequence/image.png" class="img-fluid"></p>
+<p><span class="math display">
+\begin{align}
+|x+y| \leq |x| + |y|
+\end{align}
+</span></p>
+<p><strong>Corollary:</strong> <span class="math display">
+\begin{align}
+||a| - |b| |\leq |a-b| \\
+|a-b| \leq |a| + |b|
+\end{align}
+</span> <strong>Proof:</strong> <span class="math display">
 \begin{align*}
-&amp;P \\
-&amp;\iff R \\
-&amp;\iff \dots\\
-&amp;\iff Q
+&amp;|a| = |a-b+b| \leq |a-b|+|b| \\
+&amp;|a| -|b| \leq |a-b| \\
 \end{align*}
-</span></li>
-</ol>
+</span></p>
+<p><span class="math display">
+\begin{align*}
+&amp;|b| = |b-a+a| \leq |b-a|+|a| \\
+&amp;|b|-|a| \leq |b-a| \\
+&amp;|a|-|b| \geq -|b-a| \\
+\end{align*}
+</span></p>
+<section id="bernoullis-inequality" class="level1">
+<h1>2. Bernoulli’s Inequality</h1>
+<p><span class="math display">
+\begin{align}
+\forall n \in \mathbb{N} ,
+(1+x)^n \leq 1+nx
+\end{align}
+</span></p>
 </section>
-<section id="where-to-start" class="level2">
-<h2 class="anchored" data-anchor-id="where-to-start">Where to start</h2>
-<ol type="1">
-<li>Start from <span class="math inline">P</span> (Which part of <span class="math inline">P</span>?)</li>
-<li>Start from <span class="math inline">Q</span> (Which part of <span class="math inline">Q</span>?)</li>
-<li>Start from <span class="math inline">P</span> and <span class="math inline">Q</span> at the same time (Which part of <span class="math inline">P</span>, <span class="math inline">Q</span>?)</li>
-</ol>
-<section id="by-what" class="level3">
-<h3 class="anchored" data-anchor-id="by-what">by what?</h3>
-<ol type="1">
-<li>by the sense of direction</li>
-<li>by cases</li>
-<li>by examples</li>
-<li>by graph</li>
-<li>by attempts</li>
-<li>by analogy</li>
-<li>by pattern-method</li>
-<li>by experiences</li>
-<li>by intuition</li>
-</ol>
-<p>Now we know where to start</p>
-</section>
-</section>
-<section id="the-first-step-and-further-steps" class="level2">
-<h2 class="anchored" data-anchor-id="the-first-step-and-further-steps">The first step and further steps?</h2>
-<ol type="1">
-<li>by definition</li>
-<li>by theorem or propositions</li>
-<li>by transformations/operations</li>
-<li>by techniques</li>
-<li>by axioms</li>
-</ol>
-</section>
-<section id="change-the-focus-point" class="level2">
-<h2 class="anchored" data-anchor-id="change-the-focus-point">Change the focus point</h2>
-<p>When you</p>
-<ol type="1">
-<li>(have no idea how to carry on) get stuck</li>
-<li>(know how to carry on but) find it super hard/complex to going forward in this direction</li>
-<li>finished this part</li>
-<li>feeling I might ignored some important points/things</li>
-</ol>
+<section id="archimedean-property" class="level1">
+<h1>3. Archimedean Property</h1>
+<p>There not exists a infinitely large real number</p>
+<p><span class="math display">
+\begin{align}
+\forall x \in \mathbb{R},
+\exists n \in \mathbb{N},
+x \lt n
+\end{align}
+</span></p>
+<p>There not exists a infinitely small positive real number <span class="math display">
+\begin{align}
+\forall x \gt 0,
+\exists n \in \mathbb{N},
+\frac{1}{n} \lt x
+\end{align}
+</span></p>
 
 
 </section>
