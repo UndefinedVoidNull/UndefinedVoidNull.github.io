@@ -236,6 +236,7 @@ window.Quarto = {
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x3tPr3nkzqQ?si=H1kkfb5Gs9X394uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen="">
 </iframe>
+<p><a href="./pdfs/发现社会.pdf">发现社会</a></p>
 <p><a href="../posts/博客标签设计.html">博客标签设计</a></p>
 <section id="h1" class="level1">
 <h1>H1</h1>
@@ -452,7 +453,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp('/' + window.location.host + '/');
+      var filterRegex = new RegExp("https:\/\/llfx\.lol");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }

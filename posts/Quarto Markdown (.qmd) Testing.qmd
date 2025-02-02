@@ -7,6 +7,8 @@ categories: [Record]
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x3tPr3nkzqQ?si=H1kkfb5Gs9X394uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
+[发现社会](./pdfs/发现社会.pdf)
+
 [博客标签设计](博客标签设计.qmd)
 
 # H1

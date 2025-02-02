@@ -18,7 +18,7 @@ categories: [Code, Powershell]
   ```
 - MSYS2
   - <https://www.msys2.org/>
-  - Add `C:\msys64\usr\bin` to `$env:path`
+  - Add to `$env:path`
 - Starship
   - <https://starship.rs/>
   - Config: 
