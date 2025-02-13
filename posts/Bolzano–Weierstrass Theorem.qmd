@@ -1,0 +1,18 @@
+---
+title: "[Proof] Bolzano–Weierstrass Theorem"
+date: "2025-02-05"
+categories: [Math, Analysis, Proof]
+---
+
+# Bound, Sup, Inf
+
+# Monotone Sequence
+
+# Subsequence
+
+# Bounded+Monotone -> Convergent
+
+# Existence of Monotone Subsequence
+
+# Bounded -> Existence of Convergent Subsequence
+Bolzano–Weierstrass Theorem (B-W) 
