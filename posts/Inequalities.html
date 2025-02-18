@@ -184,7 +184,8 @@ window.Quarto = {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#bernoullis-inequality" id="toc-bernoullis-inequality" class="nav-link active" data-scroll-target="#bernoullis-inequality">2. Bernoulli’s Inequality</a></li>
+  <li><a href="#triangle-inequality" id="toc-triangle-inequality" class="nav-link active" data-scroll-target="#triangle-inequality">Triangle Inequality</a></li>
+  <li><a href="#bernoullis-inequality" id="toc-bernoullis-inequality" class="nav-link" data-scroll-target="#bernoullis-inequality">2. Bernoulli’s Inequality</a></li>
   <li><a href="#archimedean-property" id="toc-archimedean-property" class="nav-link" data-scroll-target="#archimedean-property">3. Archimedean Property</a></li>
   </ul>
 </nav>
@@ -196,31 +197,57 @@ window.Quarto = {
 
 
 
-<p>TODO: inequality # 1. Triangle Inequality The sum of any two sides &gt; the remaining side</p>
+<p>TODO: inequality</p>
+<section id="triangle-inequality" class="level1">
+<h1>Triangle Inequality</h1>
+<p>The sum of any two sides &gt; the remaining side</p>
 <p><img src="images/3 basic inequality about sequence/image.png" class="img-fluid"></p>
-<p><span class="math display">
-\begin{align}
-|x+y| \leq |x| + |y|
-\end{align}
+<div id="thm-triangle-ineq" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 1 (Triangle Inequality)</strong></span> <span class="math display">
+|a + b| \leq |a| + |b|
 </span></p>
-<p><strong>Corollary:</strong> <span class="math display">
-\begin{align}
-||a| - |b| |\leq |a-b| \\
-|a-b| \leq |a| + |b|
-\end{align}
-</span> <strong>Proof:</strong> <span class="math display">
+</div>
+<div id="cor-triangle-ineq" class="theorem corollary">
+<p><span class="theorem-title"><strong>Corollary 1</strong></span> &nbsp;</p>
+<ul>
+<li><span class="math inline">||a| - |b| |\leq |a-b|</span></li>
+<li><span class="math inline">|a-b| \leq |a| + |b|</span></li>
+</ul>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">
 \begin{align*}
 &amp;|a| = |a-b+b| \leq |a-b|+|b| \\
 &amp;|a| -|b| \leq |a-b| \\
 \end{align*}
 </span></p>
-<p><span class="math display">
+</div>
+<div id="rem-triangle-ineq" class="proof remark">
+<p><span class="proof-title"><em>Remark 1</em>. </span><span class="math display">
 \begin{align*}
 &amp;|b| = |b-a+a| \leq |b-a|+|a| \\
 &amp;|b|-|a| \leq |b-a| \\
 &amp;|a|-|b| \geq -|b-a| \\
 \end{align*}
 </span></p>
+</div>
+<div id="thm-sq-ineq" class="theorem">
+<p><span class="theorem-title"><strong>Theorem 2</strong></span> &nbsp;</p>
+<ol type="1">
+<li><span class="math inline">a^2+b^2 \geq 2ab</span></li>
+<li><span class="math inline">\frac{a+b}{2} \geq \sqrt{ab}</span></li>
+</ol>
+</div>
+<div class="proof">
+<p><span class="proof-title"><em>Proof</em>. </span><span class="math display">
+(\sqrt{a}-\sqrt{b})^2 = a - 2\sqrt{ab} + b \geq 0
+</span></p>
+<p><span class="math display">
+\frac{a+b}{2} \geq \sqrt{ab}
+</span></p>
+</div>
+<p>[^1]</p>
+</section>
 <section id="bernoullis-inequality" class="level1">
 <h1>2. Bernoulli’s Inequality</h1>
 <p><span class="math display">
@@ -240,7 +267,8 @@ window.Quarto = {
 x \lt n
 \end{align}
 </span></p>
-<p>There not exists a infinitely small positive real number <span class="math display">
+<p>There not exists a infinitely small positive real number</p>
+<p><span class="math display">
 \begin{align}
 \forall x \gt 0,
 \exists n \in \mathbb{N},

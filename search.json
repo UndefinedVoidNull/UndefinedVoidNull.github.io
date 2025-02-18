@@ -172,7 +172,7 @@
     "href": "posts/AI Supply Chain.html",
     "title": "AI Supply Chain",
     "section": "",
-    "text": "能源与电力\nGPU芯片设计与制造: NVIDIA, Cerebras.ai, 华为(昇腾), 台积电(TSMC), 中芯国际(SMIC)\n云计算平台 & 数据中心: Azure, AWS, Google Cloud, …\n数据支持与标注: Scale.ai, v7Labs, Labelbox, DataLoop, SuperAnnotate, …\n模型与应用 (网站, API, 开源模型, 桌面软件, 移动端App, 集成到现有的网站/软件/App中):\n\n\n大语言模型:\n\nOpenAI (ChatGPT 4o, o1, …)\nGoogle (Gemini 2.0 Pro, 2.0 Flash Thinking)\nAnthropic (Claude Sonnet 3.5)\nDeepseek (R1. V3)\nAlibaba (Qwen 2.5-Max)\nMistral.ai (Le Chat)\n\n文生图, 图生图:\n\nStability.ai (Stable Diffusion 3.5)\nBlack Forest Lab (Flux.1)\nMidjorney\nRecraft.ai\n\n文生视频, 图生视频: Runway, Pika, Sora, 可灵\n文生模型, 图生模型 (AI 3D): Tripo, Rodin, microsoft/TRELLIS, 腾讯混元3D\n文生人声, 声音转换 (AI Voice/TTS): ElevenLabs, so-vits-svc, HeyGEN\n文生音乐: Suno, Udio\nAI幻灯片: Canva, Beautiful.ai\n联网搜索: Perplexity, Felo, 秘塔, …\nAI编程相关: Github Copilot, Cursor, WindSurf, Warp(AI终端)\n企业知识库 (RAG): LlamaIndex, LangChain, Credal, …\n角色扮演/文字冒险: character.ai\n其他: poe"
+    "text": "能源与电力\nGPU芯片设计与制造: NVIDIA, Cerebras.ai, 华为(昇腾), 台积电(TSMC), 中芯国际(SMIC)\n云计算平台 & 数据中心: Azure, AWS, Google Cloud, …\n数据支持与标注: Scale.ai, v7Labs, Labelbox, DataLoop, SuperAnnotate, …\n模型与应用 (网站, API, 开源模型, 桌面软件, 移动端App, 集成到现有的网站/软件/App中):\n\n\n大语言模型:\n\nOpenAI (ChatGPT 4o, o1, …)\nGoogle (Gemini 2.0 Pro, 2.0 Flash Thinking)\nAnthropic (Claude Sonnet 3.5)\nDeepseek (R1. V3)\nAlibaba (Qwen 2.5-Max)\nMeta (Llama 3.3)\nMistral.ai (Le Chat)\n\n文生图, 图生图:\n\nStability.ai (Stable Diffusion 3.5)\nBlack Forest Lab (Flux.1)\nMidjorney\nRecraft.ai\n\n文生视频, 图生视频: Runway, Pika, Sora, 可灵\n文生模型, 图生模型 (AI 3D): Tripo, Rodin, microsoft/TRELLIS, 腾讯混元3D\n文生人声, 声音转换 (AI Voice/TTS): ElevenLabs, so-vits-svc, HeyGEN\n文生音乐: Suno, Udio\nAI幻灯片: Canva, Beautiful.ai\n联网搜索: Perplexity, Felo, 秘塔, …\nAI编程相关: Github Copilot, Cursor, WindSurf, Warp(AI终端)\n企业知识库 (RAG): LlamaIndex, LangChain, Credal, …\n角色扮演/文字冒险: character.ai\n其他: poe"
   },
   {
     "objectID": "about.html",
@@ -333,21 +333,28 @@
     "href": "posts/Inequalities.html",
     "title": "Inequalities",
     "section": "",
-    "text": "TODO: inequality # 1. Triangle Inequality The sum of any two sides &gt; the remaining side\n\n\n\\begin{align}\n|x+y| \\leq |x| + |y|\n\\end{align}\n\nCorollary: \n\\begin{align}\n||a| - |b| |\\leq |a-b| \\\\\n|a-b| \\leq |a| + |b|\n\\end{align}\n Proof: \n\\begin{align*}\n&|a| = |a-b+b| \\leq |a-b|+|b| \\\\\n&|a| -|b| \\leq |a-b| \\\\\n\\end{align*}\n\n\n\\begin{align*}\n&|b| = |b-a+a| \\leq |b-a|+|a| \\\\\n&|b|-|a| \\leq |b-a| \\\\\n&|a|-|b| \\geq -|b-a| \\\\\n\\end{align*}\n\n\n2. Bernoulli’s Inequality\n\n\\begin{align}\n\\forall n \\in \\mathbb{N} ,\n(1+x)^n \\leq 1+nx\n\\end{align}\n\n\n\n3. Archimedean Property\nThere not exists a infinitely large real number\n\n\\begin{align}\n\\forall x \\in \\mathbb{R},\n\\exists n \\in \\mathbb{N},\nx \\lt n\n\\end{align}\n\nThere not exists a infinitely small positive real number \n\\begin{align}\n\\forall x \\gt 0,\n\\exists n \\in \\mathbb{N},\n\\frac{1}{n} \\lt x\n\\end{align}"
+    "text": "TODO: inequality\n\nTriangle Inequality\nThe sum of any two sides &gt; the remaining side\n\n\nTheorem 1 (Triangle Inequality) \n|a + b| \\leq |a| + |b|\n\n\n\nCorollary 1  \n\n||a| - |b| |\\leq |a-b|\n|a-b| \\leq |a| + |b|\n\n\n\nProof. \n\\begin{align*}\n&|a| = |a-b+b| \\leq |a-b|+|b| \\\\\n&|a| -|b| \\leq |a-b| \\\\\n\\end{align*}\n\n\n\nRemark 1. \n\\begin{align*}\n&|b| = |b-a+a| \\leq |b-a|+|a| \\\\\n&|b|-|a| \\leq |b-a| \\\\\n&|a|-|b| \\geq -|b-a| \\\\\n\\end{align*}\n\n\n\nTheorem 2  \n\na^2+b^2 \\geq 2ab\n\\frac{a+b}{2} \\geq \\sqrt{ab}\n\n\n\nProof. \n(\\sqrt{a}-\\sqrt{b})^2 = a - 2\\sqrt{ab} + b \\geq 0\n\n\n\\frac{a+b}{2} \\geq \\sqrt{ab}\n\n\n[^1]\n\n\n2. Bernoulli’s Inequality\n\n\\begin{align}\n\\forall n \\in \\mathbb{N} ,\n(1+x)^n \\leq 1+nx\n\\end{align}\n\n\n\n3. Archimedean Property\nThere not exists a infinitely large real number\n\n\\begin{align}\n\\forall x \\in \\mathbb{R},\n\\exists n \\in \\mathbb{N},\nx \\lt n\n\\end{align}\n\nThere not exists a infinitely small positive real number\n\n\\begin{align}\n\\forall x \\gt 0,\n\\exists n \\in \\mathbb{N},\n\\frac{1}{n} \\lt x\n\\end{align}"
   },
   {
     "objectID": "posts/Quarto Markdown (.qmd) Testing.html",
     "href": "posts/Quarto Markdown (.qmd) Testing.html",
     "title": "Quarto Markdown (.qmd) Testing",
     "section": "",
-    "text": "发现社会\n博客标签设计"
+    "text": "发现社会1\n博客标签设计\nNote: the order of the quantifier is \\forall, \\exists, \\forall\nDefinition 1 2\nasd"
   },
   {
     "objectID": "posts/Quarto Markdown (.qmd) Testing.html#h2",
     "href": "posts/Quarto Markdown (.qmd) Testing.html#h2",
     "title": "Quarto Markdown (.qmd) Testing",
     "section": "H2",
-    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Caculus\n\n    \\int_a^b f'(x) \\, dx = f(b) - f(a)\n    \n\nThm: Multiple Lines Theorem\n\n\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\n\n\n\n\n\n\nNote\n\n\n\na \\neq 0\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\nalt text\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Calculus\n\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\n\nThm: Multiple Lines Theorem\n\n\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\n\n\n\n\n\n\nNote\n\n\n\na \\neq 0\n\n\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\nalt text\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+  },
+  {
+    "objectID": "posts/Quarto Markdown (.qmd) Testing.html#footnotes",
+    "href": "posts/Quarto Markdown (.qmd) Testing.html#footnotes",
+    "title": "Quarto Markdown (.qmd) Testing",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou can embed pdf into your document↩︎\nYou can use @ to refer to the sources↩︎"
   },
   {
     "objectID": "posts/Scrcpy Wireless Android Casting.html",
