@@ -15,6 +15,7 @@ categories: [Record, AI]
   - Anthropic (Claude Sonnet 3.5)
   - Deepseek (R1. V3)
   - Alibaba (Qwen 2.5-Max) 
+  - Meta (Llama 3.3)
   - Mistral.ai (Le Chat)
 - 文生图, 图生图: 
   - Stability.ai (Stable Diffusion 3.5)

@@ -5,32 +5,34 @@ categories: [Math, Inequality]
 ---
 
 TODO: inequality
-# 1. Triangle Inequality
-The sum of any two sides > the remaining side
 
-![](<images/3 basic inequality about sequence/image.png>)
+# Triangle Inequality 
+The sum of any two sides \> the remaining side
 
-$$
-\begin{align}
-|x+y| \leq |x| + |y| 
-\end{align}
-$$
+![](images/3%20basic%20inequality%20about%20sequence/image.png)
 
-**Corollary:**
+::: {#thm-triangle-ineq}
+## Triangle Inequality
 $$
-\begin{align}
-||a| - |b| |\leq |a-b| \\
-|a-b| \leq |a| + |b|
-\end{align}
+|a + b| \leq |a| + |b|
 $$
-**Proof:** 
+:::
+
+::: {#cor-triangle-ineq}
+- $||a| - |b| |\leq |a-b|$
+- $|a-b| \leq |a| + |b|$
+:::
+
+::: proof
 $$
 \begin{align*}
 &|a| = |a-b+b| \leq |a-b|+|b| \\
 &|a| -|b| \leq |a-b| \\
 \end{align*}
 $$
+:::
 
+::: {#rem-triangle-ineq}
 $$
 \begin{align*}
 &|b| = |b-a+a| \leq |b-a|+|a| \\
@@ -38,9 +40,29 @@ $$
 &|a|-|b| \geq -|b-a| \\
 \end{align*}
 $$
+:::
 
+
+
+::: {#thm-sq-ineq}
+1. $a^2+b^2 \geq 2ab$
+2. $\frac{a+b}{2} \geq \sqrt{ab}$
+:::
+
+::: proof
+$$
+(\sqrt{a}-\sqrt{b})^2 = a - 2\sqrt{ab} + b \geq 0
+$$
+
+$$
+\frac{a+b}{2} \geq \sqrt{ab}
+$$
+:::
+
+[^1]
 
 # 2. Bernoulli's Inequality
+
 $$
 \begin{align}
 \forall n \in \mathbb{N} ,
@@ -49,6 +71,7 @@ $$
 $$
 
 # 3. Archimedean Property
+
 There not exists a infinitely large real number
 
 $$
@@ -59,7 +82,8 @@ x \lt n
 \end{align}
 $$
 
-There not exists a infinitely small positive real number
+There not exists a infinitely small positive real number 
+
 $$
 \begin{align}
 \forall x \gt 0,

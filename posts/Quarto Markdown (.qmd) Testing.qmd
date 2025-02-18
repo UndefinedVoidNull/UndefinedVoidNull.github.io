@@ -7,9 +7,61 @@ categories: [Record]
 <iframe width="560" height="315" src="https://www.youtube.com/embed/x3tPr3nkzqQ?si=H1kkfb5Gs9X394uc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
-[发现社会](./pdfs/发现社会.pdf)
+[发现社会](./pdfs/发现社会.pdf)[^1]
 
 [博客标签设计](博客标签设计.qmd)
+
+::: {#thm-quadratic-formula}
+## Quadratic Formula
+$$
+x=\frac{-b\pm\sqrt{b^2-4ac} }{2a} 
+$$
+:::
+
+
+
+::: {.proof}
+by $(a+b)^2=a^2+2ab+b^2$
+$$
+\begin{align*}
+&ax^2+bx+c=0 \ (a \neq 0) \\
+&x^2+\frac{b}{a}x+\frac{c}{a}=0\\&(x+\frac{b}{2a})^2=-\frac{c}{a}+\frac{b^2}{4a^2}\\
+&(x+\frac{b}{2a})^2=\frac{-4ac+b^2}{4a^2}\\
+&x+\frac{b}{2a}=\pm\sqrt{\frac{b^2-4ac}{4a^2}}\\
+&x=\pm\sqrt{\frac{b^2-4ac}{4a^2}}-\frac{b}{2a}\\
+&x=\pm\frac{\sqrt{b^2-4ac}}{2a}-\frac{b}{2a}\\
+&x=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\end{align*}
+$$
+:::
+
+::: {#def-metric-space}
+## Metric Space
+A **metric space** is a set $M$with a function $d: M \times M \to \mathbb{R}$ such that:
+
+1. $d(x, y) \geq 0$(Non-negativity)
+2. $d(x, y) = 0$ if and only if $x = y$
+3. $d(x, y) = d(y, x)$ (Symmetry)
+4. $d(x, z) \leq d(x, y) + d(y, z)$ (Triangle inequality)
+:::
+
+::: {#def-seq-limit}
+## The limit of a sequence
+Suppose $a_n$ is a convergent sequence, and $L \in \mathbb{R}$ is the limit
+
+$$
+\forall \epsilon > 0,
+\exists N \in \mathbb{N},
+\forall n \geq N,
+|a_n-L| \lt \epsilon
+$$
+:::
+
+**Note:** the order of the quantifier is $\forall$, $\exists$, $\forall$
+
+@def-metric-space [^2]
+
+asd
 
 # H1
 
@@ -50,11 +102,11 @@ console.log("Hello")
 
 ---
 
-Fundamental Theorem of Caculus
+Fundamental Theorem of Calculus
 
 $$
-    \int_a^b f'(x) \, dx = f(b) - f(a)
-    $$
+\int_a^b f'(x) \, dx = f(b) - f(a)
+$$
 
 > Thm: Multiple Lines Theorem
 
@@ -99,3 +151,7 @@ $a \neq 0$
 |------|---------|---------|
 | A1   | A1 x B1 | A1 x B2 |
 | A2   | A2 x B1 | A2 x B2 |
+
+
+[^1]: You can embed `pdf` into your document
+[^2]: You can use `@` to refer to the sources
