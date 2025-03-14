@@ -32,7 +32,7 @@ $$
 $$
 :::
 
-::: {#rem-triangle-ineq}
+::: {#rem-tri-ineq}
 $$
 \begin{align*}
 &|b| = |b-a+a| \leq |b-a|+|a| \\

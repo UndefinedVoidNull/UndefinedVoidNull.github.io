@@ -69,22 +69,8 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script>window.backupDefine = window.define; window.define = undefined;</script><script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
-  <script>document.addEventListener("DOMContentLoaded", function () {
- var mathElements = document.getElementsByClassName("math");
- var macros = [];
- for (var i = 0; i < mathElements.length; i++) {
-  var texText = mathElements[i].firstChild;
-  if (mathElements[i].tagName == "SPAN") {
-   katex.render(texText.data, mathElements[i], {
-    displayMode: mathElements[i].classList.contains('display'),
-    throwOnError: false,
-    macros: macros,
-    fleqn: false
-   });
-}}});
-  </script>
-  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css">
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
 const typesetMath = (el) => {
@@ -209,7 +195,7 @@ window.Quarto = {
 </section>
 <section id="basic-concepts" class="level1">
 <h1>Basic Concepts</h1>
-<p>Striking Price <span class="math inline">K</span></p>
+<p>Striking Price <span class="math inline">\(K\)</span></p>
 <p>Call Option</p>
 <p>Put Option</p>
 <p>Forward Contract</p>
@@ -220,22 +206,22 @@ window.Quarto = {
 <section id="variables-and-parameters" class="level1">
 <h1>Variables and Parameters</h1>
 <ul>
-<li><p><span class="math inline">t</span></p></li>
-<li><p><span class="math inline">X_n</span>: ?</p></li>
-<li><p><span class="math inline">\Delta_n</span></p></li>
-<li><p><span class="math inline">B_n</span></p></li>
-<li><p><span class="math inline">S_n</span></p></li>
-<li><p><span class="math inline">V_n</span></p></li>
-<li><p><span class="math inline">K</span></p></li>
-<li><p><span class="math inline">u</span></p></li>
-<li><p><span class="math inline">d</span></p></li>
-<li><p><span class="math inline">r</span></p></li>
-<li><p><span class="math inline">(1+r)</span></p></li>
-<li><p><span class="math inline">\frac{1}{1+r}</span></p></li>
-<li><p><span class="math inline">p</span></p></li>
-<li><p><span class="math inline">\tilde{p}</span></p></li>
-<li><p><span class="math inline">q</span></p></li>
-<li><p><span class="math inline">\tilde{q}</span></p></li>
+<li><p><span class="math inline">\(t\)</span></p></li>
+<li><p><span class="math inline">\(X_n\)</span>: ?</p></li>
+<li><p><span class="math inline">\(\Delta_n\)</span></p></li>
+<li><p><span class="math inline">\(B_n\)</span></p></li>
+<li><p><span class="math inline">\(S_n\)</span></p></li>
+<li><p><span class="math inline">\(V_n\)</span></p></li>
+<li><p><span class="math inline">\(K\)</span></p></li>
+<li><p><span class="math inline">\(u\)</span></p></li>
+<li><p><span class="math inline">\(d\)</span></p></li>
+<li><p><span class="math inline">\(r\)</span></p></li>
+<li><p><span class="math inline">\((1+r)\)</span></p></li>
+<li><p><span class="math inline">\(\frac{1}{1+r}\)</span></p></li>
+<li><p><span class="math inline">\(p\)</span></p></li>
+<li><p><span class="math inline">\(\tilde{p}\)</span></p></li>
+<li><p><span class="math inline">\(q\)</span></p></li>
+<li><p><span class="math inline">\(\tilde{q}\)</span></p></li>
 </ul>
 </section>
 <section id="evolution" class="level1">
@@ -246,9 +232,9 @@ window.Quarto = {
 </section>
 <section id="no-arbitrage-assumption" class="level1">
 <h1>No Arbitrage Assumption</h1>
-<p><span class="math display">
+<p><span class="math display">\[
 0 &lt; d &lt; 1+r &lt; u
-</span></p>
+\]</span></p>
 <p>Chap 2 # Convex Function # Jensen’s Inequality</p>
 
 

@@ -36,7 +36,9 @@ $$
 :::
 
 ::: {#def-metric-space}
+
 ## Metric Space
+
 A **metric space** is a set $M$with a function $d: M \times M \to \mathbb{R}$ such that:
 
 1. $d(x, y) \geq 0$(Non-negativity)
@@ -46,7 +48,9 @@ A **metric space** is a set $M$with a function $d: M \times M \to \mathbb{R}$ su
 :::
 
 ::: {#def-seq-limit}
+
 ## The limit of a sequence
+
 Suppose $a_n$ is a convergent sequence, and $L \in \mathbb{R}$ is the limit
 
 $$
@@ -59,7 +63,7 @@ $$
 
 **Note:** the order of the quantifier is $\forall$, $\exists$, $\forall$
 
-@def-metric-space [^2]
+@thm-quadratic-formula [^2]
 
 asd
 
@@ -115,11 +119,19 @@ $$
 &ax^2+bx+c = 0 \\ 
 &x = \frac{-b\pm\sqrt{b^2-4ac}}{2a}
 \end{align*}
-$$
+$$ {#eq-example}
 
-::: callout-note
-$a \neq 0$
+::: {#tip-example .callout-tip}
+This is a callout
 :::
+
+::: {#thm-example}
+This is a theorem example for testing reference
+:::
+
+@fig-test
+@tip-example
+@def-metric-space
 
 ---
 
@@ -143,7 +155,7 @@ $a \neq 0$
 
 <https://quarto.org/docs/get-started/>
 
-![alt text](<images/Quarto Markdown (.qmd) Testing/image.png>)
+![alt text](<images/Quarto Markdown (.qmd) Testing/image.png>){#fig-test}
 
 ---
 
