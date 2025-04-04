@@ -1,31 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://233lol.com/posts/群环域模.html</loc>
-    <lastmod>2025-01-31T17:11:48.738Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/初探SageMath.html</loc>
-    <lastmod>2025-01-31T17:11:48.737Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/Scrcpy Wireless Android Casting.html</loc>
+    <loc>https://233lol.com/posts/Scrcpy-Wireless-Android-Casting.html</loc>
     <lastmod>2025-01-31T17:11:48.732Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/Quadratic Formula.html</loc>
-    <lastmod>2025-01-31T17:11:48.732Z</lastmod>
+    <loc>https://233lol.com/posts/Quarto-Markdown-(.qmd)-Testing.html</loc>
+    <lastmod>2025-02-18T04:39:31.960Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/How to write a proof.html</loc>
-    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/CSS Styles.html</loc>
-    <lastmod>2025-01-31T17:11:48.730Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/Command Line Tools.html</loc>
+    <loc>https://233lol.com/posts/Command-Line-Tools.html</loc>
     <lastmod>2025-01-31T17:28:32.766Z</lastmod>
   </url>
   <url>
@@ -33,8 +17,24 @@
     <lastmod>2025-01-31T17:11:48.728Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/archives/如何高效获取「长视频」的关键信息.html</loc>
+    <loc>https://233lol.com/archives/群环域模.html</loc>
     <lastmod>2025-01-31T17:11:48.738Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/sqrt(2) is not a rational number.html</loc>
+    <lastmod>2025-01-31T17:11:48.737Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/Inequalities.html</loc>
+    <lastmod>2025-02-20T15:14:40.382Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/Geometric Series.html</loc>
+    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/Calc3 Notes.html</loc>
+    <lastmod>2025-01-31T17:11:48.730Z</lastmod>
   </url>
   <url>
     <loc>https://233lol.com/about.html</loc>
@@ -45,35 +45,35 @@
     <lastmod>2025-02-13T01:57:45.355Z</lastmod>
   </url>
   <url>
+    <loc>https://233lol.com/archives/Construct N, Z, Q, R, C.html</loc>
+    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/How to write a proof.html</loc>
+    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/Quadratic Formula.html</loc>
+    <lastmod>2025-01-31T17:11:48.732Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/archives/如何高效获取「长视频」的关键信息.html</loc>
+    <lastmod>2025-01-31T17:11:48.738Z</lastmod>
+  </url>
+  <url>
     <loc>https://233lol.com/archives/读书.html</loc>
     <lastmod>2025-02-20T15:18:09.314Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/Calc3 Notes.html</loc>
+    <loc>https://233lol.com/posts/Blog-Post-Tags.html</loc>
+    <lastmod>2025-04-04T02:42:46.987Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/posts/CSS-Styles.html</loc>
     <lastmod>2025-01-31T17:11:48.730Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/Construct N, Z, Q, R, C.html</loc>
-    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/Geometric Series.html</loc>
-    <lastmod>2025-01-31T17:11:48.731Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/Inequalities.html</loc>
-    <lastmod>2025-02-20T15:14:40.382Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/Quarto Markdown (.qmd) Testing.html</loc>
-    <lastmod>2025-02-18T04:39:31.960Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/sqrt(2) is not a rational number.html</loc>
-    <lastmod>2025-01-31T17:11:48.737Z</lastmod>
-  </url>
-  <url>
-    <loc>https://233lol.com/posts/博客标签设计.html</loc>
-    <lastmod>2025-01-31T17:11:48.738Z</lastmod>
+    <loc>https://233lol.com/posts/SageMath-First-Look.html</loc>
+    <lastmod>2025-04-04T02:43:14.281Z</lastmod>
   </url>
 </urlset>
