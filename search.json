@@ -35,116 +35,130 @@
     "text": "1. Setup\n\nPowershell 7\n\nhttps://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows\nnotepad $profile or code $profile\n\nhttps://gist.github.com/UndefinedVoidNull/055e23f8d9df82cf650d4e5f0a8f6f06\nSet-Alias -Name ALIAS_NAME -Value COMMAND -Scope Global\n\n\nWindows Terminal\n\nSet AHK Shortcut: Win + Backtick to open wt.exe\n\n#`::Run, wt.exe\nMSYS2\n\nhttps://www.msys2.org/\nAdd to $env:path\n\nStarship\n\nhttps://starship.rs/\nConfig:\n\nWin+R: %USERPROFILE%\\.config\\starship.toml\nhttps://gist.github.com/UndefinedVoidNull/24cd0afd8bab03950723eebcc4a5806b\n\n\nOn-My-Posh (Not Recommend)\n\nhttps://ohmyposh.dev/\n\n\n\n\n2. Basic Tools\n\nPackage Manager\n\nwinget\nchoco\nscoop\n\nlsd (ls)\n\nhttps://github.com/lsd-rs/lsd\n\nz zoxide (smarter cd)\n\nhttps://github.com/ajeetdsouza/zoxide\n\nrg ripgrep (grep)\n\nhttps://github.com/BurntSushi/ripgrep\n\nbat (cat)\n\nhttps://github.com/sharkdp/bat\n\nfd (find)\n\nhttps://github.com/sharkdp/fd\n\nfzf (fuzzy find)\n\nhttps://github.com/junegunn/fzf\n\ndua Disk Usage Analyzer (du)\n\nhttps://github.com/Byron/dua-cli\n\ngsudo (sudo)\n\nhttps://github.com/gerardog/gsudo\n\nicdiff Improved colored diff (diff)\n\nhttps://github.com/jeffkaufman/icdiff\n\nnew (New-Item) (Paste into $profile)\n\nfunction new {\n    param(\n        [Parameter(Mandatory)]\n        [string]$Name\n    )\n\n    if ($Name -match '\\.') {\n        # Contains a dot, assume it's a file\n        New-Item -Path $Name -ItemType File -Force\n    } else {\n        # No dot, assume it's a directory\n        New-Item -Path $Name -ItemType Directory -Force\n    }\n}\n\n\n3. Application Tools\n\nconda Anaconda\n\nhttps://www.anaconda.com/download-success\n\ngh GitHub CLI\n\nhttps://cli.github.com/\n\nffmpeg\n\nhttps://www.ffmpeg.org/\n\nmagick ImageMagick\n\nhttps://imagemagick.org/script/command-line-tools.php\n\nhttp httpie (curl)\n\nhttps://github.com/httpie/cli\n\nyt-dlp\n\nhttps://github.com/yt-dlp/yt-dlp\n\naria2c\n\nhttps://aria2.github.io/\n\ncalibre\n\nhttps://calibre-ebook.com/download_windows\nhttps://manual.calibre-ebook.com/generated/en/cli-index.html\nebook-convert\n\nhttps://manual.calibre-ebook.com/generated/en/ebook-convert.html\n\n2pdf (Paste into $profile)\n\nfunction 2pdf {\n  param (\n      [string]$inputFile\n  )\n\n  if (-not $inputFile) {\n      Write-Host \"Usage: 2pdf 'inputfile'\"\n      return\n  }\n\n  # Ensure the input file exists\n  if (-not (Test-Path $inputFile)) {\n      Write-Host \"Error: File '$inputFile' does not exist.\"\n      return\n  }\n\n  # Determine the output file name by changing the extension to .pdf\n  $outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n  # Run ebook-convert\n  try {\n      ebook-convert $inputFile $outputFile\n      Write-Host \"Converted '$inputFile' to '$outputFile'\"\n  } catch {\n      Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n  }\n}\n\n\n\n4. Commons\n\ncode (Open With Visual Studio Code)\nh (history)\ncls (clear)\npwd print current directory\nipconfig /flushdns\nnetsh interface ip show dns\nnetsh wlan show profiles\nnetsh wlan show profile name=\"Wi-Fi_Name\" key=clear\nping\nssh\nssh-keygen\nftp\nrobocopy\nps Get-Process\nkill Stop-Process\ngc -head 10 Get-Content (head)\ngc -tail 10 Get-Content (tail)\nRename-Item old_name new_name (mv)\nGet-Alias\n\n\n\n5. Git\nhttps://git-scm.com/downloads/win\n\n.git\n.gitignore\n\ngit init\ngit add # add files to staging area\ngit commit -m \"...\" # commit to local repo\n\ngit clone\ngit push origin main\ngit push origin\ngit push\ngit pull # fetch and merge\ngit fetch\ngit merge\ngit rebase\n\ngit branch\ngit checkout\ngit merge\n\ngit status\ngit log\ngit diff\n\n\n6. Win + R\n\nshell:startup\n%USERPROFILE%\n%USERPROFILE%/Desktop\n%USERPROFILE%/Downloads\n%USERPROFILE%/Documents\n%USERPROFILE%/Pictures\n%ALLUSERSPROFILE%\n%APPDATA%\n%LOCALAPPDATA%\n%WINDIR%\n%WINDIR%\\system32\n%WINDIR%\\system32\\drivers\\etc\\hosts\n%PROGRAMFILES%\n%PROGRAMFILES(X86)%\n%TEMP%"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
+    "objectID": "posts/AI Supply Chain.html",
+    "href": "posts/AI Supply Chain.html",
+    "title": "AI Supply Chain",
+    "section": "",
+    "text": "能源与电力\nGPU芯片设计与制造: NVIDIA, Cerebras.ai, 华为(昇腾), 台积电(TSMC), 中芯国际(SMIC)\n云计算平台 & 数据中心: Azure, AWS, Google Cloud, …\n数据支持与标注: Scale.ai, v7Labs, Labelbox, DataLoop, SuperAnnotate, …\n模型与应用 (网站, API, 开源模型, 桌面软件, 移动端App, 集成到现有的网站/软件/App中):\n\n\n大语言模型:\n\nOpenAI (ChatGPT 4o, o1, …)\nGoogle (Gemini 2.0 Pro, 2.0 Flash Thinking)\nAnthropic (Claude Sonnet 3.5)\nDeepseek (R1. V3)\nAlibaba (Qwen 2.5-Max)\nMeta (Llama 3.3)\nMistral.ai (Le Chat)\n\n文生图, 图生图:\n\nStability.ai (Stable Diffusion 3.5)\nBlack Forest Lab (Flux.1)\nMidjorney\nRecraft.ai\n\n文生视频, 图生视频: Runway, Pika, Sora, 可灵\n文生模型, 图生模型 (AI 3D): Tripo, Rodin, microsoft/TRELLIS, 腾讯混元3D\n文生人声, 声音转换 (AI Voice/TTS): ElevenLabs, so-vits-svc, HeyGEN\n文生音乐: Suno, Udio\nAI幻灯片: Canva, Beautiful.ai\n联网搜索: Perplexity, Felo, 秘塔, …\nAI编程相关: Github Copilot, Cursor, WindSurf, Warp(AI终端)\n企业知识库 (RAG): LlamaIndex, LangChain, Credal, …\n角色扮演/文字冒险: character.ai\n其他: poe"
+  },
+  {
+    "objectID": "archives/读书.html",
+    "href": "archives/读书.html",
+    "title": "Reading",
+    "section": "",
+    "text": "读什么\n\n豆瓣(标记想读, 列书单), 微信读书\n知乎, B站, Youtube, 公众号等社交媒体推荐\n淘宝\n作者\n问周围人\n群友\n搜索 xxx相关的书推荐, 关键词(豆瓣, Goodreads)\nSyllabus 课程书籍, 教材\n高校培养方案\n考研参考书籍\n其他书/网页/文章的参考/引用的书籍\n按专业读, 按专题读, 按问题读\n\n\n\n书源\n\nz-lib\nAnna’s Archive\n微信读书\n搜索引擎\n扫书群\n实体书\n淘宝找书\n国家哲学社会科学文献中心 (中文论文/期刊)\n\n如: 社会学研究\n\n中文电子书找不到可以找英文电子书读\n\n\n\n设备\n\n一个把网卡拔掉的笔记本\n电纸书 e-ink\n手机\n平板\n电脑\n\n\n\n软件\n\nWPS PDF独立版\n\n通过shell:startup设置开机自启动\nPin在Taskbar\n批注 -&gt; 形状批注\n\n下划线\n斜线: 关键词, 点, …\n竖线, 竖线横线: 重要部分, 需要读完后截图\n\nF11全屏 也可以 右键上边栏, uncheck 显示功能区\n\n微信读书\n\nPin Chrome Tab, 也可以开机自启 微信读书 App (by Chrome)\n移动设备放在首页或Docker栏\n\n放在只有一两个图标的首页中间偏右会比放在Docker好\n\n\nGoodNotes / NoteShelf\nReadEra: 可以切掉pdf的两边margin, 这样手机上读pdf会好很多\nCalibre: 格式转换(ebook-convert, 2pdf脚本批量转换), epub, …\n\n\n\nWhen\n\n固定时间, 闹钟\n不固定时间\n事件时间\n\n等待\n在xx前\n在xx后\n通勤, 吃饭, 睡前\n游戏, 视频, 游戏与阅读并行\n\n\n整块时间\n碎片时间: 碎片内容 如词典式，概念式，短篇, 论文, 不太重要的\n\n\n\nWhere\n\n固定地点: 书房, 图书馆, 车上, 车站\nEverywhere\n\n声音 降噪\n通风\n温度\nput phone away\n\n\n\n习惯, 目标, 计划\n\n微习惯, 微目标\n\ndaily 1 min/small action\n\n想读就读(兴趣导向) vs 读书计划/roadmap\nreading for an action (write, share, presentation, application, …)\n\ndaily todo list\nproject todo list\nreading plan and roadmap\nimportant dates\n限时, 但允许一定超时\n\n\n\n预处理 Pre-Process\n\n看书评/读书笔记\n先快速翻过\nAI大纲/与AI聊聊, 这本书内容与有价值的问题\n先看相关论文\n跟看过的人聊聊, 问问\n问题\n为什么读\n\n判断与预期:\n\n书的类型，主题，主体，内容\n难度\n偏离与调整\n需要花多少小时, 多少天, …\n值得读吗?\n值得全文读吗? 还是选读?\n\n\n\n\n读中 注意力\n\n判断/归类/问题\n\n论点, 论证, 论据…\n定义/概念解释, 性质, 联系, 隐喻/类比, 问题\n知道 vs 不知道\n熟悉 vs 不熟悉\n能大概它要讲什么 vs 不能预测\n要跳过么?\n要提速吗?\n要减速吗?\n和我之前读的/学的东西有什么关系/关联?\n和问题相关吗? 有何种练习 (带着问题读, 问题赋予文本和段落不同的权重)\n和我如何练习?\n\n什么场景?\n\n\n\n结构化, 编织/串联, 流程\n\n分类 分点 分层 分序\n联系 类比 支持\n演绎 归纳\n\n\n流式\n块式\n句式\n段式\n扫式（两条线）\n笔或鼠标指针视觉引导, 不一定非是流式的视觉引导\n\n文档宽度不要太宽 合适的缩放很重要\n\n视幅扩展\n\n调整字体(不要太大), 行距, 边距\n减少中断（比如划很多线, 添加后处理过程）\n\n划很多线也是一种想着一次就掌握/吃下所有的表现\n\n不要匀速\n不是同等重要的\n几本书切换着读 (最好不要超过3本)\nCatch Keywords and the relationship of keywords\n不要背书/考试思维\n不要想着一次就掌握/吃下所有\n水, 饮料, 零食\n减少回读\n看书 -&gt; 听书 -&gt; 看书 的接力\n速度切换\n焦点切换\n番茄工作法(25-5, 40-10) (可选)\n\n\n\n英语阅读速度需要刻意练习\n\n刻意练习速度是指: 读时不要想着同时兼顾速度练习, 内容, 词汇, 愉悦…而是专注于练习速度和克服英文阅读的心理障碍\n练习的书籍不宜太难, 但要覆盖不同的类型\n练习的书籍需要一定程度的重复阅读\n必须克服英语考试式的阅读心理\n\n克服要都读懂\n克服每个单词都要认识的心理\n克服全都要读, 如果你留意的话你正常速度读中文绝对不是全读, 而是自动忽略了不少内容但是你察觉不到. 但是英文你会更容易察觉, 而你要做的自动忽略某些片段而不察觉/不自知\n\n\n忽略生词(除了重要词汇) until it repeats\n\n边读边查的频率一定要降低再降低\n\nBionic Reading\n\n找到感觉后要撇开Bionic Reading的样式\n在单词前几个字母跳动（流式）\nBionic流式不要贯穿全书, 而一定是和其他模式切换的\n\n流/块/句/几行/段/扫处理模式的切换\n判断句子成分\n逻辑链接词\n减少回读\n注意力焦点跳转\n\n\n\n后处理 Post-Process\n\nPixPin -&gt; LogSeq(Multiple Files into Assets Plugin) -&gt; Anki\n\n不要想着一次做完, 可以看别的书不想看的时候切过来截图和写笔记\n\n写文章 -&gt; 博客\n日总结, 月总结\n分享: 朋友 群 朋友圈\n展望, 还没解决的问题/不足, 接下来读什么\n参考文献\n\n\n\nX\n读多想少 想多读少的辩证法\n是行动还是阅读"
+  },
+  {
+    "objectID": "archives/如何高效获取「长视频」的关键信息.html",
+    "href": "archives/如何高效获取「长视频」的关键信息.html",
+    "title": "如何高效获取「长视频」的关键信息",
+    "section": "",
+    "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
+  },
+  {
+    "objectID": "archives/Quadratic Formula.html",
+    "href": "archives/Quadratic Formula.html",
+    "title": "[Proof] Quadratic Formula",
+    "section": "",
+    "text": "\\[\n\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\nTherefore,\n\nIf \\(b^2-4ac&gt;0\\), there are two real roots\nIf \\(b^2-4ac=0\\), there is only one real root (or two repeated roots)\nIf \\(b^2-4ac&lt;0\\), there is no real root (or two complex conjugate root)"
+  },
+  {
+    "objectID": "archives/How to write a proof.html",
+    "href": "archives/How to write a proof.html",
+    "title": "How to write a proof",
+    "section": "",
+    "text": "Conditional Proof Proof by Cases Proof by Contradiction Proof by Induction"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#intro",
+    "href": "archives/How to write a proof.html#intro",
+    "title": "How to write a proof",
+    "section": "Intro",
+    "text": "Intro\nThere are 3 common types of proofs\n\nIf \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n\\(P\\) iff \\(Q\\) (\\(P \\iff Q\\)) (iff stands for if and only if)\nIf \\(P\\) then (a), (b) and (c) are equivalent"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#if-p-then-q",
+    "href": "archives/How to write a proof.html#if-p-then-q",
+    "title": "How to write a proof",
+    "section": "If \\(P\\), then \\(Q\\)",
+    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove\n\nConditional Proof\nProof by Contradiction\nProof by Contrapositive\nProof by Induction"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#p-iff-q",
+    "href": "archives/How to write a proof.html#p-iff-q",
+    "title": "How to write a proof",
+    "section": "\\(P\\) iff \\(Q\\)",
+    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove\n\nProve \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) (First prove forward \\(\\implies\\) and then prove backward \\(\\impliedby\\))\nA chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#where-to-start",
+    "href": "archives/How to write a proof.html#where-to-start",
+    "title": "How to write a proof",
+    "section": "Where to start",
+    "text": "Where to start\n\nStart from \\(P\\) (Which part of \\(P\\)?)\nStart from \\(Q\\) (Which part of \\(Q\\)?)\nStart from \\(P\\) and \\(Q\\) at the same time (Which part of \\(P\\), \\(Q\\)?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#the-first-step-and-further-steps",
+    "href": "archives/How to write a proof.html#the-first-step-and-further-steps",
+    "title": "How to write a proof",
+    "section": "The first step and further steps?",
+    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
+  },
+  {
+    "objectID": "archives/How to write a proof.html#change-the-focus-point",
+    "href": "archives/How to write a proof.html#change-the-focus-point",
+    "title": "How to write a proof",
+    "section": "Change the focus point",
+    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html",
+    "href": "archives/Construct N, Z, Q, R, C.html",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "",
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbn",
+    "href": "archives/Construct N, Z, Q, R, C.html#mathbbn",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "",
+    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbz",
+    "href": "archives/Construct N, Z, Q, R, C.html#mathbbz",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{Z}\\)",
+    "text": "\\(\\mathbb{Z}\\)\nBy equivalence classes of ordered pairs of \\(N\\), we can construct \\(\\mathbb{Z}\\)\n\\((a, b)\\) to express \\(a - b\\)\n\\[\n\\mathbb{Z} = \\{[(a,b)] \\mid a, b \\in \\mathbb{N} \\}\n\\]"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbq",
+    "href": "archives/Construct N, Z, Q, R, C.html#mathbbq",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{Q}\\)",
+    "text": "\\(\\mathbb{Q}\\)\n\\[\n\\mathbb{Q} = \\{\\frac{m}{n}  \\mid m, n \\in \\mathbb{Z}  \\}\n\\]"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbr",
+    "href": "archives/Construct N, Z, Q, R, C.html#mathbbr",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{R}\\)",
+    "text": "\\(\\mathbb{R}\\)\nThere are 3 common ways to construct \\(\\mathbb{R}\\)\n\nby Axioms (Field Axioms, Order Axioms and Completeness Axiom)\nby Cauchy Sequence\nby Dedekind Cut\n\n\nField Axioms\nA1 A2 A3 A4\nM1 M2 M3 M4\nDL\n\n\nOrder Axioms\n\n\nCompleteness Axiom\nArchimedean property"
+  },
+  {
+    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbc",
+    "href": "archives/Construct N, Z, Q, R, C.html#mathbbc",
+    "title": "Construct N, Z, Q, R, C",
+    "section": "\\(\\mathbb{C}\\)",
+    "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
     "title": "UndefinedVoidNull",
     "section": "",
-    "text": "Command Line Tools\n\n\n\n\n\n\nCode\n\n\nPowershell\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCSS Styles\n\n\n\n\n\n\nCode\n\n\nCSS\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nScrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post Tags\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSageMath First Look\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "archives/群环域模.html",
-    "href": "archives/群环域模.html",
-    "title": "群 环 域 模",
-    "section": "",
-    "text": "以下是群、环、域和模的基础定义。这些都是抽象代数中的重要概念，每个都有不同的代数结构和运算规则。"
-  },
-  {
-    "objectID": "archives/群环域模.html#群group",
-    "href": "archives/群环域模.html#群group",
-    "title": "群 环 域 模",
-    "section": "1. 群（Group）",
-    "text": "1. 群（Group）\n群是一个集合和一个二元运算的代数结构，满足以下条件：\n\n封闭性：对于任意 \\(a, b \\in G\\)，有 \\(a \\cdot b \\in G\\)\n结合律：对于任意 \\(a, b, c \\in G\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n单位元：存在一个单位元 \\(e \\in G\\)，对于任意 \\(a \\in G\\)，有 \\(e \\cdot a = a \\cdot e = a\\)\n逆元：对于任意 \\(a \\in G\\)，存在一个逆元 \\(a^{-1} \\in G\\)，使得 \\(a \\cdot a^{-1} = a^{-1} \\cdot a = e\\)\n\n\n如果还满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in G\\)，则称为交换群或阿贝尔群\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法下构成一个交换群，单位元是 0，逆元是负数\n非零实数集合 \\(\\mathbb{R}^*\\) 在乘法下构成一个群，单位元是 1，逆元是数的倒数"
-  },
-  {
-    "objectID": "archives/群环域模.html#环ring",
-    "href": "archives/群环域模.html#环ring",
-    "title": "群 环 域 模",
-    "section": "2. 环（Ring）",
-    "text": "2. 环（Ring）\n环是一个集合，配备了两个二元运算：加法和乘法。环中的元素必须满足以下条件：\n\n加法构成交换群：环中的加法形成一个交换群（有单位元、逆元和交换性）\n乘法封闭性：环中对任意元素 \\(a, b \\in R\\)，有 \\(a \\cdot b \\in R\\)\n乘法结合律：对于任意 \\(a, b, c \\in R\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n乘法分配律：乘法对加法满足分配律，即 \\(a \\cdot (b + c) = a \\cdot b + a \\cdot c\\) 和 \\((a + b) \\cdot c = a \\cdot c + b \\cdot c\\)\n\n\n如果乘法也满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in R\\)，则称为交换环\n\n环不要求每个非零元素有乘法逆元，也不要求乘法有单位元\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法和乘法下构成一个交换环\n矩阵集合 \\(M_n(\\mathbb{R})\\) （实数 \\(n \\times n\\) 矩阵）在加法和矩阵乘法下构成一个环（不是交换环，因为矩阵乘法不交换）"
-  },
-  {
-    "objectID": "archives/群环域模.html#域field",
-    "href": "archives/群环域模.html#域field",
-    "title": "群 环 域 模",
-    "section": "3. 域（Field）",
-    "text": "3. 域（Field）\n域是一个环的特例，它要求在加法和乘法下满足更强的条件。域中的元素不仅可以进行加法和乘法，还能进行除法（除了除以零）。一个域必须满足以下条件：\n\n加法构成交换群：域中的加法构成一个交换群，单位元为 0\n乘法构成交换群（除零元外）：域中的非零元素在乘法下构成一个交换群，单位元为 1。对于任意非零元素 \\(a \\in F\\)，存在一个乘法逆元 \\(a^{-1}\\)，使得 \\(a \\cdot a^{-1} = 1\\)\n分配律：乘法对加法满足分配律\n\n\n例子：\n\n实数集合 \\(\\mathbb{R}\\) 和有理数集合 \\(\\mathbb{Q}\\) 都是域\n复数集合 \\(\\mathbb{C}\\) 也是一个域\n有限域 \\(\\mathbb{F}_p\\)，其中 \\(p\\) 是素数，定义在模 \\(p\\) 加法和乘法上，是一个有限域"
-  },
-  {
-    "objectID": "archives/群环域模.html#模module",
-    "href": "archives/群环域模.html#模module",
-    "title": "群 环 域 模",
-    "section": "4. 模（Module）",
-    "text": "4. 模（Module）\n模是向量空间的广义概念。与向量空间类似，模中的元素可以进行加法和标量乘法，但模中的标量来自一个环而不是域。模的定义类似于向量空间，但它只要求标量来自环，因此模比向量空间更广泛。\n\n模的定义：\n一个模是一个集合 \\(M\\)，配备了两个运算：\n\n加法：模中的元素可以相加，满足交换群的公理。\n标量乘法：环中的标量可以与模中的元素相乘，满足结合律和分配律。\n\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在自身上构成一个模。\n矩阵空间 \\(M_n(\\mathbb{Z})\\) 是一个模，其中标量来自于环 \\(\\mathbb{Z}\\)，矩阵中的元素来自于整数。"
-  },
-  {
-    "objectID": "archives/群环域模.html#总结",
-    "href": "archives/群环域模.html#总结",
-    "title": "群 环 域 模",
-    "section": "总结：",
-    "text": "总结：\n\n群：一个集合，定义了一个封闭的二元运算（加法或乘法），并且每个元素都有逆元\n环：包含两个运算（加法和乘法），但不要求每个非零元素都有乘法逆元\n域：一个特殊的环，非零元素在乘法下也构成群，即可以进行除法（除零外）\n模：类似于向量空间，但标量来自环而非域，因此更为广泛"
-  },
-  {
-    "objectID": "archives/sqrt(2) is not a rational number.html",
-    "href": "archives/sqrt(2) is not a rational number.html",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "",
-    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
-  },
-  {
-    "objectID": "archives/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "href": "archives/sqrt(2) is not a rational number.html#proof-by-contradiction",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Proof by contradiction",
-    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
-  },
-  {
-    "objectID": "archives/sqrt(2) is not a rational number.html#summary",
-    "href": "archives/sqrt(2) is not a rational number.html#summary",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Summary",
-    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
-  },
-  {
-    "objectID": "archives/sqrt(2) is not a rational number.html#takeaways",
-    "href": "archives/sqrt(2) is not a rational number.html#takeaways",
-    "title": "[Proof] sqrt(2) is not a rational number",
-    "section": "Takeaways",
-    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
-  },
-  {
-    "objectID": "archives/Inequalities.html",
-    "href": "archives/Inequalities.html",
-    "title": "Inequalities",
-    "section": "",
-    "text": "TODO: inequality\n\nTriangle Inequality\nThe sum of any two sides &gt; the remaining side\n\n\nTheorem 1 (Triangle Inequality) \\[\n|a + b| \\leq |a| + |b|\n\\]\n\n\nCorollary 1  \n\n\\(||a| - |b| |\\leq |a-b|\\)\n\\(|a-b| \\leq |a| + |b|\\)\n\n\n\nProof. \\[\n\\begin{align*}\n&|a| = |a-b+b| \\leq |a-b|+|b| \\\\\n&|a| -|b| \\leq |a-b| \\\\\n\\end{align*}\n\\]\n\n\nRemark 1. \\[\n\\begin{align*}\n&|b| = |b-a+a| \\leq |b-a|+|a| \\\\\n&|b|-|a| \\leq |b-a| \\\\\n&|a|-|b| \\geq -|b-a| \\\\\n\\end{align*}\n\\]\n\n\nTheorem 2  \n\n\\(a^2+b^2 \\geq 2ab\\)\n\\(\\frac{a+b}{2} \\geq \\sqrt{ab}\\)\n\n\n\nProof. \\[\n(\\sqrt{a}-\\sqrt{b})^2 = a - 2\\sqrt{ab} + b \\geq 0\n\\]\n\\[\n\\frac{a+b}{2} \\geq \\sqrt{ab}\n\\]\n\n[^1]\n\n\n2. Bernoulli’s Inequality\n\\[\n\\begin{align}\n\\forall n \\in \\mathbb{N} ,\n(1+x)^n \\leq 1+nx\n\\end{align}\n\\]\n\n\n3. Archimedean Property\nThere not exists a infinitely large real number\n\\[\n\\begin{align}\n\\forall x \\in \\mathbb{R},\n\\exists n \\in \\mathbb{N},\nx \\lt n\n\\end{align}\n\\]\nThere not exists a infinitely small positive real number\n\\[\n\\begin{align}\n\\forall x \\gt 0,\n\\exists n \\in \\mathbb{N},\n\\frac{1}{n} \\lt x\n\\end{align}\n\\]"
-  },
-  {
-    "objectID": "archives/Geometric Series.html",
-    "href": "archives/Geometric Series.html",
-    "title": "[Proof] Geometric Series",
-    "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
-  },
-  {
-    "objectID": "archives/Geometric Series.html#geometric-sequence",
-    "href": "archives/Geometric Series.html#geometric-sequence",
-    "title": "[Proof] Geometric Series",
-    "section": "",
-    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
-  },
-  {
-    "objectID": "archives/Geometric Series.html#finite-series",
-    "href": "archives/Geometric Series.html#finite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Finite Series",
-    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "archives/Geometric Series.html#infinite-series",
-    "href": "archives/Geometric Series.html#infinite-series",
-    "title": "[Proof] Geometric Series",
-    "section": "Infinite Series",
-    "text": "Infinite Series"
+    "text": "🐲🐍🐴🐐🐒🐔🐶🐷🐭🐮🐯🐰🏝️🏖️🏜️🌄🌅🥑🍉🙏"
   },
   {
     "objectID": "archives/Calc3 Notes.html",
@@ -210,137 +224,123 @@
     "text": "Divergence Thm\n\\[\n\\oiint_S \\vec{F} \\cdotp \\vec{N} \\ dS=\\iiint _{D} Div(\\vec{F}) \\ dV\n\\]"
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
+    "objectID": "archives/Geometric Series.html",
+    "href": "archives/Geometric Series.html",
+    "title": "[Proof] Geometric Series",
+    "section": "",
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "archives/Geometric Series.html#geometric-sequence",
+    "href": "archives/Geometric Series.html#geometric-sequence",
+    "title": "[Proof] Geometric Series",
+    "section": "",
+    "text": "\\[\na_{n+1} = q \\cdot a_n\n\\]"
+  },
+  {
+    "objectID": "archives/Geometric Series.html#finite-series",
+    "href": "archives/Geometric Series.html#finite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Finite Series",
+    "text": "Finite Series\n\\[\n\\begin{align*}    S_n &= a_1 + a_2 + \\cdots + a_{n-1} + a_n \\\\    q*S_n &= a_2 + a_3 + \\cdots + a_n + a_{n+1} \\\\    S_n - q*S_n &= a_1 - a_{n+1}\\\\    (1-q)S_n &= a_1 - a_{n+1}\\\\    S_n &= \\frac{a_1-a_{n+1}}{1-q}\\\\\\end{align*}\n\\]"
+  },
+  {
+    "objectID": "archives/Geometric Series.html#infinite-series",
+    "href": "archives/Geometric Series.html#infinite-series",
+    "title": "[Proof] Geometric Series",
+    "section": "Infinite Series",
+    "text": "Infinite Series"
+  },
+  {
+    "objectID": "archives/Inequalities.html",
+    "href": "archives/Inequalities.html",
+    "title": "Inequalities",
+    "section": "",
+    "text": "TODO: inequality\n\nTriangle Inequality\nThe sum of any two sides &gt; the remaining side\n\n\nTheorem 1 (Triangle Inequality) \\[\n|a + b| \\leq |a| + |b|\n\\]\n\n\nCorollary 1  \n\n\\(||a| - |b| |\\leq |a-b|\\)\n\\(|a-b| \\leq |a| + |b|\\)\n\n\n\nProof. \\[\n\\begin{align*}\n&|a| = |a-b+b| \\leq |a-b|+|b| \\\\\n&|a| -|b| \\leq |a-b| \\\\\n\\end{align*}\n\\]\n\n\nRemark 1. \\[\n\\begin{align*}\n&|b| = |b-a+a| \\leq |b-a|+|a| \\\\\n&|b|-|a| \\leq |b-a| \\\\\n&|a|-|b| \\geq -|b-a| \\\\\n\\end{align*}\n\\]\n\n\nTheorem 2  \n\n\\(a^2+b^2 \\geq 2ab\\)\n\\(\\frac{a+b}{2} \\geq \\sqrt{ab}\\)\n\n\n\nProof. \\[\n(\\sqrt{a}-\\sqrt{b})^2 = a - 2\\sqrt{ab} + b \\geq 0\n\\]\n\\[\n\\frac{a+b}{2} \\geq \\sqrt{ab}\n\\]\n\n[^1]\n\n\n2. Bernoulli’s Inequality\n\\[\n\\begin{align}\n\\forall n \\in \\mathbb{N} ,\n(1+x)^n \\leq 1+nx\n\\end{align}\n\\]\n\n\n3. Archimedean Property\nThere not exists a infinitely large real number\n\\[\n\\begin{align}\n\\forall x \\in \\mathbb{R},\n\\exists n \\in \\mathbb{N},\nx \\lt n\n\\end{align}\n\\]\nThere not exists a infinitely small positive real number\n\\[\n\\begin{align}\n\\forall x \\gt 0,\n\\exists n \\in \\mathbb{N},\n\\frac{1}{n} \\lt x\n\\end{align}\n\\]"
+  },
+  {
+    "objectID": "archives/sqrt(2) is not a rational number.html",
+    "href": "archives/sqrt(2) is not a rational number.html",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "",
+    "text": "This classic proof is associated with\n\\(\\sqrt{2}\\) is not a rational number."
+  },
+  {
+    "objectID": "archives/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "href": "archives/sqrt(2) is not a rational number.html#proof-by-contradiction",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Proof by contradiction",
+    "text": "Proof by contradiction\nWe know \\[\n\\mathbb{Q} = \\{ \\frac{m}{n} \\mid m, n \\in\\mathbb{Z}, n \\neq 0 \\}\n\\]\nSuppose \\(\\sqrt{ 2 }\\) is rational to reach a contradiction\nSo, \\[\n\\exists m, n \\in \\mathbb{Z}, \\sqrt{2} = \\frac{m}{n}\n\\]\nAnd we also suppose \\(\\frac{m}{n}\\) is in lowest terms\nTo say \\(\\frac{m}{n}\\) in lowest terms means if an integer \\(d\\) divides \\(m\\) and \\(d\\) divides \\(n\\), then \\(d = 1\\) (i.e. \\(GCD(m,n) =1\\))\nObviously, every fraction can be expressed in lowest terms by simply dividing both numerator and denominator by their greatest common divisor (\\(GCD\\))\nTake square on both sides and simplify\n\\[\n\\begin{aligned}\n2 = \\frac{m^2}{n^2} \\\\\nm^2 = 2n^2\n\\end{aligned}\n\\]\nThus, \\(m^2\\) is even so that \\(m\\) is even (It is easy to prove by its contrapositive)\nSo, \\(\\exists k\\in \\mathbb{Z}, m=2k\\)\nSubstitute \\(m=2k\\) back \\[\n\\begin{aligned}\n    (2k)^2 = 2n^2\\\\\n    2n^2 = 4k^2 \\\\\n    n^2 = 2k^2 \\\\\n\\end{aligned}\n\\]\nThus, \\(n^2\\) is even so that \\(n\\) is even.\nSince \\(m\\) is even and \\(n\\) is even, they have common factor 2 which means \\(\\frac{m}{n}\\) isn’t in lowest terms.\nBut we assume \\(\\frac{m}{n}\\) is in lowest term (without common factor), we reach a contradiction!\nTherefore, \\(\\sqrt{2}\\) is not a rational number. So it is irrational number."
+  },
+  {
+    "objectID": "archives/sqrt(2) is not a rational number.html#summary",
+    "href": "archives/sqrt(2) is not a rational number.html#summary",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Summary",
+    "text": "Summary\n\nProof by contradiction\nProve irrational is hard so we made an additional assumption of lowest terms fraction. So we can prove they have command divisor to reach contraction (It’s easy to associate common divisor/factor with even number and prime numbers)\nEven number definition"
+  },
+  {
+    "objectID": "archives/sqrt(2) is not a rational number.html#takeaways",
+    "href": "archives/sqrt(2) is not a rational number.html#takeaways",
+    "title": "[Proof] sqrt(2) is not a rational number",
+    "section": "Takeaways",
+    "text": "Takeaways\n\nRational or fraction always associate with lowest terms assumption\nWhen we prove by contradiction, we can add an additional true assumption (i.e. transform to a new form) to change where the contradiction gonna happen (i.e. change our goal)"
+  },
+  {
+    "objectID": "archives/群环域模.html",
+    "href": "archives/群环域模.html",
+    "title": "群 环 域 模",
+    "section": "",
+    "text": "以下是群、环、域和模的基础定义。这些都是抽象代数中的重要概念，每个都有不同的代数结构和运算规则。"
+  },
+  {
+    "objectID": "archives/群环域模.html#群group",
+    "href": "archives/群环域模.html#群group",
+    "title": "群 环 域 模",
+    "section": "1. 群（Group）",
+    "text": "1. 群（Group）\n群是一个集合和一个二元运算的代数结构，满足以下条件：\n\n封闭性：对于任意 \\(a, b \\in G\\)，有 \\(a \\cdot b \\in G\\)\n结合律：对于任意 \\(a, b, c \\in G\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n单位元：存在一个单位元 \\(e \\in G\\)，对于任意 \\(a \\in G\\)，有 \\(e \\cdot a = a \\cdot e = a\\)\n逆元：对于任意 \\(a \\in G\\)，存在一个逆元 \\(a^{-1} \\in G\\)，使得 \\(a \\cdot a^{-1} = a^{-1} \\cdot a = e\\)\n\n\n如果还满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in G\\)，则称为交换群或阿贝尔群\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法下构成一个交换群，单位元是 0，逆元是负数\n非零实数集合 \\(\\mathbb{R}^*\\) 在乘法下构成一个群，单位元是 1，逆元是数的倒数"
+  },
+  {
+    "objectID": "archives/群环域模.html#环ring",
+    "href": "archives/群环域模.html#环ring",
+    "title": "群 环 域 模",
+    "section": "2. 环（Ring）",
+    "text": "2. 环（Ring）\n环是一个集合，配备了两个二元运算：加法和乘法。环中的元素必须满足以下条件：\n\n加法构成交换群：环中的加法形成一个交换群（有单位元、逆元和交换性）\n乘法封闭性：环中对任意元素 \\(a, b \\in R\\)，有 \\(a \\cdot b \\in R\\)\n乘法结合律：对于任意 \\(a, b, c \\in R\\)，有 \\((a \\cdot b) \\cdot c = a \\cdot (b \\cdot c)\\)\n乘法分配律：乘法对加法满足分配律，即 \\(a \\cdot (b + c) = a \\cdot b + a \\cdot c\\) 和 \\((a + b) \\cdot c = a \\cdot c + b \\cdot c\\)\n\n\n如果乘法也满足交换律 \\(a \\cdot b = b \\cdot a\\) 对于所有 \\(a, b \\in R\\)，则称为交换环\n\n环不要求每个非零元素有乘法逆元，也不要求乘法有单位元\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在加法和乘法下构成一个交换环\n矩阵集合 \\(M_n(\\mathbb{R})\\) （实数 \\(n \\times n\\) 矩阵）在加法和矩阵乘法下构成一个环（不是交换环，因为矩阵乘法不交换）"
+  },
+  {
+    "objectID": "archives/群环域模.html#域field",
+    "href": "archives/群环域模.html#域field",
+    "title": "群 环 域 模",
+    "section": "3. 域（Field）",
+    "text": "3. 域（Field）\n域是一个环的特例，它要求在加法和乘法下满足更强的条件。域中的元素不仅可以进行加法和乘法，还能进行除法（除了除以零）。一个域必须满足以下条件：\n\n加法构成交换群：域中的加法构成一个交换群，单位元为 0\n乘法构成交换群（除零元外）：域中的非零元素在乘法下构成一个交换群，单位元为 1。对于任意非零元素 \\(a \\in F\\)，存在一个乘法逆元 \\(a^{-1}\\)，使得 \\(a \\cdot a^{-1} = 1\\)\n分配律：乘法对加法满足分配律\n\n\n例子：\n\n实数集合 \\(\\mathbb{R}\\) 和有理数集合 \\(\\mathbb{Q}\\) 都是域\n复数集合 \\(\\mathbb{C}\\) 也是一个域\n有限域 \\(\\mathbb{F}_p\\)，其中 \\(p\\) 是素数，定义在模 \\(p\\) 加法和乘法上，是一个有限域"
+  },
+  {
+    "objectID": "archives/群环域模.html#模module",
+    "href": "archives/群环域模.html#模module",
+    "title": "群 环 域 模",
+    "section": "4. 模（Module）",
+    "text": "4. 模（Module）\n模是向量空间的广义概念。与向量空间类似，模中的元素可以进行加法和标量乘法，但模中的标量来自一个环而不是域。模的定义类似于向量空间，但它只要求标量来自环，因此模比向量空间更广泛。\n\n模的定义：\n一个模是一个集合 \\(M\\)，配备了两个运算：\n\n加法：模中的元素可以相加，满足交换群的公理。\n标量乘法：环中的标量可以与模中的元素相乘，满足结合律和分配律。\n\n\n\n例子：\n\n整数集合 \\(\\mathbb{Z}\\) 在自身上构成一个模。\n矩阵空间 \\(M_n(\\mathbb{Z})\\) 是一个模，其中标量来自于环 \\(\\mathbb{Z}\\)，矩阵中的元素来自于整数。"
+  },
+  {
+    "objectID": "archives/群环域模.html#总结",
+    "href": "archives/群环域模.html#总结",
+    "title": "群 环 域 模",
+    "section": "总结：",
+    "text": "总结：\n\n群：一个集合，定义了一个封闭的二元运算（加法或乘法），并且每个元素都有逆元\n环：包含两个运算（加法和乘法），但不要求每个非零元素都有乘法逆元\n域：一个特殊的环，非零元素在乘法下也构成群，即可以进行除法（除零外）\n模：类似于向量空间，但标量来自环而非域，因此更为广泛"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "UndefinedVoidNull",
     "section": "",
-    "text": "🐲🐍🐴🐐🐒🐔🐶🐷🐭🐮🐯🐰🏝️🏖️🏜️🌄🌅🥑🍉🙏"
-  },
-  {
-    "objectID": "archives/AI Supply Chain.html",
-    "href": "archives/AI Supply Chain.html",
-    "title": "AI Supply Chain",
-    "section": "",
-    "text": "能源与电力\nGPU芯片设计与制造: NVIDIA, Cerebras.ai, 华为(昇腾), 台积电(TSMC), 中芯国际(SMIC)\n云计算平台 & 数据中心: Azure, AWS, Google Cloud, …\n数据支持与标注: Scale.ai, v7Labs, Labelbox, DataLoop, SuperAnnotate, …\n模型与应用 (网站, API, 开源模型, 桌面软件, 移动端App, 集成到现有的网站/软件/App中):\n\n\n大语言模型:\n\nOpenAI (ChatGPT 4o, o1, …)\nGoogle (Gemini 2.0 Pro, 2.0 Flash Thinking)\nAnthropic (Claude Sonnet 3.5)\nDeepseek (R1. V3)\nAlibaba (Qwen 2.5-Max)\nMeta (Llama 3.3)\nMistral.ai (Le Chat)\n\n文生图, 图生图:\n\nStability.ai (Stable Diffusion 3.5)\nBlack Forest Lab (Flux.1)\nMidjorney\nRecraft.ai\n\n文生视频, 图生视频: Runway, Pika, Sora, 可灵\n文生模型, 图生模型 (AI 3D): Tripo, Rodin, microsoft/TRELLIS, 腾讯混元3D\n文生人声, 声音转换 (AI Voice/TTS): ElevenLabs, so-vits-svc, HeyGEN\n文生音乐: Suno, Udio\nAI幻灯片: Canva, Beautiful.ai\n联网搜索: Perplexity, Felo, 秘塔, …\nAI编程相关: Github Copilot, Cursor, WindSurf, Warp(AI终端)\n企业知识库 (RAG): LlamaIndex, LangChain, Credal, …\n角色扮演/文字冒险: character.ai\n其他: poe"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html",
-    "href": "archives/Construct N, Z, Q, R, C.html",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "",
-    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbn",
-    "href": "archives/Construct N, Z, Q, R, C.html#mathbbn",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "",
-    "text": "There are 2 common ways to construct \\(\\mathbb{N}\\)\n\nby Peano Axioms\nby Set Theory (\\(\\emptyset\\) and \\(\\cup\\))\n\nDedekind–Peano Structure is the ternary tuple \\((e,S,\\mathbb{N})\\) such that\n\n\\(e\\) is an element, \\(S\\) is the a function, \\(\\mathbb{N}\\) is a set\n\\(e \\in \\mathbb{N}\\) (neutral element)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\in\\mathbb{N}\\) (successor function is \\(\\mathbb{N}\\rightarrow\\mathbb{N}\\))\n\\(\\forall a,b\\in\\mathbb{N}, (S(a)=S(b) \\implies a=b)\\) (successor function is injection)\n\\(\\forall a \\in \\mathbb{N}, S(a)\\mathbb{N}eq e\\) (the range of successor function exclude \\(e\\), no circle, \\(e\\) is the first)\n\\(\\forall P,\\{P(e) \\land \\forall k \\in \\mathbb{N},[P(k)\\implies P(S(k))]\\} \\implies [\\forall n \\in \\mathbb{N}, P(n)]\\) (induction)\n\nSo, we can define \\(0 := e, 1:=S(0),2:=S(1)=S(S(0)), ...\\)"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbz",
-    "href": "archives/Construct N, Z, Q, R, C.html#mathbbz",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{Z}\\)",
-    "text": "\\(\\mathbb{Z}\\)\nBy equivalence classes of ordered pairs of \\(N\\), we can construct \\(\\mathbb{Z}\\)\n\\((a, b)\\) to express \\(a - b\\)\n\\[\n\\mathbb{Z} = \\{[(a,b)] \\mid a, b \\in \\mathbb{N} \\}\n\\]"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbq",
-    "href": "archives/Construct N, Z, Q, R, C.html#mathbbq",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{Q}\\)",
-    "text": "\\(\\mathbb{Q}\\)\n\\[\n\\mathbb{Q} = \\{\\frac{m}{n}  \\mid m, n \\in \\mathbb{Z}  \\}\n\\]"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbr",
-    "href": "archives/Construct N, Z, Q, R, C.html#mathbbr",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{R}\\)",
-    "text": "\\(\\mathbb{R}\\)\nThere are 3 common ways to construct \\(\\mathbb{R}\\)\n\nby Axioms (Field Axioms, Order Axioms and Completeness Axiom)\nby Cauchy Sequence\nby Dedekind Cut\n\n\nField Axioms\nA1 A2 A3 A4\nM1 M2 M3 M4\nDL\n\n\nOrder Axioms\n\n\nCompleteness Axiom\nArchimedean property"
-  },
-  {
-    "objectID": "archives/Construct N, Z, Q, R, C.html#mathbbc",
-    "href": "archives/Construct N, Z, Q, R, C.html#mathbbc",
-    "title": "Construct N, Z, Q, R, C",
-    "section": "\\(\\mathbb{C}\\)",
-    "text": "\\(\\mathbb{C}\\)\n\\[\n\\mathbb{C} = \\{a+bi \\mid a, b \\in \\mathbb{R}, i^2 = -1  \\}\n\\]"
-  },
-  {
-    "objectID": "archives/How to write a proof.html",
-    "href": "archives/How to write a proof.html",
-    "title": "How to write a proof",
-    "section": "",
-    "text": "Conditional Proof Proof by Cases Proof by Contradiction Proof by Induction"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#intro",
-    "href": "archives/How to write a proof.html#intro",
-    "title": "How to write a proof",
-    "section": "Intro",
-    "text": "Intro\nThere are 3 common types of proofs\n\nIf \\(P\\), then \\(Q\\). (\\(P \\implies Q\\))\n\\(P\\) iff \\(Q\\) (\\(P \\iff Q\\)) (iff stands for if and only if)\nIf \\(P\\) then (a), (b) and (c) are equivalent"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#if-p-then-q",
-    "href": "archives/How to write a proof.html#if-p-then-q",
-    "title": "How to write a proof",
-    "section": "If \\(P\\), then \\(Q\\)",
-    "text": "If \\(P\\), then \\(Q\\)\nThere are two ways to prove\n\nConditional Proof\nProof by Contradiction\nProof by Contrapositive\nProof by Induction"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#p-iff-q",
-    "href": "archives/How to write a proof.html#p-iff-q",
-    "title": "How to write a proof",
-    "section": "\\(P\\) iff \\(Q\\)",
-    "text": "\\(P\\) iff \\(Q\\)\nThere are two ways to prove\n\nProve \\(P \\implies Q\\) and then prove \\(Q \\implies P\\) (First prove forward \\(\\implies\\) and then prove backward \\(\\impliedby\\))\nA chain of iff \\[\n\\begin{align*}\n&P \\\\\n&\\iff R \\\\\n&\\iff \\dots\\\\\n&\\iff Q\n\\end{align*}\n\\]"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#where-to-start",
-    "href": "archives/How to write a proof.html#where-to-start",
-    "title": "How to write a proof",
-    "section": "Where to start",
-    "text": "Where to start\n\nStart from \\(P\\) (Which part of \\(P\\)?)\nStart from \\(Q\\) (Which part of \\(Q\\)?)\nStart from \\(P\\) and \\(Q\\) at the same time (Which part of \\(P\\), \\(Q\\)?)\n\n\nby what?\n\nby the sense of direction\nby cases\nby examples\nby graph\nby attempts\nby analogy\nby pattern-method\nby experiences\nby intuition\n\nNow we know where to start"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#the-first-step-and-further-steps",
-    "href": "archives/How to write a proof.html#the-first-step-and-further-steps",
-    "title": "How to write a proof",
-    "section": "The first step and further steps?",
-    "text": "The first step and further steps?\n\nby definition\nby theorem or propositions\nby transformations/operations\nby techniques\nby axioms"
-  },
-  {
-    "objectID": "archives/How to write a proof.html#change-the-focus-point",
-    "href": "archives/How to write a proof.html#change-the-focus-point",
-    "title": "How to write a proof",
-    "section": "Change the focus point",
-    "text": "Change the focus point\nWhen you\n\n(have no idea how to carry on) get stuck\n(know how to carry on but) find it super hard/complex to going forward in this direction\nfinished this part\nfeeling I might ignored some important points/things"
-  },
-  {
-    "objectID": "archives/Quadratic Formula.html",
-    "href": "archives/Quadratic Formula.html",
-    "title": "[Proof] Quadratic Formula",
-    "section": "",
-    "text": "\\[\n\\begin{align*}\n&ax^2+bx+c=0 \\ (a \\neq 0) \\\\\n&x^2+\\frac{b}{a}x+\\frac{c}{a}=0\\\\&(x+\\frac{b}{2a})^2=-\\frac{c}{a}+\\frac{b^2}{4a^2}\\\\\n&(x+\\frac{b}{2a})^2=\\frac{-4ac+b^2}{4a^2}\\\\\n&x+\\frac{b}{2a}=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}\\\\\n&x=\\pm\\sqrt{\\frac{b^2-4ac}{4a^2}}-\\frac{b}{2a}\\\\\n&x=\\pm\\frac{\\sqrt{b^2-4ac}}{2a}-\\frac{b}{2a}\\\\\n&x=\\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\]\nTherefore,\n\nIf \\(b^2-4ac&gt;0\\), there are two real roots\nIf \\(b^2-4ac=0\\), there is only one real root (or two repeated roots)\nIf \\(b^2-4ac&lt;0\\), there is no real root (or two complex conjugate root)"
-  },
-  {
-    "objectID": "archives/如何高效获取「长视频」的关键信息.html",
-    "href": "archives/如何高效获取「长视频」的关键信息.html",
-    "title": "如何高效获取「长视频」的关键信息",
-    "section": "",
-    "text": "去DownSub等可以Download Youtube Subtitles的网站, 粘贴视频链接, 下载txt字幕\n将txt文件在VS Code中进行预处理, 比如将 \\n 换成 Space (正则表达式)\n将txt文件喂给AI让其详细总结\n由于一般文档太长AI没法一次性翻译, 可以让AI分次翻译, 输入”继续翻译”的提示词让AI继续. 不是特别长的可以尝试Mistral AI的Le Chat一般可以一次性翻译. 也可以尝试Deepseek或者Kimi.ai. (但是这两个Chatbot在有敏感内容时, 翻译的过程中会被突然掐掉, 拒绝应答)\n(推荐) 将txt的内容粘贴进Word Docx中. 使用Google Translate或者DeepL, Reverso(这两个需要付费)上传Docx进行翻译\n新开一个文档, 将翻译后的Transcript的关键部分加粗/排版并摘出\n将摘抄部分发到互联网上, 然后分享给朋友\n将摘抄和Transcript合并成一个文档(摘抄放在头部), 放进Google Drive的Archives文件夹\n\nPS: 上述过程也可以借助某些Chrome Extension来实现/助力. 如豆包, YouTube Summary"
-  },
-  {
-    "objectID": "archives/读书.html",
-    "href": "archives/读书.html",
-    "title": "Reading",
-    "section": "",
-    "text": "读什么\n\n豆瓣(标记想读, 列书单), 微信读书\n知乎, B站, Youtube, 公众号等社交媒体推荐\n淘宝\n作者\n问周围人\n群友\n搜索 xxx相关的书推荐, 关键词(豆瓣, Goodreads)\nSyllabus 课程书籍, 教材\n高校培养方案\n考研参考书籍\n其他书/网页/文章的参考/引用的书籍\n按专业读, 按专题读, 按问题读\n\n\n\n书源\n\nz-lib\nAnna’s Archive\n微信读书\n搜索引擎\n扫书群\n实体书\n淘宝找书\n国家哲学社会科学文献中心 (中文论文/期刊)\n\n如: 社会学研究\n\n中文电子书找不到可以找英文电子书读\n\n\n\n设备\n\n一个把网卡拔掉的笔记本\n电纸书 e-ink\n手机\n平板\n电脑\n\n\n\n软件\n\nWPS PDF独立版\n\n通过shell:startup设置开机自启动\nPin在Taskbar\n批注 -&gt; 形状批注\n\n下划线\n斜线: 关键词, 点, …\n竖线, 竖线横线: 重要部分, 需要读完后截图\n\nF11全屏 也可以 右键上边栏, uncheck 显示功能区\n\n微信读书\n\nPin Chrome Tab, 也可以开机自启 微信读书 App (by Chrome)\n移动设备放在首页或Docker栏\n\n放在只有一两个图标的首页中间偏右会比放在Docker好\n\n\nGoodNotes / NoteShelf\nReadEra: 可以切掉pdf的两边margin, 这样手机上读pdf会好很多\nCalibre: 格式转换(ebook-convert, 2pdf脚本批量转换), epub, …\n\n\n\nWhen\n\n固定时间, 闹钟\n不固定时间\n事件时间\n\n等待\n在xx前\n在xx后\n通勤, 吃饭, 睡前\n游戏, 视频, 游戏与阅读并行\n\n\n整块时间\n碎片时间: 碎片内容 如词典式，概念式，短篇, 论文, 不太重要的\n\n\n\nWhere\n\n固定地点: 书房, 图书馆, 车上, 车站\nEverywhere\n\n声音 降噪\n通风\n温度\nput phone away\n\n\n\n习惯, 目标, 计划\n\n微习惯, 微目标\n\ndaily 1 min/small action\n\n想读就读(兴趣导向) vs 读书计划/roadmap\nreading for an action (write, share, presentation, application, …)\n\ndaily todo list\nproject todo list\nreading plan and roadmap\nimportant dates\n限时, 但允许一定超时\n\n\n\n预处理 Pre-Process\n\n看书评/读书笔记\n先快速翻过\nAI大纲/与AI聊聊, 这本书内容与有价值的问题\n先看相关论文\n跟看过的人聊聊, 问问\n问题\n为什么读\n\n判断与预期:\n\n书的类型，主题，主体，内容\n难度\n偏离与调整\n需要花多少小时, 多少天, …\n值得读吗?\n值得全文读吗? 还是选读?\n\n\n\n\n读中 注意力\n\n判断/归类/问题\n\n论点, 论证, 论据…\n定义/概念解释, 性质, 联系, 隐喻/类比, 问题\n知道 vs 不知道\n熟悉 vs 不熟悉\n能大概它要讲什么 vs 不能预测\n要跳过么?\n要提速吗?\n要减速吗?\n和我之前读的/学的东西有什么关系/关联?\n和问题相关吗? 有何种练习 (带着问题读, 问题赋予文本和段落不同的权重)\n和我如何练习?\n\n什么场景?\n\n\n\n结构化, 编织/串联, 流程\n\n分类 分点 分层 分序\n联系 类比 支持\n演绎 归纳\n\n\n流式\n块式\n句式\n段式\n扫式（两条线）\n笔或鼠标指针视觉引导, 不一定非是流式的视觉引导\n\n文档宽度不要太宽 合适的缩放很重要\n\n视幅扩展\n\n调整字体(不要太大), 行距, 边距\n减少中断（比如划很多线, 添加后处理过程）\n\n划很多线也是一种想着一次就掌握/吃下所有的表现\n\n不要匀速\n不是同等重要的\n几本书切换着读 (最好不要超过3本)\nCatch Keywords and the relationship of keywords\n不要背书/考试思维\n不要想着一次就掌握/吃下所有\n水, 饮料, 零食\n减少回读\n看书 -&gt; 听书 -&gt; 看书 的接力\n速度切换\n焦点切换\n番茄工作法(25-5, 40-10) (可选)\n\n\n\n英语阅读速度需要刻意练习\n\n刻意练习速度是指: 读时不要想着同时兼顾速度练习, 内容, 词汇, 愉悦…而是专注于练习速度和克服英文阅读的心理障碍\n练习的书籍不宜太难, 但要覆盖不同的类型\n练习的书籍需要一定程度的重复阅读\n必须克服英语考试式的阅读心理\n\n克服要都读懂\n克服每个单词都要认识的心理\n克服全都要读, 如果你留意的话你正常速度读中文绝对不是全读, 而是自动忽略了不少内容但是你察觉不到. 但是英文你会更容易察觉, 而你要做的自动忽略某些片段而不察觉/不自知\n\n\n忽略生词(除了重要词汇) until it repeats\n\n边读边查的频率一定要降低再降低\n\nBionic Reading\n\n找到感觉后要撇开Bionic Reading的样式\n在单词前几个字母跳动（流式）\nBionic流式不要贯穿全书, 而一定是和其他模式切换的\n\n流/块/句/几行/段/扫处理模式的切换\n判断句子成分\n逻辑链接词\n减少回读\n注意力焦点跳转\n\n\n\n后处理 Post-Process\n\nPixPin -&gt; LogSeq(Multiple Files into Assets Plugin) -&gt; Anki\n\n不要想着一次做完, 可以看别的书不想看的时候切过来截图和写笔记\n\n写文章 -&gt; 博客\n日总结, 月总结\n分享: 朋友 群 朋友圈\n展望, 还没解决的问题/不足, 接下来读什么\n参考文献\n\n\n\nX\n读多想少 想多读少的辩证法\n是行动还是阅读"
+    "text": "AI Supply Chain\n\n\n\n\n\n\nRecord\n\n\nAI\n\n\n\n\n\n\n\n\n\nFeb 12, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Line Tools\n\n\n\n\n\n\nCode\n\n\nPowershell\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCSS Styles\n\n\n\n\n\n\nCode\n\n\nCSS\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nScrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post Tags\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSageMath First Look\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Blog-Post-Tags.html",
     "href": "posts/Blog-Post-Tags.html",
     "title": "Blog Post Tags",
     "section": "",
-    "text": "By Action\n\nRecord\nWorkflow\nReading\nRepost\nComment/Review\n\nBy Theme\n\nSOC\nECON\nPsychology\nData\nCS\nCode\nMath\nLogic\nAI\nHistory\nMusic\nArt\nEfficiency\nTool\nIdea\nMethod"
+    "text": "By Action\n\nRecord\n\nWorkflow\n\nReading\n\nRepost\n\nComment/Review\n\n\n\nBy Theme\n\nSOC\n\nECON\n\nPsychology\n\nData\n\nCS\n\nCode\n\nMath\n\nLogic\n\nAI\n\nHistory\n\nMusic\n\nArt\n\nEfficiency\n\nTool\n\nIdea\n\nMethod"
   },
   {
     "objectID": "posts/CSS-Styles.html",
