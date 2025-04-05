@@ -1,3 +1,5 @@
+_site
+
 .Rproj.user
 .Rhistory
 .RData
@@ -5,5 +7,4 @@
 
 /.quarto/
 
-_site
 .vscode
