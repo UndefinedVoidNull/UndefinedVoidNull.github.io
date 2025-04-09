@@ -1,0 +1,8 @@
+---
+title: "VS Code Extensions"
+date: "2025-04-09"
+categories: [PDF]
+---
+
+[VS Code Extensions](pdfs/VS Code Extensions.pdf)
+![](pdfs/VS Code Extensions.pdf){width=100% height=800}

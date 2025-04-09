@@ -1,0 +1,8 @@
+---
+title: "Chrome Extensions"
+date: "2025-04-09"
+categories: [PDF]
+---
+
+[Chrome Extensions](pdfs/Chrome Extensions.pdf)
+![](pdfs/Chrome Extensions.pdf){width=100% height=800}
