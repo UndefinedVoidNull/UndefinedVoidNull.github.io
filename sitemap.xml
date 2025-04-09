@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://233lol.com/posts/Scrcpy-Wireless-Android-Casting.html</loc>
-    <lastmod>2025-01-31T17:11:48.732Z</lastmod>
+    <loc>https://233lol.com/posts/VS-Code-Extensions.html</loc>
+    <lastmod>2025-04-09T13:15:09.852Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/Quarto-Markdown-(.qmd)-Testing.html</loc>
-    <lastmod>2025-02-18T04:39:31.960Z</lastmod>
+    <loc>https://233lol.com/posts/SageMath-First-Look.html</loc>
+    <lastmod>2025-04-04T02:43:14.281Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/Command-Line-Tools.html</loc>
-    <lastmod>2025-01-31T17:28:32.766Z</lastmod>
+    <loc>https://233lol.com/posts/CSS-Styles.html</loc>
+    <lastmod>2025-01-31T17:11:48.730Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/posts/Chrome-Extensions.html</loc>
+    <lastmod>2025-04-09T13:14:18.745Z</lastmod>
   </url>
   <url>
     <loc>https://233lol.com/posts/AI Supply Chain.html</loc>
@@ -69,11 +73,15 @@
     <lastmod>2025-04-05T16:44:20.244Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/CSS-Styles.html</loc>
-    <lastmod>2025-01-31T17:11:48.730Z</lastmod>
+    <loc>https://233lol.com/posts/Command-Line-Tools.html</loc>
+    <lastmod>2025-01-31T17:28:32.766Z</lastmod>
   </url>
   <url>
-    <loc>https://233lol.com/posts/SageMath-First-Look.html</loc>
-    <lastmod>2025-04-04T02:43:14.281Z</lastmod>
+    <loc>https://233lol.com/posts/Quarto-Markdown-(.qmd)-Testing.html</loc>
+    <lastmod>2025-04-09T13:14:48.155Z</lastmod>
+  </url>
+  <url>
+    <loc>https://233lol.com/posts/Scrcpy-Wireless-Android-Casting.html</loc>
+    <lastmod>2025-01-31T17:11:48.732Z</lastmod>
   </url>
 </urlset>

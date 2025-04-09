@@ -2,6 +2,8 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Chrome-Extensions.html",
+      "/posts/VS-Code-Extensions.html",
       "/posts/AI Supply Chain.html",
       "/posts/Command-Line-Tools.html",
       "/posts/CSS-Styles.html",

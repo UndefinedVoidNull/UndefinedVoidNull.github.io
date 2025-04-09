@@ -1,38 +1,66 @@
 [
   {
-    "objectID": "posts/Scrcpy-Wireless-Android-Casting.html",
-    "href": "posts/Scrcpy-Wireless-Android-Casting.html",
-    "title": "Scrcpy Wireless Android Casting",
+    "objectID": "posts/VS-Code-Extensions.html",
+    "href": "posts/VS-Code-Extensions.html",
+    "title": "VS Code Extensions",
     "section": "",
-    "text": "Escrcpy\nMaybe Escrcpy is a better solution https://github.com/viarotel-org/escrcpy\n\n\nConnect to the phone\n\nDownload and unzip scrcpy (If your are using Windows, download scrcpy-win64-$version.zip) https://github.com/Genymobile/scrcpy/releases/\nConnect phone to PC via USB cable\nMake sure turn on the USB debugging on your phone\nOpen terminal inside the scrcpy folder\n./adb devices\n./adb tcpip 5555\nUnplug USB cable\nGo to settings search ip in settings and remember the ip address (Make sure your phone and PC are in the same LAN i.e. connect to same WIFI)\n./adb connect 192.168.1.xx:5555\n./scrcpy.exe\nIf you want to disconnect, first use ./adb devices to check the ip address and port. Then ./adb disconnect 192.168.1.xx:5555\n\n\n\nUsage\n\nRight Click: Back\nMiddle Click: Home\nYou can use clipboard across PC and your phone\nCreate a desktop shortcut for scrcpy.exe (Maybe rename it to My Phone)\nIf scrcpy doesn’t support audio forwarding for your phone. You can try Bluetooth Audio Receiver\nYou can add the scrcpy folder path to the PATH environmental variable so that you can directly use adb and scrcpy commands in the terminal\nhttps://github.com/Genymobile/scrcpy"
+    "text": "VS Code Extensions"
   },
   {
-    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html",
-    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html",
-    "title": "Quarto Markdown (.qmd) Testing",
+    "objectID": "posts/SageMath-First-Look.html",
+    "href": "posts/SageMath-First-Look.html",
+    "title": "SageMath First Look",
     "section": "",
-    "text": "发现社会1\n博客标签设计\nNote: the order of the quantifier is \\(\\forall\\), \\(\\exists\\), \\(\\forall\\)\nTheorem 1 2\nasd"
+    "text": "https://sagecell.sagemath.org/\nhttps://doc.sagemath.org/html/en/tutorial/tour_assignment.html\n# define variables\nx, b, c = var('x b c')\n\n# solve equations\nsolve([x^2 + b*x + c == 0], x) \nsolve([x+y==6, x-y==4], x, y)\n\n# differentiate\nu = var('u')\ndiff(sin(u), u)\n\n# 4-th derivative\ndiff(sin(x^2), x, 4)\n\n# partial\nx, y = var('x,y')\nf = x^2 + 17*y^2\n\nf.diff(x) # w.r.t. x\nf.diff(y) # w.r.t. y\n\n# partial fraction decomposition\nf = 1/((1+x)*(x-1))\nf.partial_fraction(x)\n\n# indefnite integral\nintegral(x*sin(x^2), x)\n# definite integral\nintegral(x/(x^2+1), x, 0, 1)\n\n# solve DEs\nt = var('t')    # define a variable t\nx = function('x')(t)   # define x to be a function of t\nDE = diff(x, t) + x - 1\ndesolve(DE, [x,t])\n\n# lapalce transform\ns = var(\"s\")\nt = var(\"t\")\nf = t^2*exp(t) - sin(t)\nf.laplace(t,s)\n\n# LaTeX\nlatex(sqrt(z^2 + 1/2)) # \\sqrt{z^{2} + \\frac{1}{2}}\n\n# print\nprint(\"Hello World\")"
   },
   {
-    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html#h2",
-    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html#h2",
-    "title": "Quarto Markdown (.qmd) Testing",
-    "section": "H2",
-    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Calculus\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\tag{1}\\]\n\n\n\n\n\n\nTip 1\n\n\n\nThis is a callout\n\n\n\nTheorem 2 This is a theorem example for testing reference\n\nFigure 1 Tip 1 Definition 1\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\n\n\n\nFigure 1: alt text\n\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
-  },
-  {
-    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html#footnotes",
-    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html#footnotes",
-    "title": "Quarto Markdown (.qmd) Testing",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nYou can embed pdf into your document↩︎\nYou can use @ to refer to the sources↩︎"
-  },
-  {
-    "objectID": "posts/Command-Line-Tools.html",
-    "href": "posts/Command-Line-Tools.html",
-    "title": "Command Line Tools",
+    "objectID": "posts/CSS-Styles.html",
+    "href": "posts/CSS-Styles.html",
+    "title": "CSS Styles",
     "section": "",
-    "text": "1. Setup\n\nPowershell 7\n\nhttps://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows\nnotepad $profile or code $profile\n\nhttps://gist.github.com/UndefinedVoidNull/055e23f8d9df82cf650d4e5f0a8f6f06\nSet-Alias -Name ALIAS_NAME -Value COMMAND -Scope Global\n\n\nWindows Terminal\n\nSet AHK Shortcut: Win + Backtick to open wt.exe\n\n#`::Run, wt.exe\nMSYS2\n\nhttps://www.msys2.org/\nAdd to $env:path\n\nStarship\n\nhttps://starship.rs/\nConfig:\n\nWin+R: %USERPROFILE%\\.config\\starship.toml\nhttps://gist.github.com/UndefinedVoidNull/24cd0afd8bab03950723eebcc4a5806b\n\n\nOn-My-Posh (Not Recommend)\n\nhttps://ohmyposh.dev/\n\n\n\n\n2. Basic Tools\n\nPackage Manager\n\nwinget\nchoco\nscoop\n\nlsd (ls)\n\nhttps://github.com/lsd-rs/lsd\n\nz zoxide (smarter cd)\n\nhttps://github.com/ajeetdsouza/zoxide\n\nrg ripgrep (grep)\n\nhttps://github.com/BurntSushi/ripgrep\n\nbat (cat)\n\nhttps://github.com/sharkdp/bat\n\nfd (find)\n\nhttps://github.com/sharkdp/fd\n\nfzf (fuzzy find)\n\nhttps://github.com/junegunn/fzf\n\ndua Disk Usage Analyzer (du)\n\nhttps://github.com/Byron/dua-cli\n\ngsudo (sudo)\n\nhttps://github.com/gerardog/gsudo\n\nicdiff Improved colored diff (diff)\n\nhttps://github.com/jeffkaufman/icdiff\n\nnew (New-Item) (Paste into $profile)\n\nfunction new {\n    param(\n        [Parameter(Mandatory)]\n        [string]$Name\n    )\n\n    if ($Name -match '\\.') {\n        # Contains a dot, assume it's a file\n        New-Item -Path $Name -ItemType File -Force\n    } else {\n        # No dot, assume it's a directory\n        New-Item -Path $Name -ItemType Directory -Force\n    }\n}\n\n\n3. Application Tools\n\nconda Anaconda\n\nhttps://www.anaconda.com/download-success\n\ngh GitHub CLI\n\nhttps://cli.github.com/\n\nffmpeg\n\nhttps://www.ffmpeg.org/\n\nmagick ImageMagick\n\nhttps://imagemagick.org/script/command-line-tools.php\n\nhttp httpie (curl)\n\nhttps://github.com/httpie/cli\n\nyt-dlp\n\nhttps://github.com/yt-dlp/yt-dlp\n\naria2c\n\nhttps://aria2.github.io/\n\ncalibre\n\nhttps://calibre-ebook.com/download_windows\nhttps://manual.calibre-ebook.com/generated/en/cli-index.html\nebook-convert\n\nhttps://manual.calibre-ebook.com/generated/en/ebook-convert.html\n\n2pdf (Paste into $profile)\n\nfunction 2pdf {\n  param (\n      [string]$inputFile\n  )\n\n  if (-not $inputFile) {\n      Write-Host \"Usage: 2pdf 'inputfile'\"\n      return\n  }\n\n  # Ensure the input file exists\n  if (-not (Test-Path $inputFile)) {\n      Write-Host \"Error: File '$inputFile' does not exist.\"\n      return\n  }\n\n  # Determine the output file name by changing the extension to .pdf\n  $outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n  # Run ebook-convert\n  try {\n      ebook-convert $inputFile $outputFile\n      Write-Host \"Converted '$inputFile' to '$outputFile'\"\n  } catch {\n      Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n  }\n}\n\n\n\n4. Commons\n\ncode (Open With Visual Studio Code)\nh (history)\ncls (clear)\npwd print current directory\nipconfig /flushdns\nnetsh interface ip show dns\nnetsh wlan show profiles\nnetsh wlan show profile name=\"Wi-Fi_Name\" key=clear\nping\nssh\nssh-keygen\nftp\nrobocopy\nps Get-Process\nkill Stop-Process\ngc -head 10 Get-Content (head)\ngc -tail 10 Get-Content (tail)\nRename-Item old_name new_name (mv)\nGet-Alias\n\n\n\n5. Git\nhttps://git-scm.com/downloads/win\n\n.git\n.gitignore\n\ngit init\ngit add # add files to staging area\ngit commit -m \"...\" # commit to local repo\n\ngit clone\ngit push origin main\ngit push origin\ngit push\ngit pull # fetch and merge\ngit fetch\ngit merge\ngit rebase\n\ngit branch\ngit checkout\ngit merge\n\ngit status\ngit log\ngit diff\n\n\n6. Win + R\n\nshell:startup\n%USERPROFILE%\n%USERPROFILE%/Desktop\n%USERPROFILE%/Downloads\n%USERPROFILE%/Documents\n%USERPROFILE%/Pictures\n%ALLUSERSPROFILE%\n%APPDATA%\n%LOCALAPPDATA%\n%WINDIR%\n%WINDIR%\\system32\n%WINDIR%\\system32\\drivers\\etc\\hosts\n%PROGRAMFILES%\n%PROGRAMFILES(X86)%\n%TEMP%"
+    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;\n\n\n\n&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;\n\n\n\n&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "posts/CSS-Styles.html#style-inline-css",
+    "href": "posts/CSS-Styles.html#style-inline-css",
+    "title": "CSS Styles",
+    "section": "",
+    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;"
+  },
+  {
+    "objectID": "posts/CSS-Styles.html#headstyle-css",
+    "href": "posts/CSS-Styles.html#headstyle-css",
+    "title": "CSS Styles",
+    "section": "",
+    "text": "&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "posts/CSS-Styles.html#headlinkrelstylesheet-hrefxxx.css",
+    "href": "posts/CSS-Styles.html#headlinkrelstylesheet-hrefxxx.css",
+    "title": "CSS Styles",
+    "section": "",
+    "text": "&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
+  },
+  {
+    "objectID": "posts/CSS-Styles.html#import-xxx.css-jsx",
+    "href": "posts/CSS-Styles.html#import-xxx.css-jsx",
+    "title": "CSS Styles",
+    "section": "import ‘xxx.css’ (jsx)",
+    "text": "import ‘xxx.css’ (jsx)\nimport './styles.css';"
+  },
+  {
+    "objectID": "posts/CSS-Styles.html#style-tag-vue",
+    "href": "posts/CSS-Styles.html#style-tag-vue",
+    "title": "CSS Styles",
+    "section": "style tag (vue)",
+    "text": "style tag (vue)\n&lt;style&gt;\n/* ... */\n&lt;/style&gt;"
+  },
+  {
+    "objectID": "posts/Chrome-Extensions.html",
+    "href": "posts/Chrome-Extensions.html",
+    "title": "Chrome Extensions",
+    "section": "",
+    "text": "Chrome Extensions"
   },
   {
     "objectID": "posts/AI Supply Chain.html",
@@ -333,7 +361,7 @@
     "href": "index.html",
     "title": "UndefinedVoidNull",
     "section": "",
-    "text": "AI Supply Chain\n\n\n\n\n\n\nRecord\n\n\nAI\n\n\n\n\n\n\n\n\n\nFeb 12, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Line Tools\n\n\n\n\n\n\nCode\n\n\nPowershell\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCSS Styles\n\n\n\n\n\n\nCode\n\n\nCSS\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nScrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post Tags\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSageMath First Look\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "Chrome Extensions\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\n\n\nApr 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nVS Code Extensions\n\n\n\n\n\n\nPDF\n\n\n\n\n\n\n\n\n\nApr 9, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAI Supply Chain\n\n\n\n\n\n\nRecord\n\n\nAI\n\n\n\n\n\n\n\n\n\nFeb 12, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCommand Line Tools\n\n\n\n\n\n\nCode\n\n\nPowershell\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nCSS Styles\n\n\n\n\n\n\nCode\n\n\nCSS\n\n\n\n\n\n\n\n\n\nJan 30, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nScrcpy Wireless Android Casting\n\n\n\n\n\n\nAndroid\n\n\n\n\n\n\n\n\n\nJan 17, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nBlog Post Tags\n\n\n\n\n\n\nRecord\n\n\nIdea\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nSageMath First Look\n\n\n\n\n\n\nMath\n\n\nCode\n\n\n\n\n\n\n\n\n\nJan 6, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nQuarto Markdown (.qmd) Testing\n\n\n\n\n\n\nRecord\n\n\n\n\n\n\n\n\n\nJan 1, 2025\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/Blog-Post-Tags.html",
@@ -343,52 +371,38 @@
     "text": "By Action\n\nRecord\n\nWorkflow\n\nReading\n\nRepost\n\nComment/Review\n\n\n\nBy Theme\n\nSOC\n\nECON\n\nPsychology\n\nData\n\nCS\n\nCode\n\nMath\n\nLogic\n\nAI\n\nHistory\n\nMusic\n\nArt\n\nEfficiency\n\nTool\n\nIdea\n\nMethod"
   },
   {
-    "objectID": "posts/CSS-Styles.html",
-    "href": "posts/CSS-Styles.html",
-    "title": "CSS Styles",
+    "objectID": "posts/Command-Line-Tools.html",
+    "href": "posts/Command-Line-Tools.html",
+    "title": "Command Line Tools",
     "section": "",
-    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;\n\n\n\n&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;\n\n\n\n&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
+    "text": "1. Setup\n\nPowershell 7\n\nhttps://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows\nnotepad $profile or code $profile\n\nhttps://gist.github.com/UndefinedVoidNull/055e23f8d9df82cf650d4e5f0a8f6f06\nSet-Alias -Name ALIAS_NAME -Value COMMAND -Scope Global\n\n\nWindows Terminal\n\nSet AHK Shortcut: Win + Backtick to open wt.exe\n\n#`::Run, wt.exe\nMSYS2\n\nhttps://www.msys2.org/\nAdd to $env:path\n\nStarship\n\nhttps://starship.rs/\nConfig:\n\nWin+R: %USERPROFILE%\\.config\\starship.toml\nhttps://gist.github.com/UndefinedVoidNull/24cd0afd8bab03950723eebcc4a5806b\n\n\nOn-My-Posh (Not Recommend)\n\nhttps://ohmyposh.dev/\n\n\n\n\n2. Basic Tools\n\nPackage Manager\n\nwinget\nchoco\nscoop\n\nlsd (ls)\n\nhttps://github.com/lsd-rs/lsd\n\nz zoxide (smarter cd)\n\nhttps://github.com/ajeetdsouza/zoxide\n\nrg ripgrep (grep)\n\nhttps://github.com/BurntSushi/ripgrep\n\nbat (cat)\n\nhttps://github.com/sharkdp/bat\n\nfd (find)\n\nhttps://github.com/sharkdp/fd\n\nfzf (fuzzy find)\n\nhttps://github.com/junegunn/fzf\n\ndua Disk Usage Analyzer (du)\n\nhttps://github.com/Byron/dua-cli\n\ngsudo (sudo)\n\nhttps://github.com/gerardog/gsudo\n\nicdiff Improved colored diff (diff)\n\nhttps://github.com/jeffkaufman/icdiff\n\nnew (New-Item) (Paste into $profile)\n\nfunction new {\n    param(\n        [Parameter(Mandatory)]\n        [string]$Name\n    )\n\n    if ($Name -match '\\.') {\n        # Contains a dot, assume it's a file\n        New-Item -Path $Name -ItemType File -Force\n    } else {\n        # No dot, assume it's a directory\n        New-Item -Path $Name -ItemType Directory -Force\n    }\n}\n\n\n3. Application Tools\n\nconda Anaconda\n\nhttps://www.anaconda.com/download-success\n\ngh GitHub CLI\n\nhttps://cli.github.com/\n\nffmpeg\n\nhttps://www.ffmpeg.org/\n\nmagick ImageMagick\n\nhttps://imagemagick.org/script/command-line-tools.php\n\nhttp httpie (curl)\n\nhttps://github.com/httpie/cli\n\nyt-dlp\n\nhttps://github.com/yt-dlp/yt-dlp\n\naria2c\n\nhttps://aria2.github.io/\n\ncalibre\n\nhttps://calibre-ebook.com/download_windows\nhttps://manual.calibre-ebook.com/generated/en/cli-index.html\nebook-convert\n\nhttps://manual.calibre-ebook.com/generated/en/ebook-convert.html\n\n2pdf (Paste into $profile)\n\nfunction 2pdf {\n  param (\n      [string]$inputFile\n  )\n\n  if (-not $inputFile) {\n      Write-Host \"Usage: 2pdf 'inputfile'\"\n      return\n  }\n\n  # Ensure the input file exists\n  if (-not (Test-Path $inputFile)) {\n      Write-Host \"Error: File '$inputFile' does not exist.\"\n      return\n  }\n\n  # Determine the output file name by changing the extension to .pdf\n  $outputFile = [System.IO.Path]::ChangeExtension($inputFile, \"pdf\")\n\n  # Run ebook-convert\n  try {\n      ebook-convert $inputFile $outputFile\n      Write-Host \"Converted '$inputFile' to '$outputFile'\"\n  } catch {\n      Write-Host \"Error: Conversion failed. Ensure 'ebook-convert' is installed and supports the input file format.\"\n  }\n}\n\n\n\n4. Commons\n\ncode (Open With Visual Studio Code)\nh (history)\ncls (clear)\npwd print current directory\nipconfig /flushdns\nnetsh interface ip show dns\nnetsh wlan show profiles\nnetsh wlan show profile name=\"Wi-Fi_Name\" key=clear\nping\nssh\nssh-keygen\nftp\nrobocopy\nps Get-Process\nkill Stop-Process\ngc -head 10 Get-Content (head)\ngc -tail 10 Get-Content (tail)\nRename-Item old_name new_name (mv)\nGet-Alias\n\n\n\n5. Git\nhttps://git-scm.com/downloads/win\n\n.git\n.gitignore\n\ngit init\ngit add # add files to staging area\ngit commit -m \"...\" # commit to local repo\n\ngit clone\ngit push origin main\ngit push origin\ngit push\ngit pull # fetch and merge\ngit fetch\ngit merge\ngit rebase\n\ngit branch\ngit checkout\ngit merge\n\ngit status\ngit log\ngit diff\n\n\n6. Win + R\n\nshell:startup\n%USERPROFILE%\n%USERPROFILE%/Desktop\n%USERPROFILE%/Downloads\n%USERPROFILE%/Documents\n%USERPROFILE%/Pictures\n%ALLUSERSPROFILE%\n%APPDATA%\n%LOCALAPPDATA%\n%WINDIR%\n%WINDIR%\\system32\n%WINDIR%\\system32\\drivers\\etc\\hosts\n%PROGRAMFILES%\n%PROGRAMFILES(X86)%\n%TEMP%"
   },
   {
-    "objectID": "posts/CSS-Styles.html#style-inline-css",
-    "href": "posts/CSS-Styles.html#style-inline-css",
-    "title": "CSS Styles",
+    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html",
+    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html",
+    "title": "Quarto Markdown (.qmd) Testing",
     "section": "",
-    "text": "&lt;div style=\"\"&gt;\n\n&lt;/div&gt;"
+    "text": "博客标签设计\nNote: the order of the quantifier is \\(\\forall\\), \\(\\exists\\), \\(\\forall\\)\nTheorem 1 1\nasd"
   },
   {
-    "objectID": "posts/CSS-Styles.html#headstyle-css",
-    "href": "posts/CSS-Styles.html#headstyle-css",
-    "title": "CSS Styles",
+    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html#h2",
+    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html#h2",
+    "title": "Quarto Markdown (.qmd) Testing",
+    "section": "H2",
+    "text": "H2\n\nH3\n\nH4\n\nH5\n\nH6\n\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\nList\n\n\nFirst\nSecond\n\nFirst\n\nFirst\n\n\nThird\nForth\n\n\nWhat is JavaScript ?\nconsole.log(\"Hello\")\n\nFundamental Theorem of Calculus\n\\[\n\\int_a^b f'(x) \\, dx = f(b) - f(a)\n\\]\n\nThm: Multiple Lines Theorem\n\n\\[\n\\begin{align*}\n&ax^2+bx+c = 0 \\\\\n&x = \\frac{-b\\pm\\sqrt{b^2-4ac}}{2a}\n\\end{align*}\n\\tag{1}\\]\n\n\n\n\n\n\nTip 1\n\n\n\nThis is a callout\n\n\n\nTheorem 2 This is a theorem example for testing reference\n\nFigure 1 Tip 1 Definition 1\n\n\nQuote:\n\nNested Quote:\n\nNested Quote:\n\n\n\n\nbold\nitalic\nbold italic\n\nGoogle\nhttps://quarto.org/docs/get-started/\n\n\n\n\n\n\nFigure 1\n\n\n\n\n\n\n\nA\\B\nB1\nB2\n\n\n\n\nA1\nA1 x B1\nA1 x B2\n\n\nA2\nA2 x B1\nA2 x B2"
+  },
+  {
+    "objectID": "posts/Quarto-Markdown-(.qmd)-Testing.html#footnotes",
+    "href": "posts/Quarto-Markdown-(.qmd)-Testing.html#footnotes",
+    "title": "Quarto Markdown (.qmd) Testing",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou can use @ to refer to the sources↩︎"
+  },
+  {
+    "objectID": "posts/Scrcpy-Wireless-Android-Casting.html",
+    "href": "posts/Scrcpy-Wireless-Android-Casting.html",
+    "title": "Scrcpy Wireless Android Casting",
     "section": "",
-    "text": "&lt;head&gt;\n  &lt;style&gt;\n    /* ... */\n  &lt;/style&gt;\n&lt;/head&gt;"
-  },
-  {
-    "objectID": "posts/CSS-Styles.html#headlinkrelstylesheet-hrefxxx.css",
-    "href": "posts/CSS-Styles.html#headlinkrelstylesheet-hrefxxx.css",
-    "title": "CSS Styles",
-    "section": "",
-    "text": "&lt;head&gt;\n  &lt;link rel=\"stylesheet\" href=\"style.css\"&gt;\n&lt;/head&gt;"
-  },
-  {
-    "objectID": "posts/CSS-Styles.html#import-xxx.css-jsx",
-    "href": "posts/CSS-Styles.html#import-xxx.css-jsx",
-    "title": "CSS Styles",
-    "section": "import ‘xxx.css’ (jsx)",
-    "text": "import ‘xxx.css’ (jsx)\nimport './styles.css';"
-  },
-  {
-    "objectID": "posts/CSS-Styles.html#style-tag-vue",
-    "href": "posts/CSS-Styles.html#style-tag-vue",
-    "title": "CSS Styles",
-    "section": "style tag (vue)",
-    "text": "style tag (vue)\n&lt;style&gt;\n/* ... */\n&lt;/style&gt;"
-  },
-  {
-    "objectID": "posts/SageMath-First-Look.html",
-    "href": "posts/SageMath-First-Look.html",
-    "title": "SageMath First Look",
-    "section": "",
-    "text": "https://sagecell.sagemath.org/\nhttps://doc.sagemath.org/html/en/tutorial/tour_assignment.html\n# define variables\nx, b, c = var('x b c')\n\n# solve equations\nsolve([x^2 + b*x + c == 0], x) \nsolve([x+y==6, x-y==4], x, y)\n\n# differentiate\nu = var('u')\ndiff(sin(u), u)\n\n# 4-th derivative\ndiff(sin(x^2), x, 4)\n\n# partial\nx, y = var('x,y')\nf = x^2 + 17*y^2\n\nf.diff(x) # w.r.t. x\nf.diff(y) # w.r.t. y\n\n# partial fraction decomposition\nf = 1/((1+x)*(x-1))\nf.partial_fraction(x)\n\n# indefnite integral\nintegral(x*sin(x^2), x)\n# definite integral\nintegral(x/(x^2+1), x, 0, 1)\n\n# solve DEs\nt = var('t')    # define a variable t\nx = function('x')(t)   # define x to be a function of t\nDE = diff(x, t) + x - 1\ndesolve(DE, [x,t])\n\n# lapalce transform\ns = var(\"s\")\nt = var(\"t\")\nf = t^2*exp(t) - sin(t)\nf.laplace(t,s)\n\n# LaTeX\nlatex(sqrt(z^2 + 1/2)) # \\sqrt{z^{2} + \\frac{1}{2}}\n\n# print\nprint(\"Hello World\")"
+    "text": "Escrcpy\nMaybe Escrcpy is a better solution https://github.com/viarotel-org/escrcpy\n\n\nConnect to the phone\n\nDownload and unzip scrcpy (If your are using Windows, download scrcpy-win64-$version.zip) https://github.com/Genymobile/scrcpy/releases/\nConnect phone to PC via USB cable\nMake sure turn on the USB debugging on your phone\nOpen terminal inside the scrcpy folder\n./adb devices\n./adb tcpip 5555\nUnplug USB cable\nGo to settings search ip in settings and remember the ip address (Make sure your phone and PC are in the same LAN i.e. connect to same WIFI)\n./adb connect 192.168.1.xx:5555\n./scrcpy.exe\nIf you want to disconnect, first use ./adb devices to check the ip address and port. Then ./adb disconnect 192.168.1.xx:5555\n\n\n\nUsage\n\nRight Click: Back\nMiddle Click: Home\nYou can use clipboard across PC and your phone\nCreate a desktop shortcut for scrcpy.exe (Maybe rename it to My Phone)\nIf scrcpy doesn’t support audio forwarding for your phone. You can try Bluetooth Audio Receiver\nYou can add the scrcpy folder path to the PATH environmental variable so that you can directly use adb and scrcpy commands in the terminal\nhttps://github.com/Genymobile/scrcpy"
   }
 ]
