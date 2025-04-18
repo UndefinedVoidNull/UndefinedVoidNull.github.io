@@ -118,6 +118,22 @@ main {
     }
 }
 
+@media (max-width: 768px) {
+    #listing-listing {
+        margin: 3em 5%;
+    }
+
+    .signature {
+        font-size: 1rem;
+        color: whitesmoke;
+        font-family: FZJinLS, SimSun, serif;
+    }
+
+    .thumbnail {
+        display: none !important;
+    }
+}
+
 
 .listing-title {
     /* font-size: 1.5rem; */
