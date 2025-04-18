@@ -1,5 +1,5 @@
 ---
-# title: "quarto-blog"
+# title: "Quarto-Blog"
 listing:
   contents: posts
   sort: "date desc"
@@ -9,4 +9,39 @@ listing:
   filter-ui: false
 page-layout: full
 title-block-banner: true
+css: index.css
 ---
+
+::: {.profile}
+
+<!-- Simple Avatar -->
+<!-- ::: {.avatar}
+![avatar](profile.webp)
+::: -->
+
+<!-- Flip Avatar -->
+:::{.flip-container}
+:::{.flipper}
+
+:::{.front}
+![](profile.jpg)
+:::
+
+:::{.back}
+![](profile_back.jpg)
+:::
+
+:::
+:::
+
+
+<!-- ::: {.name}
+Askin
+::: -->
+
+::: {.signature}
+清泉流响山林静, 薄雾迷离景更深
+:::
+
+:::
+

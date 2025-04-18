@@ -1,0 +1,177 @@
+@font-face {
+    font-family: 'FZJinLS';
+    src: url('FZJinLS.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+nav {
+    opacity: 0.9;
+}
+
+main {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.quarto-post {
+    /* border-bottom: none !important; */
+    padding: 20px 0;
+    margin-bottom: 0 !important;
+}
+
+#listing-listing {
+    margin: 3em 25%;
+}
+
+
+.list {
+    border-radius: 16px; 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10) ;
+    padding: 0 30px; 
+}
+
+.quarto-listing {
+    padding-bottom: 5em !important;
+}
+
+.listing-title>a{
+    transition: all ease 200ms;
+}
+
+.listing-title>a:hover {
+    color: skyblue;
+}
+
+#quarto-margin-sidebar {
+    display: none;
+}
+
+.quarto-post>.metadata {
+    display: none !important;
+}
+
+.listing-description {
+    display: none;
+}
+
+.profile {
+    height: 100%;
+    width: 100%; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+.avatar {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* .avatar img {
+    transition: transform 0.5s ease;
+}
+
+.avatar img:hover {
+    transform: rotate(360deg);
+} */
+
+
+/* .name {
+    font-size: 2rem;
+    color: whitesmoke;
+    font-family: FZJinLS, SimSun, serif;
+} */
+
+.signature {
+    font-size: 3rem;
+    color: whitesmoke;
+    font-family: FZJinLS, SimSun, serif;
+}
+
+@media (max-width: 768px) {
+    #listing-listing {
+        margin: 3em 5%;
+    }
+
+    .signature {
+        font-size: 1.5rem;
+        color: whitesmoke;
+        font-family: FZJinLS, SimSun, serif;
+    }
+
+    .thumbnail {
+        display: none !important;
+    }
+}
+
+
+.listing-title {
+    /* font-size: 1.5rem; */
+    font-family: 'Times New Roman', Times, serif;
+}
+
+/* 
+.listing-title::before{
+    content: "◦"
+} */
+
+
+/* .listing-categories {
+    display: none !important;
+} */
+
+/* Flip Avatar */
+
+.flip-container {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.flipper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-container:hover .flipper {
+  transform: rotateY(180deg);
+}
+
+.front, .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.front img, .back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.back {
+  transform: rotateY(180deg);
+}
+

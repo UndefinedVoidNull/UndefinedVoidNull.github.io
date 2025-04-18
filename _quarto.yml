@@ -5,7 +5,7 @@ project:
 toc: true
 website:
   favicon: favicon.png
-  title: "UndefinedVoidNull"
+  title: "Askin's Blog"
   navbar:
     right:
       - text: "About"
@@ -17,5 +17,3 @@ format:
     theme:
       - cosmo
     css: styles.css
-editor:
-  render-on-save: true
