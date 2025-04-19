@@ -102,15 +102,15 @@ main {
     font-family: FZJinLS, SimSun, serif;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 960px) {
     #listing-listing {
         margin: 3em 5%;
     }
+}
 
+@media (max-width: 768px) {
     .signature {
-        font-size: 1.5rem;
-        color: whitesmoke;
-        font-family: FZJinLS, SimSun, serif;
+        font-size: 2rem;
     }
 
     .thumbnail {
@@ -118,19 +118,15 @@ main {
     }
 }
 
-@media (max-width: 370px) {
-    #listing-listing {
-        margin: 3em 5%;
-    }
-
+@media (max-width: 512px) {
     .signature {
-        font-size: 1rem;
-        color: whitesmoke;
-        font-family: FZJinLS, SimSun, serif;
+        font-size: 1.5rem;
     }
+}
 
-    .thumbnail {
-        display: none !important;
+@media (max-width: 370px) {
+    .signature {
+        font-size: 1.25rem;
     }
 }
 
