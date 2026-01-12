@@ -1,0 +1,19 @@
+{
+  "name": "pdf-blog",
+  "version": "1.0.0",
+  "description": "A static PDF blog generator for GitHub Pages",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js",
+    "deploy": "node deploy.js"
+  },
+  "keywords": [
+    "pdf",
+    "blog",
+    "static",
+    "github-pages"
+  ],
+  "author": "",
+  "license": "MIT"
+}
+
