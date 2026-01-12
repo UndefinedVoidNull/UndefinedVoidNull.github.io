@@ -195,12 +195,10 @@ function generatePaginationHTML(currentPage, totalPages) {
     
     let paginationHTML = '<div class="pagination">';
     
-    // Previous button
+    // Previous button (only show if not first page)
     if (currentPage > 1) {
-        const prevPage = currentPage === 2 ? 'index.html' : `page${currentPage - 1}.html`;
-        paginationHTML += `<a href="${prevPage}" class="pagination-link">« Previous</a>`;
-    } else {
-        paginationHTML += '<span class="pagination-link disabled">« Previous</span>';
+        const prevPage = currentPage === 2 ? 'index.html' : `p${currentPage - 1}.html`;
+        paginationHTML += `<a href="${prevPage}" class="pagination-link">«</a>`;
     }
     
     // Page numbers
@@ -212,7 +210,7 @@ function generatePaginationHTML(currentPage, totalPages) {
                 paginationHTML += '<a href="index.html" class="pagination-link">1</a>';
             }
         } else {
-            const pageFile = `page${i}.html`;
+            const pageFile = `p${i}.html`;
             if (i === currentPage) {
                 paginationHTML += `<span class="pagination-link active">${i}</span>`;
             } else {
@@ -221,12 +219,10 @@ function generatePaginationHTML(currentPage, totalPages) {
         }
     }
     
-    // Next button
+    // Next button (only show if not last page)
     if (currentPage < totalPages) {
-        const nextPage = `page${currentPage + 1}.html`;
-        paginationHTML += `<a href="${nextPage}" class="pagination-link">Next »</a>`;
-    } else {
-        paginationHTML += '<span class="pagination-link disabled">Next »</span>';
+        const nextPage = `p${currentPage + 1}.html`;
+        paginationHTML += `<a href="${nextPage}" class="pagination-link">»</a>`;
     }
     
     paginationHTML += '</div>';
@@ -254,7 +250,12 @@ function updateIndexHTMLWithPagination(entries) {
                 html = fs.readFileSync(INDEX_HTML, 'utf8');
                 // Update title and canonical URL for paginated pages
                 html = html.replace(/<title>.*?<\/title>/i, `<title>Askin's Blog - Page ${page}</title>`);
-                html = html.replace(/<link\s+rel="canonical"[^>]*>/i, `<link rel="canonical" href="https://233lol.com/page${page}.html">`);
+                html = html.replace(/<link\s+rel="canonical"[^>]*>/i, `<link rel="canonical" href="https://233lol.com/p${page}.html">`);
+                
+                // Remove pinned entries section for pages 2+
+                // Match the entire pinned-entries div including the container
+                const pinnedRegex = /<div\s+class="pinned-entries">[\s\S]*?<!--\s*PINNED_ENTRIES_END\s*-->[\s\S]*?<\/div>/gi;
+                html = html.replace(pinnedRegex, '');
             }
             
             // Generate entries HTML
@@ -277,9 +278,9 @@ function updateIndexHTMLWithPagination(entries) {
                 'g'
             );
             
-            // Add pagination before entries
+            // Add pagination after entries (only lower pagination)
             const paginationHTML = generatePaginationHTML(page, totalPages);
-            const newEntriesContent = `${startMarker}\n${paginationHTML}\n${entriesHTML}\n${paginationHTML}\n            ${endMarker}`;
+            const newEntriesContent = `${startMarker}\n${entriesHTML}\n${paginationHTML}\n            ${endMarker}`;
             
             html = html.replace(entriesRegex, newEntriesContent);
             
@@ -290,18 +291,25 @@ function updateIndexHTMLWithPagination(entries) {
             html = ensureSEOTags(html, 'index', entries.length);
             
             // Write file
-            const outputFile = page === 1 ? INDEX_HTML : path.join(__dirname, `page${page}.html`);
+            const outputFile = page === 1 ? INDEX_HTML : path.join(__dirname, `p${page}.html`);
             fs.writeFileSync(outputFile, html, 'utf8');
-            console.log(`Generated ${page === 1 ? 'index.html' : `page${page}.html`} (page ${page}/${totalPages})`);
+            console.log(`Generated ${page === 1 ? 'index.html' : `p${page}.html`} (page ${page}/${totalPages})`);
         }
         
-        // Clean up old page files if total pages decreased
+        // Clean up old page files if total pages decreased (both old and new naming)
         if (totalPages > 0) {
             for (let page = totalPages + 1; page <= 10; page++) {
+                // Remove old naming (page2.html, page3.html, etc.)
                 const oldPageFile = path.join(__dirname, `page${page}.html`);
                 if (fs.existsSync(oldPageFile)) {
                     fs.unlinkSync(oldPageFile);
                     console.log(`Removed old page${page}.html`);
+                }
+                // Remove new naming (p2.html, p3.html, etc.)
+                const newPageFile = path.join(__dirname, `p${page}.html`);
+                if (fs.existsSync(newPageFile)) {
+                    fs.unlinkSync(newPageFile);
+                    console.log(`Removed old p${page}.html`);
                 }
             }
         }
@@ -490,7 +498,7 @@ function generateSitemap(entries, archivedEntries = []) {
         const totalPages = Math.ceil(entries.length / ENTRIES_PER_PAGE);
         for (let page = 2; page <= totalPages; page++) {
             urlXML += `    <url>
-        <loc>${siteURL}/page${page}.html</loc>
+        <loc>${siteURL}/p${page}.html</loc>
         <lastmod>${formatDateSitemap(new Date())}</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.9</priority>
