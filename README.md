@@ -9,17 +9,14 @@ Markdown, LaTeX, Typst, Onenote, Word, Webpages, Epub, Pictures...
 但是通过放弃一些绝大多数情况我都不会用到的功能(尽管这些功能可能很fancy), 换取一个更小的心智负担, 更简单, 更稳定的系统对我来说是值得的
  
 ## Getting Started
-1. Clone This Repository
+1. Clone This Repo
 2. 复制或移动PDF文件到 `/pdfs` 目录
-3. 执行`build.js`生成文章条目或`deploy.js`生成条目并Push
+3. 执行`build.js`生成文章条目
 ```bash
 node build.js
 ```
-
-```bash
-node deploy.js
-```
-
+4. 查看效果
 ```
 ./index.html
 ```
+5. Push到Github
