@@ -576,24 +576,6 @@ function ensureSEOTags(html, pageType, entryCount = 0) {
         }
     }
     
-    // Ensure favicon is present
-    const faviconLink = '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧊</text></svg>">';
-    // Remove any existing favicon links and any corrupted fragments
-    html = html.replace(/<link\s+rel="icon"[^>]*>/gi, '');
-    html = html.replace(/<text\s+y=[^>]*>🧊<\/text><\/svg>">/gi, '');
-    // Remove all favicon comments (we'll add a clean one)
-    html = html.replace(/<!--\s*Favicon\s*-->[\s\n]*/gi, '');
-    // Insert favicon after viewport meta tag, before Primary Meta Tags comment
-    const primaryMetaRegex = /(<!--\s*Primary Meta Tags\s*-->)/i;
-    if (html.match(primaryMetaRegex)) {
-        html = html.replace(primaryMetaRegex, `    <!-- Favicon -->\n    ${faviconLink}\n    \n    $1`);
-    } else {
-        // Fallback: insert after viewport
-        const viewportRegex = /(<meta\s+name="viewport"[^>]*>)/i;
-        if (html.match(viewportRegex)) {
-            html = html.replace(viewportRegex, `$1\n    <!-- Favicon -->\n    ${faviconLink}`);
-        }
-    }
     
     // Update or create title tag
     const titleRegex = /<title>.*?<\/title>/i;
