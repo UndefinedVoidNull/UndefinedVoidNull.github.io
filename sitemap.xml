@@ -19,6 +19,12 @@
         <priority>0.9</priority>
     </url>
     <url>
+        <loc>https://233lol.com/archives.html</loc>
+        <lastmod>2026-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
         <loc>https://233lol.com/p2.html</loc>
         <lastmod>2026-01-12</lastmod>
         <changefreq>daily</changefreq>
@@ -194,12 +200,6 @@
     </url>
     <url>
         <loc>https://233lol.com/pdfs/什么是权力 (韩炳哲).pdf</loc>
-        <lastmod>2026-01-12</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    <url>
-        <loc>https://233lol.com/pdfs/亚里士多德理论的一些德性和恶.pdf</loc>
         <lastmod>2026-01-12</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>

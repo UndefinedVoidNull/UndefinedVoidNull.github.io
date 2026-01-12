@@ -361,14 +361,8 @@ function generateArchivesHTML(archivedEntries) {
         html = html.replace(entriesRegex, newEntriesContent);
         
         // Remove pinned entries section for archives
-        const pinnedStartMarker = '<!-- GENERATED_PINNED_ENTRIES_START -->';
-        const pinnedEndMarker = '<!-- GENERATED_PINNED_ENTRIES_END -->';
-        const pinnedRegex = new RegExp(
-            pinnedStartMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + 
-            '[\\s\\S]*?' + 
-            pinnedEndMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
-            'g'
-        );
+        // Match the entire pinned-entries div including the container
+        const pinnedRegex = /<div\s+class="pinned-entries">[\s\S]*?<!--\s*PINNED_ENTRIES_END\s*-->[\s\S]*?<\/div>/gi;
         html = html.replace(pinnedRegex, '');
         
         // Add RSS link if not present
@@ -427,7 +421,7 @@ function generateRSSFeed(entries) {
         <title>${escapeXML(blogTitle)}</title>
         <link>${siteURL}</link>
         <description>${escapeXML(blogDescription)}</description>
-        <language>en-us</language>
+        <language>zh-cn</language>
         <lastBuildDate>${lastBuildDate}</lastBuildDate>
         <atom:link href="${siteURL}/feed.xml" rel="self" type="application/rss+xml"/>
 ${itemsXML}    </channel>
@@ -633,7 +627,7 @@ function ensureSEOTags(html, pageType, entryCount = 0) {
             "@type": "Person",
             "name": "Askin"
         },
-        "inLanguage": "en-US",
+        "inLanguage": "zh-CN",
         "numberOfItems": entryCount
     } : {
         "@context": "https://schema.org",
