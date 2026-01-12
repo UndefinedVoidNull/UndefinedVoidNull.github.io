@@ -532,11 +532,11 @@ function ensureSEOTags(html, pageType, entryCount = 0) {
     const siteURL = getSiteURL();
     const isIndex = pageType === 'index';
     const pageTitle = isIndex 
-        ? "Askin's Blog - PDF Blog Showcasing Academic Documents"
+        ? "Askin's Blog"
         : "About - Askin's Blog";
     const pageDescription = isIndex
-        ? `A static PDF blog showcasing ${entryCount} academic documents, research papers, and scholarly articles in PDF format. Browse and read PDF documents on various topics including philosophy, sociology, political science, and more.`
-        : "Learn more about Askin's Blog, a static PDF blog powered by PDF Blog. Subscribe to our RSS feed for the latest academic documents and research papers.";
+        ? "A place to share my notes, articles and thoughts"
+        : "RSS Subscription and Archives";
     const pageUrl = isIndex ? `${siteURL}/` : `${siteURL}/about.html`;
     
     // Check if head tag exists
@@ -576,6 +576,25 @@ function ensureSEOTags(html, pageType, entryCount = 0) {
         }
     }
     
+    // Ensure favicon is present
+    const faviconLink = '<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧊</text></svg>">';
+    // Remove any existing favicon links and any corrupted fragments
+    html = html.replace(/<link\s+rel="icon"[^>]*>/gi, '');
+    html = html.replace(/<text\s+y=[^>]*>🧊<\/text><\/svg>">/gi, '');
+    // Remove all favicon comments (we'll add a clean one)
+    html = html.replace(/<!--\s*Favicon\s*-->[\s\n]*/gi, '');
+    // Insert favicon after viewport meta tag, before Primary Meta Tags comment
+    const primaryMetaRegex = /(<!--\s*Primary Meta Tags\s*-->)/i;
+    if (html.match(primaryMetaRegex)) {
+        html = html.replace(primaryMetaRegex, `    <!-- Favicon -->\n    ${faviconLink}\n    \n    $1`);
+    } else {
+        // Fallback: insert after viewport
+        const viewportRegex = /(<meta\s+name="viewport"[^>]*>)/i;
+        if (html.match(viewportRegex)) {
+            html = html.replace(viewportRegex, `$1\n    <!-- Favicon -->\n    ${faviconLink}`);
+        }
+    }
+    
     // Update or create title tag
     const titleRegex = /<title>.*?<\/title>/i;
     if (titleRegex.test(html)) {
@@ -586,11 +605,11 @@ function ensureSEOTags(html, pageType, entryCount = 0) {
     getOrCreateMetaTag('title', null, pageTitle);
     getOrCreateMetaTag('description', null, pageDescription);
     getOrCreateMetaTag('keywords', null, isIndex 
-        ? 'PDF blog, academic blog, research papers, scholarly articles, philosophy, sociology, political science, PDF documents'
-        : 'about, PDF blog, academic blog, RSS feed, PDF documents');
+        ? 'PDF blog, personal blog, reading notes, articles, philosophy, sociology, political science, history, PDF documents'
+        : 'about, PDF blog, archives, RSS feed, PDF documents');
     getOrCreateMetaTag('author', null, 'Askin');
     getOrCreateMetaTag('robots', null, 'index, follow');
-    getOrCreateMetaTag('language', null, 'English');
+    getOrCreateMetaTag('language', null, 'Chinese');
     if (isIndex) {
         getOrCreateMetaTag('revisit-after', null, '7 days');
     }
