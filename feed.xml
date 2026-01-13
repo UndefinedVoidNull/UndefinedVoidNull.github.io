@@ -5,8 +5,29 @@
         <link>https://233lol.com</link>
         <description>Askin&apos;s Blog, powered by PDF Blog</description>
         <language>zh-cn</language>
-        <lastBuildDate>Tue, 13 Jan 2026 09:24:34 +0000</lastBuildDate>
+        <lastBuildDate>Tue, 13 Jan 2026 10:15:11 +0000</lastBuildDate>
         <atom:link href="https://233lol.com/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+        <title>Windows阅读PDF书籍的最佳实践探索</title>
+        <link>https://233lol.com/pdfs/Windows阅读PDF书籍的最佳实践探索.pdf</link>
+        <guid isPermaLink="true">https://233lol.com/pdfs/Windows阅读PDF书籍的最佳实践探索.pdf</guid>
+        <pubDate>Tue, 13 Jan 2026 10:15:11 +0000</pubDate>
+        <description>Windows阅读PDF书籍的最佳实践探索</description>
+    </item>
+    <item>
+        <title>第一次体验共享Scooter (Veo)</title>
+        <link>https://233lol.com/pdfs/第一次体验共享Scooter (Veo).pdf</link>
+        <guid isPermaLink="true">https://233lol.com/pdfs/第一次体验共享Scooter (Veo).pdf</guid>
+        <pubDate>Tue, 13 Jan 2026 10:02:39 +0000</pubDate>
+        <description>第一次体验共享Scooter (Veo)</description>
+    </item>
+    <item>
+        <title>打瓦读书法</title>
+        <link>https://233lol.com/pdfs/打瓦读书法.pdf</link>
+        <guid isPermaLink="true">https://233lol.com/pdfs/打瓦读书法.pdf</guid>
+        <pubDate>Tue, 13 Jan 2026 09:58:32 +0000</pubDate>
+        <description>打瓦读书法</description>
+    </item>
     <item>
         <title>Command Line Tools</title>
         <link>https://233lol.com/pdfs/Command Line Tools.pdf</link>
