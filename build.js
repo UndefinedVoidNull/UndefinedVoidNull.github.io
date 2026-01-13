@@ -12,12 +12,10 @@ const { execSync } = require('child_process');
 
 // Function to format filename as title (remove extension, replace hyphens/underscores with spaces, capitalize)
 function formatTitle(filename) {
+    // Keep original casing; only strip extension and replace separators
     return filename
         .replace(/\.pdf$/i, '')
-        .replace(/[-_]/g, ' ')
-        .split(' ')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
-        .join(' ');
+        .replace(/[-_]/g, ' ');
 }
 
 // Function to format date
