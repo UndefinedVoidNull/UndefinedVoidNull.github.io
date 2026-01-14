@@ -1,0 +1,55 @@
+name: Build and Deploy PDF Blog
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'   # your local version is v22.11.0
+
+      # If you later add dependencies to package.json, keep this.
+      # Right now it's harmless even if you have no dependencies.
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run build script
+        env:
+          SITE_URL: https://233lol.com
+        run: npm run build
+
+      # Upload the whole repo root (HTML, PDFs, CSS, etc.) as the site artifact
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .  # current directory (index.html, pdfs/, style.css, etc.)
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

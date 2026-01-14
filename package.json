@@ -4,8 +4,7 @@
   "description": "A static PDF blog generator for GitHub Pages",
   "main": "build.js",
   "scripts": {
-    "build": "node build.js",
-    "deploy": "node deploy.js"
+    "build": "node build.js"
   },
   "keywords": [
     "pdf",
