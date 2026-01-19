@@ -3,6 +3,7 @@ const path = require('path');
 
 const PDFS_DIR = path.join(__dirname, 'pdfs');
 const ARCHIVES_DIR = path.join(__dirname, 'pdfs', 'archives');
+const PINNED_DIR = path.join(__dirname, 'pdfs', 'pinned');
 const INDEX_HTML = path.join(__dirname, 'index.html');
 const ARCHIVES_HTML = path.join(__dirname, 'archives.html');
 const RSS_XML = path.join(__dirname, 'feed.xml');
@@ -104,10 +105,10 @@ function build() {
         // Read all files in pdfs directory (excluding archives subfolder)
         const files = fs.readdirSync(PDFS_DIR);
         
-        // Filter PDF files (exclude archives folder and files inside it)
+        // Filter PDF files (exclude archives and pinned folders and files inside them)
         const pdfFiles = files.filter(file => {
             const filePath = path.join(PDFS_DIR, file);
-            // Skip if it's a directory (like archives) or not a PDF
+            // Skip if it's a directory (like archives, pinned) or not a PDF
             if (fs.statSync(filePath).isDirectory()) {
                 return false;
             }
@@ -127,6 +128,31 @@ function build() {
             })
             // Sort by modification date (newest first)
             .sort((a, b) => b.modifiedDate - a.modifiedDate);
+
+        // Handle pinned PDFs
+        let pinnedEntries = [];
+        if (fs.existsSync(PINNED_DIR)) {
+            const pinnedFiles = fs.readdirSync(PINNED_DIR);
+            const pinnedPDFs = pinnedFiles.filter(file => 
+                file.toLowerCase().endsWith('.pdf')
+            );
+            
+            pinnedEntries = pinnedPDFs
+                .map(filename => {
+                    const filePath = path.join(PINNED_DIR, filename);
+                    const stats = fs.statSync(filePath);
+                    return {
+                        filename,
+                        modifiedDate: stats.mtime,
+                        path: `pdfs/pinned/${filename}`
+                    };
+                })
+                .sort((a, b) => b.modifiedDate - a.modifiedDate);
+            
+            if (pinnedEntries.length > 0) {
+                console.log(`Found ${pinnedEntries.length} pinned PDF file(s)`);
+            }
+        }
 
         // Handle archived PDFs
         let archivedEntries = [];
@@ -166,8 +192,8 @@ function build() {
             return;
         }
 
-        // Update index.html with pagination (only regular entries section, pinned section is left untouched)
-        updateIndexHTMLWithPagination(entries);
+        // Update index.html with pagination (including pinned entries for page 1)
+        updateIndexHTMLWithPagination(entries, pinnedEntries);
         
         // Generate RSS feed
         generateRSSFeed(entries);
@@ -227,9 +253,19 @@ function generatePaginationHTML(currentPage, totalPages) {
     return paginationHTML;
 }
 
+// Function to generate pinned entries HTML
+function generatePinnedEntriesHTML(pinnedEntries) {
+    if (pinnedEntries.length === 0) {
+        return '';
+    }
+    
+    return pinnedEntries
+        .map(entry => generateEntryHTML(entry))
+        .join('\n');
+}
+
 // Function to update index.html with pagination
-// Note: This only updates the regular entries section. The pinned-entries section is left untouched for manual editing.
-function updateIndexHTMLWithPagination(entries) {
+function updateIndexHTMLWithPagination(entries, pinnedEntries = []) {
     try {
         const totalPages = Math.ceil(entries.length / ENTRIES_PER_PAGE);
         
@@ -243,6 +279,19 @@ function updateIndexHTMLWithPagination(entries) {
             let html;
             if (page === 1) {
                 html = fs.readFileSync(INDEX_HTML, 'utf8');
+                
+                // Generate and update pinned entries section for page 1
+                const pinnedEntriesHTML = generatePinnedEntriesHTML(pinnedEntries);
+                const pinnedStartMarker = '<!-- PINNED_ENTRIES_START -->';
+                const pinnedEndMarker = '<!-- PINNED_ENTRIES_END -->';
+                const pinnedRegex = new RegExp(
+                    pinnedStartMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + 
+                    '[\\s\\S]*?' + 
+                    pinnedEndMarker.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'),
+                    'g'
+                );
+                const newPinnedContent = `${pinnedStartMarker}\n${pinnedEntriesHTML}\n            ${pinnedEndMarker}`;
+                html = html.replace(pinnedRegex, newPinnedContent);
             } else {
                 // Use index.html as template for other pages
                 html = fs.readFileSync(INDEX_HTML, 'utf8');
@@ -358,8 +407,7 @@ function generateArchivesHTML(archivedEntries) {
         
         html = html.replace(entriesRegex, newEntriesContent);
         
-        // Remove pinned entries section for archives
-        // Match the entire pinned-entries div including the container
+        // Remove pinned entries section for archives (pinned entries only show on homepage)
         const pinnedRegex = /<div\s+class="pinned-entries">[\s\S]*?<!--\s*PINNED_ENTRIES_END\s*-->[\s\S]*?<\/div>/gi;
         html = html.replace(pinnedRegex, '');
         
