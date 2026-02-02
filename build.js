@@ -11,6 +11,23 @@ const SITEMAP_XML = path.join(__dirname, 'sitemap.xml');
 const ENTRIES_PER_PAGE = 15;
 const { execSync } = require('child_process');
 
+// Function to get file date - use git log when available (preserves correct dates in CI);
+// fall back to mtime when running locally with uncommitted files.
+function getFileDate(filePath) {
+    try {
+        const result = execSync(`git log -1 --format=%cI -- "${path.relative(process.cwd(), filePath).replace(/\\/g, '/')}"`, {
+            encoding: 'utf8',
+            cwd: __dirname
+        }).trim();
+        if (result) {
+            return new Date(result);
+        }
+    } catch (e) {
+        // git not available or file not in git - fall through to mtime
+    }
+    return fs.statSync(filePath).mtime;
+}
+
 // Function to format filename as title (remove extension, replace hyphens/underscores with spaces, capitalize)
 function formatTitle(filename) {
     // Keep original casing; only strip extension and replace separators
@@ -119,10 +136,9 @@ function build() {
         const entries = pdfFiles
             .map(filename => {
                 const filePath = path.join(PDFS_DIR, filename);
-                const stats = fs.statSync(filePath);
                 return {
                     filename,
-                    modifiedDate: stats.mtime,
+                    modifiedDate: getFileDate(filePath),
                     path: `pdfs/${filename}`
                 };
             })
@@ -140,10 +156,9 @@ function build() {
             pinnedEntries = pinnedPDFs
                 .map(filename => {
                     const filePath = path.join(PINNED_DIR, filename);
-                    const stats = fs.statSync(filePath);
                     return {
                         filename,
-                        modifiedDate: stats.mtime,
+                        modifiedDate: getFileDate(filePath),
                         path: `pdfs/pinned/${filename}`
                     };
                 })
@@ -165,10 +180,9 @@ function build() {
             archivedEntries = archivePDFs
                 .map(filename => {
                     const filePath = path.join(ARCHIVES_DIR, filename);
-                    const stats = fs.statSync(filePath);
                     return {
                         filename,
-                        modifiedDate: stats.mtime,
+                        modifiedDate: getFileDate(filePath),
                         path: `pdfs/archives/${filename}`
                     };
                 })
